@@ -2,7 +2,7 @@
   "name": "lucky-sun-54c0fileflip-tool",
   "compatibility_date": "2026-10-23",
   "assets": {
-    "directory": "./public",
+    "directory": "./",
     "binding": "ASSETS",
     "not_found_handling": "404"
   }
