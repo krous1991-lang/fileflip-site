@@ -1,104 +1,151 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us | FileFlip</title>
-  <meta name="description" content="Contact FileFlip for help, feedback, accessibility issues, and suggestions.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us - FileFlip</title>
+  <meta name="description" content="Contact FileFlip for questions, feedback, technical support, or suggestions about our free online PDF and image conversion tools.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fileflipconver.com/contact.html">
 
   <style>
-    :root {
-      color-scheme: light;
-      --ink: #18213a;
-      --muted: #657086;
-      --line: #e3e7ef;
-      --accent: #5546d8;
+    * {
+      box-sizing: border-box;
     }
-
-    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      color: var(--ink);
-      background: #f5f6fb;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #202938;
       line-height: 1.7;
     }
 
     header {
-      background: linear-gradient(135deg, #171f48, #5848d8);
-      color: white;
-      padding: 22px 18px;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 20px;
     }
 
-    .wrap {
-      max-width: 850px;
-      margin: 0 auto;
+    .topbar {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    header a {
-      color: white;
+    .brand {
+      font-size: 27px;
+      font-weight: bold;
+      color: #2563eb;
       text-decoration: none;
-      font-size: 26px;
-      font-weight: 800;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #374151;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover,
+    footer a:hover {
+      color: #2563eb;
     }
 
     main {
-      background: white;
-      margin: 28px auto;
-      padding: 28px 22px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      box-shadow: 0 8px 28px rgba(24, 33, 58, 0.04);
+      max-width: 760px;
+      margin: 45px auto;
+      padding: 0 18px;
+    }
+
+    .contact-card {
+      background: #fff;
+      padding: 32px;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
     }
 
     h1 {
       margin-top: 0;
-      font-size: clamp(30px, 6vw, 42px);
-      line-height: 1.2;
+      margin-bottom: 12px;
+      font-size: 32px;
+      line-height: 1.3;
+    }
+
+    .intro {
+      color: #596579;
+      margin-bottom: 25px;
+    }
+
+    .contact-item {
+      padding: 16px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
     }
 
     h2 {
-      margin-top: 30px;
-      font-size: 23px;
+      font-size: 19px;
+      margin: 0 0 6px;
     }
 
-    p { margin: 12px 0; }
+    p {
+      margin: 5px 0;
+    }
 
-    a {
-      color: var(--accent);
+    .contact-link {
+      color: #2563eb;
       overflow-wrap: anywhere;
     }
 
-    .contact-card {
-      margin-top: 20px;
-      padding: 18px;
-      background: #f5f6ff;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-    }
-
-    .back {
-      display: inline-block;
+    .note {
       margin-top: 24px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    footer {
-      padding: 20px 16px 30px;
-      text-align: center;
-      color: var(--muted);
+      padding: 15px;
+      background: #eff6ff;
+      border-radius: 10px;
+      color: #334155;
       font-size: 14px;
     }
 
-    footer a { margin: 0 5px; }
+    footer {
+      margin-top: 40px;
+      padding: 24px 16px;
+      background: #fff;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+      margin: 0 8px;
+    }
 
     @media (max-width: 600px) {
       main {
-        margin: 14px;
+        margin: 25px auto;
+      }
+
+      .contact-card {
         padding: 22px 18px;
+      }
+
+      h1 {
+        font-size: 27px;
       }
     }
   </style>
@@ -106,51 +153,77 @@
 
 <body>
   <header>
-    <div class="wrap">
-      <a href="index.html">FileFlip</a>
+    <div class="topbar">
+      <a class="brand" href="/">FileFlip</a>
+
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/contact.html">Contact Us</a>
+      </nav>
     </div>
   </header>
 
-  <main class="wrap">
-    <h1>Contact FileFlip</h1>
-
-    <p>
-      We welcome feedback about conversion problems,
-      accessibility, and ideas for improving FileFlip.
-    </p>
-
+  <main>
     <section class="contact-card">
-      <h2>Support contact</h2>
-      <p>
-        For support or questions about FileFlip, please email us at:
+      <h1>Contact Us</h1>
+
+      <p class="intro">
+        Thank you for visiting FileFlip. We welcome your questions,
+        feedback, suggestions, and reports about technical problems.
       </p>
-      <p>
-        <strong>
-          <a href="mailto:Simonako080591@gmail.com">
+
+      <div class="contact-item">
+        <h2>General Inquiries</h2>
+        <p>
+          For general questions about FileFlip and its services,
+          please contact us by email.
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <h2>Technical Support</h2>
+        <p>
+          If a PDF or image conversion does not work as expected,
+          tell us which tool you were using and describe the issue.
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <h2>Feedback and Suggestions</h2>
+        <p>
+          We appreciate feedback that helps us improve our website
+          and user experience.
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <h2>Email Us</h2>
+        <p>
+          Email:
+          <a class="contact-link"
+             href="mailto:Simonako080591@gmail.com">
             Simonako080591@gmail.com
           </a>
-        </strong>
-      </p>
-    </section>
+        </p>
+      </div>
 
-    <section>
-      <h2>When reporting a problem</h2>
-      <p>
-        Please describe which tool you were using, the type of file,
-        and what happened. Do not send private or sensitive documents
-        when reporting a problem.
-      </p>
+      <div class="note">
+        <strong>Privacy note:</strong>
+        Please do not send passwords, payment details, or sensitive
+        personal information when contacting us.
+      </div>
     </section>
-
-    <a class="back" href="index.html">← Back to FileFlip</a>
   </main>
 
   <footer>
-    <p>FileFlip · Free browser-based file tools</p>
+    <p>&copy; 2026 FileFlip. All rights reserved.</p>
     <p>
-      <a href="privacy-policy.html">Privacy Policy</a> ·
-      <a href="about.html">About Us</a> ·
-      <a href="contact.html">Contact Us</a>
+      <a href="/">Home</a>
+      <a href="/about.html">About Us</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/contact.html">Contact Us</a>
     </p>
   </footer>
 </body>
