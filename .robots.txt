@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fileflipconver.com/sitemap.xml
