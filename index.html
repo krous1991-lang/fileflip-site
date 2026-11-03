@@ -1,211 +1,783 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#24245f">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="description" content="Convert PDF pages to PNG images or combine JPG and PNG photos into one PDF for free. Fast, private, browser-based file conversion with no account or upload.">
-  <title>PDF to PNG Converter & JPG to PDF Online Free | FileFlip</title>
-  <link rel="canonical" href="https://fileflipconver.com/">
-  <link rel="icon" href="data:,">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="FileFlip">
-  <meta property="og:title" content="Free PDF to PNG & JPG to PDF Converter | FileFlip">
-  <meta property="og:description" content="Convert PDF pages to PNG or combine JPG and PNG images into a PDF. Free, private and easy to use in your browser.">
-  <meta property="og:url" content="https://fileflipconver.com/">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Free PDF to PNG & JPG to PDF Converter | FileFlip">
-  <meta name="twitter:description" content="Convert PDF pages to PNG or combine images into a PDF for free with FileFlip.">
-  <meta name="google-site-verification" content="WvWN_kHgotvwP5kkDRIGqG78hJ-GWjGdchk-Afx0fw8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://fileflipconver.com/#website",
-        "url": "https://fileflipconver.com/",
-        "name": "FileFlip",
-        "description": "Free browser-based PDF and image conversion tools."
-      },
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileflipconver.com/#app",
-        "name": "FileFlip PDF and Image Converter",
-        "url": "https://fileflipconver.com/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "browserRequirements": "Requires JavaScript and a modern browser",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Convert PDF pages to PNG images and combine JPG or PNG images into a PDF. Files are processed locally in the browser."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I convert a PDF to PNG?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Choose a PDF file, select the image quality, and press Convert PDF to PNG. Download each converted page."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I combine JPG or PNG images into one PDF?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Select one or more JPG or PNG images, choose a page size, and press Convert images to PDF. Then download the combined PDF."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are my files uploaded to FileFlip?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "File conversion is performed in your browser. The selected files are not uploaded to a FileFlip server."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is FileFlip free to use?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. The PDF to PNG and image to PDF tools on FileFlip are free to use without creating an account."
-            }
-          }
-        ]
-      }
-    ]
+<title>Free PDF to PNG & JPG Converter | Images to PDF – FileFlip</title>
+
+<meta name="description" content="Convert PDF pages to PNG images or combine JPG and PNG photos into one PDF for free. Fast, private and secure online file converter. No signup required.">
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://fileflipconver.com/">
+<meta name="theme-color" content="#29246d">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="FileFlip – Free PDF & Image Converter">
+<meta property="og:description" content="Convert PDF to PNG and JPG, or combine images into PDF. Free, private and easy to use.">
+<meta property="og:url" content="https://fileflipconver.com/">
+<meta property="og:site_name" content="FileFlip">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FileFlip – Free PDF & Image Converter">
+<meta name="twitter:description" content="Convert PDF pages to images and combine images into PDF for free.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"FileFlip",
+  "url":"https://fileflipconver.com/",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "description":"Free online PDF to PNG converter and JPG PNG images to PDF converter.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"USD"
   }
-  </script>
+}
+</script>
 
-  <style>
-    :root {
-      --bg:#f6f7fb; --card:#fff; --ink:#172033; --muted:#68738a;
-      --line:#e5e9f2; --accent:#5145e5; --accent2:#eeedff;
-      --good:#087f5b; --shadow:0 12px 34px rgba(28,39,76,.07);
+<style>
+:root {
+  --bg:#f4f5fb;
+  --card:#ffffff;
+  --ink:#172033;
+  --muted:#687386;
+  --primary:#5145e5;
+  --line:#e2e6ef;
+  --green:#16845f;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.65;
+}
+header {
+  color:white;
+  background:linear-gradient(135deg,#171b43,#5145e5);
+  padding:25px 18px 65px;
+}
+.topbar {
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+.brand {
+  font-size:30px;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+.brand span {color:#aaa4ff}
+.navtag {
+  border:1px solid #7775b9;
+  border-radius:30px;
+  padding:8px 16px;
+  font-size:12px;
+  font-weight:bold;
+}
+.hero {
+  max-width:850px;
+  margin:55px auto 0;
+  text-align:center;
+}
+.hero .eyebrow {
+  display:inline-block;
+  border:1px solid #8582c5;
+  padding:8px 18px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:bold;
+}
+.hero h1 {
+  font-size:clamp(30px,6vw,54px);
+  line-height:1.12;
+  margin:25px 0;
+  letter-spacing:-1.5px;
+}
+.hero p {
+  font-size:19px;
+  color:#e4e4ff;
+  max-width:700px;
+  margin:auto;
+}
+main {
+  max-width:1060px;
+  margin:-35px auto 50px;
+  padding:0 16px;
+}
+.privacy {
+  background:#edfff5;
+  border:1px solid #c8f0d9;
+  color:#176447;
+  border-radius:22px;
+  padding:20px;
+  margin-bottom:24px;
+}
+.tools {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+.card {
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:25px;
+  box-shadow:0 8px 30px rgba(20,30,70,.045);
+}
+.card-head {
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:20px;
+}
+.tool-icon {
+  background:#f0efff;
+  border-radius:17px;
+  padding:13px;
+  font-size:29px;
+}
+.card h2 {
+  font-size:23px;
+  line-height:1.25;
+  margin:0;
+}
+.card-head p {
+  color:var(--muted);
+  margin:5px 0 0;
+}
+.drop {
+  display:block;
+  border:2px dashed #cbd0df;
+  border-radius:20px;
+  padding:25px 15px;
+  text-align:center;
+  background:#fafaff;
+  cursor:pointer;
+  margin:15px 0;
+}
+.drop:hover {border-color:var(--primary)}
+.drop .big {font-size:38px}
+.drop strong {
+  display:block;
+  font-size:19px;
+  margin:8px 0;
+}
+.drop small {color:var(--muted)}
+.drop input {
+  display:block;
+  max-width:100%;
+  margin:14px auto 0;
+}
+.options {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:15px 0;
+}
+.options label {color:var(--muted)}
+select {
+  padding:11px 14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:white;
+  font-size:15px;
+}
+.files {
+  color:var(--muted);
+  font-size:13px;
+  overflow-wrap:anywhere;
+  margin:12px 0;
+}
+button,.download {
+  display:inline-block;
+  border:0;
+  border-radius:14px;
+  padding:15px 20px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  text-align:center;
+  text-decoration:none;
+}
+.primary {
+  width:100%;
+  background:var(--primary);
+  color:white;
+  box-shadow:0 7px 18px #5145e52a;
+}
+.primary:disabled {
+  opacity:.5;
+  cursor:not-allowed;
+}
+.status {
+  margin-top:14px;
+  font-size:14px;
+  color:var(--green);
+  overflow-wrap:anywhere;
+}
+.results {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
+  gap:12px;
+  margin-top:15px;
+}
+.result {
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:10px;
+  text-align:center;
+  background:#fff;
+}
+.result img {
+  width:100%;
+  height:150px;
+  object-fit:contain;
+  background:#f7f7fb;
+  border-radius:9px;
+}
+.result a {
+  display:block;
+  color:var(--primary);
+  font-weight:bold;
+  margin-top:8px;
+  text-decoration:none;
+}
+.adslot {
+  margin:24px 0;
+  border:1px dashed #cbd0df;
+  text-align:center;
+  padding:22px;
+  color:#929bad;
+  border-radius:18px;
+  font-size:13px;
+  min-height:65px;
+}
+.benefits {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:25px;
+}
+.benefit {
+  padding:18px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+}
+.benefit b {display:block;margin-bottom:5px}
+.benefit span {color:var(--muted);font-size:13px}
+.content-section {
+  margin-top:25px;
+  padding:25px;
+  border:1px solid var(--line);
+  background:white;
+  border-radius:20px;
+}
+.content-section h2 {font-size:24px}
+.content-section h3 {font-size:18px}
+.content-section p,.content-section li {color:#566174}
+.content-section a {color:var(--primary)}
+.faq-item {
+  padding:13px 0;
+  border-bottom:1px solid var(--line);
+}
+.faq-item:last-child {border:0}
+.faq-item h3 {margin:0 0 5px}
+footer {
+  text-align:center;
+  padding:30px 15px;
+  color:var(--muted);
+  font-size:13px;
+  border-top:1px solid var(--line);
+}
+footer a {
+  color:var(--primary);
+  margin:0 7px;
+  text-decoration:none;
+}
+@media(max-width:760px) {
+  .tools {grid-template-columns:1fr}
+  .benefits {grid-template-columns:1fr}
+  header {padding-bottom:55px}
+  .hero {margin-top:38px}
+  .hero p {font-size:16px}
+  .card {padding:19px}
+  .topbar .navtag {font-size:10px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="brand">File<span>Flip</span></div>
+    <div class="navtag">FREE ONLINE FILE TOOLS</div>
+  </div>
+
+  <section class="hero">
+    <div class="eyebrow">✦ SIMPLE · PRIVATE · IN YOUR BROWSER</div>
+    <h1>Free PDF to PNG & JPG Converter</h1>
+    <p>
+      Convert PDF pages into clear PNG images, or combine
+      JPG and PNG photos into one PDF. FileFlip is free,
+      easy to use, and processes your files in your browser.
+    </p>
+  </section>
+</header>
+
+<main>
+
+  <div class="privacy">
+    <strong>🔒 Your files stay on your device.</strong><br>
+    Conversions run locally in your browser. Files are not
+    uploaded to a FileFlip server.
+  </div>
+
+  <div class="tools">
+
+    <article class="card">
+      <div class="card-head">
+        <div class="tool-icon">📄</div>
+        <div>
+          <h2>PDF to PNG Converter</h2>
+          <p>Turn every page of a PDF into a downloadable PNG image.</p>
+        </div>
+      </div>
+
+      <label class="drop" for="pdfInput">
+        <span class="big">📄</span>
+        <strong>Choose a PDF file</strong>
+        <small>One PDF at a time · processed locally</small>
+        <input id="pdfInput" type="file" accept="application/pdf,.pdf">
+      </label>
+
+      <div class="options">
+        <label for="quality">Image quality:</label>
+        <select id="quality">
+          <option value="1.5">Standard</option>
+          <option value="2.5" selected>High</option>
+          <option value="3.5">Very High</option>
+        </select>
+      </div>
+
+      <div class="files" id="pdfName">No file selected</div>
+      <button class="primary" id="convertPdf" disabled>
+        Convert PDF to PNG
+      </button>
+      <div class="status" id="pdfStatus" role="status"></div>
+      <div class="results" id="pngResults"></div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <div class="tool-icon">🖼️</div>
+        <div>
+          <h2>PNG / JPG to PDF</h2>
+          <p>Combine one or more images into a single PDF.</p>
+        </div>
+      </div>
+
+      <label class="drop" for="imgInput">
+        <span class="big">🖼️</span>
+        <strong>Choose image files</strong>
+        <small>PNG, JPG or JPEG · select multiple</small>
+        <input id="imgInput" type="file"
+          accept="image/png,image/jpeg,.png,.jpg,.jpeg" multiple>
+      </label>
+
+      <div class="options">
+        <label for="pageSize">PDF page size:</label>
+        <select id="pageSize">
+          <option value="a4">A4</option>
+          <option value="letter">Letter</option>
+          <option value="image">Fit to image</option>
+        </select>
+      </div>
+
+      <div class="files" id="imgNames">No images selected</div>
+      <button class="primary" id="convertImg" disabled>
+        Convert images to PDF
+      </button>
+      <div class="status" id="imgStatus" role="status"></div>
+      <div id="pdfResult"></div>
+    </article>
+
+  </div>
+
+  <div class="adslot">
+    Advertisement space — ad placement subject to network approval
+  </div>
+
+  <section class="benefits">
+    <div class="benefit">
+      <b>🔒 Private by design</b>
+      <span>Your files are processed locally in your browser.</span>
+    </div>
+    <div class="benefit">
+      <b>⚡ Easy to use</b>
+      <span>Simple tools with no account or registration required.</span>
+    </div>
+    <div class="benefit">
+      <b>💻 Browser based</b>
+      <span>Use FileFlip on desktop, tablet or mobile.</span>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Free Online PDF and Image Converter</h2>
+    <p>
+      FileFlip provides simple online tools to convert PDF
+      documents into PNG images and combine JPG or PNG
+      pictures into a single PDF file. You can use these
+      tools directly in your browser without creating an account.
+    </p>
+
+    <h3>Convert PDF pages to PNG images</h3>
+    <p>
+      Select a PDF document and choose your preferred image
+      quality. FileFlip converts each page into a separate
+      PNG image that you can download individually.
+    </p>
+
+    <h3>Combine JPG and PNG images into PDF</h3>
+    <p>
+      Select one or more JPG, JPEG or PNG images and create
+      a single PDF document. Choose A4, Letter or image-sized
+      pages before starting the conversion.
+    </p>
+
+    <h3>Is FileFlip free?</h3>
+    <p>
+      Yes. FileFlip offers these PDF and image conversion
+      tools free of charge. No account is required.
+    </p>
+
+    <h3>Are my files private?</h3>
+    <p>
+      File conversion takes place in your browser. Your
+      selected files are not sent to a FileFlip upload server.
+      Your browser and device still control local file access.
+    </p>
+  </section>
+
+  <section class="content-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>How do I convert PDF to PNG?</h3>
+      <p>Select your PDF file, choose image quality, click
+      Convert PDF to PNG, then download each page.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I convert multiple images into one PDF?</h3>
+      <p>Yes. Select multiple JPG or PNG images and click
+      Convert images to PDF.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do I need to install software?</h3>
+      <p>No. FileFlip works directly in a modern web browser.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Are my files uploaded?</h3>
+      <p>No. These conversions are performed locally in your browser.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© <span id="year"></span> FileFlip. All rights reserved.</p>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact Us</a>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+(() => {
+  "use strict";
+
+  const $ = id => document.getElementById(id);
+
+  $("year").textContent = new Date().getFullYear();
+
+  if (window.pdfjsLib) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  }
+
+  let pdfFile = null;
+  let imageFiles = [];
+
+  function setStatus(id, message) {
+    $(id).textContent = message;
+  }
+
+  function prettyBytes(bytes) {
+    if (bytes < 1024) return bytes + " B";
+    if (bytes < 1024 * 1024)
+      return (bytes / 1024).toFixed(1) + " KB";
+    return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+  }
+
+  function safeFileName(name) {
+    return name.replace(/[^a-z0-9_-]/gi, "_");
+  }
+
+  $("pdfInput").addEventListener("change", event => {
+    pdfFile = event.target.files[0] || null;
+
+    $("pdfName").textContent = pdfFile
+      ? pdfFile.name + " · " + prettyBytes(pdfFile.size)
+      : "No file selected";
+
+    $("convertPdf").disabled = !pdfFile;
+    $("pngResults").replaceChildren();
+    setStatus("pdfStatus", "");
+  });
+
+  $("imgInput").addEventListener("change", event => {
+    imageFiles = Array.from(event.target.files).filter(file =>
+      ["image/png", "image/jpeg"].includes(file.type)
+    );
+
+    $("imgNames").textContent = imageFiles.length
+      ? imageFiles.map(file =>
+          file.name + " (" + prettyBytes(file.size) + ")"
+        ).join(" · ")
+      : "No valid images selected";
+
+    $("convertImg").disabled = imageFiles.length === 0;
+    $("pdfResult").replaceChildren();
+    setStatus("imgStatus", "");
+  });
+
+  $("convertPdf").addEventListener("click", async () => {
+    if (!pdfFile || !window.pdfjsLib) {
+      setStatus("pdfStatus", "PDF library is not available. Check your internet connection.");
+      return;
     }
-    * { box-sizing:border-box }
-    html { scroll-behavior:smooth }
-    body {
-      margin:0; background:var(--bg); color:var(--ink);
-      font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+
+    const button = $("convertPdf");
+    button.disabled = true;
+    $("pngResults").replaceChildren();
+
+    try {
+      setStatus("pdfStatus", "Reading PDF...");
+
+      const bytes = await pdfFile.arrayBuffer();
+      const doc = await pdfjsLib.getDocument({
+        data: bytes
+      }).promise;
+
+      const scale = Number($("quality").value);
+      const baseName = safeFileName(
+        pdfFile.name.replace(/\.pdf$/i, "")
+      );
+
+      for (let i = 1; i <= doc.numPages; i++) {
+        setStatus(
+          "pdfStatus",
+          "Converting page " + i + " of " + doc.numPages + "..."
+        );
+
+        const page = await doc.getPage(i);
+        const viewport = page.getViewport({ scale });
+
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+
+        canvas.width = Math.ceil(viewport.width);
+        canvas.height = Math.ceil(viewport.height);
+
+        await page.render({
+          canvasContext: context,
+          viewport: viewport
+        }).promise;
+
+        const blob = await new Promise(resolve =>
+          canvas.toBlob(resolve, "image/png")
+        );
+
+        if (!blob) throw new Error("Could not create PNG image.");
+
+        const url = URL.createObjectURL(blob);
+
+        const card = document.createElement("div");
+        card.className = "result";
+
+        const preview = document.createElement("img");
+        preview.src = url;
+        preview.alt = "Converted PDF page " + i;
+        preview.loading = "lazy";
+
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = baseName + "-page-" + i + ".png";
+        link.textContent = "Download page " + i;
+
+        card.append(preview, link);
+        $("pngResults").append(card);
+
+        canvas.width = 1;
+        canvas.height = 1;
+      }
+
+      setStatus(
+        "pdfStatus",
+        "Done! Converted " + doc.numPages + " page(s). Download each PNG below."
+      );
+
+    } catch (error) {
+      console.error(error);
+      setStatus(
+        "pdfStatus",
+        "Conversion failed. Please try another PDF file."
+      );
+    } finally {
+      button.disabled = !pdfFile;
     }
-    a { color:var(--accent) }
-    header {
-      background:linear-gradient(135deg,#171b3a,#35318a 58%,#6559ee);
-      color:#fff; padding:22px 18px 58px;
+  });
+
+  $("convertImg").addEventListener("click", async () => {
+    if (!imageFiles.length || !window.jspdf) {
+      setStatus("imgStatus", "PDF library is not available. Check your internet connection.");
+      return;
     }
-    .topbar {
-      max-width:1060px; margin:auto; display:flex; align-items:center;
-      justify-content:space-between; gap:14px;
+
+    const button = $("convertImg");
+    button.disabled = true;
+    $("pdfResult").replaceChildren();
+
+    try {
+      const { jsPDF } = window.jspdf;
+      const size = $("pageSize").value;
+      let pdf = null;
+
+      for (let i = 0; i < imageFiles.length; i++) {
+        const file = imageFiles[i];
+
+        setStatus(
+          "imgStatus",
+          "Adding image " + (i + 1) + " of " + imageFiles.length + "..."
+        );
+
+        const dataUrl = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = () => reject(new Error("Could not read image."));
+          reader.readAsDataURL(file);
+        });
+
+        const dimensions = await new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = () => resolve({
+            width: img.naturalWidth,
+            height: img.naturalHeight
+          });
+          img.onerror = () => reject(new Error("Invalid image."));
+          img.src = dataUrl;
+        });
+
+        const orientation =
+          dimensions.width >= dimensions.height ? "landscape" : "portrait";
+
+        if (!pdf) {
+          if (size === "image") {
+            pdf = new jsPDF({
+              orientation,
+              unit: "px",
+              format: [dimensions.width, dimensions.height],
+              hotfixes: ["px_scaling"]
+            });
+          } else {
+            pdf = new jsPDF({
+              orientation,
+              unit: "mm",
+              format: size
+            });
+          }
+        } else if (size === "image") {
+          pdf.addPage(
+            [dimensions.width, dimensions.height],
+            orientation
+          );
+        } else {
+          pdf.addPage(size, orientation);
+        }
+
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
+
+        const ratio = Math.min(
+          pageWidth / dimensions.width,
+          pageHeight / dimensions.height
+        );
+
+        const width = dimensions.width * ratio;
+        const height = dimensions.height * ratio;
+
+        const x = (pageWidth - width) / 2;
+        const y = (pageHeight - height) / 2;
+
+        const format = file.type === "image/png" ? "PNG" : "JPEG";
+
+        pdf.addImage(
+          dataUrl,
+          format,
+          x,
+          y,
+          width,
+          height
+        );
+      }
+
+      const blob = pdf.output("blob");
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "fileflip-converted.pdf";
+      link.className = "download";
+      link.textContent = "Download your PDF";
+
+      $("pdfResult").append(link);
+
+      setStatus(
+        "imgStatus",
+        "Done! Combined " + imageFiles.length +
+        " image(s) into one PDF (" + prettyBytes(blob.size) + ")."
+      );
+
+    } catch (error) {
+      console.error(error);
+      setStatus(
+        "imgStatus",
+        "Conversion failed. Please check your image files and try again."
+      );
+    } finally {
+      button.disabled = imageFiles.length === 0;
     }
-    .brand { font-weight:900; font-size:28px; letter-spacing:-1px }
-    .brand span { color:#b9b5ff }
-    .navtag {
-      font-size:12px; font-weight:700; color:#e3e1ff;
-      border:1px solid #ffffff40; padding:7px 11px; border-radius:999px;
-    }
-    .hero { max-width:850px; margin:42px auto 0; text-align:center }
-    .eyebrow {
-      display:inline-block; padding:6px 11px; border:1px solid #ffffff40;
-      border-radius:999px; background:#ffffff12; font-size:12px;
-      font-weight:700; color:#eeedff;
-    }
-    .hero h1 {
-      font-size:clamp(32px,6vw,54px); line-height:1.08;
-      letter-spacing:-1.8px; margin:18px 0 14px;
-    }
-    .hero p { max-width:690px; margin:0 auto; color:#e2e3ff; font-size:17px }
-    main { max-width:1060px; margin:-30px auto 0; padding:0 16px 48px; position:relative }
-    .privacy {
-      display:flex; gap:12px; align-items:flex-start; background:#effbf5;
-      border:1px solid #c7f0d8; color:#155b3b; padding:15px 17px;
-      border-radius:16px; margin-bottom:20px; font-size:14px; box-shadow:var(--shadow);
-    }
-    .privacy-icon { background:#d5f6e3; border-radius:10px; padding:8px }
-    .tools { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px }
-    .card {
-      background:var(--card); border:1px solid var(--line); border-radius:22px;
-      padding:24px; box-shadow:var(--shadow); min-width:0;
-    }
-    .card-head { display:flex; align-items:flex-start; gap:12px; margin-bottom:18px }
-    .tool-icon {
-      flex:0 0 46px; width:46px; height:46px; border-radius:14px;
-      display:grid; place-items:center; background:var(--accent2); font-size:23px;
-    }
-    .card h2 { font-size:21px; line-height:1.25; letter-spacing:-.4px; margin:1px 0 5px }
-    .sub { color:var(--muted); margin:0; font-size:14px }
-    .drop {
-      display:block; border:1.5px dashed #c3c9dc; border-radius:16px;
-      padding:24px 14px; text-align:center; background:#fafaff; cursor:pointer;
-      transition:background .18s,border-color .18s;
-    }
-    .drop:hover,.drop.over { border-color:var(--accent); background:var(--accent2) }
-    .drop strong { display:block; margin:7px 0 3px }
-    .drop small { display:block; color:var(--muted); font-size:13px }
-    input[type=file] { display:none }
-    .filebtn {
-      display:inline-flex; align-items:center; justify-content:center;
-      background:#f0f1f7; color:var(--ink); margin-top:13px; padding:10px 15px;
-      border-radius:10px; font-weight:750; font-size:13px;
-    }
-    .options { display:flex; align-items:center; gap:9px; margin-top:14px; flex-wrap:wrap; font-size:13px; color:var(--muted) }
-    select { padding:8px 10px; border:1px solid #dfe3ed; border-radius:10px; background:#fff; color:var(--ink); font:inherit }
-    .files { margin-top:11px; font-size:12px; color:var(--muted); overflow-wrap:anywhere; min-height:20px }
-    button,.filebtn { border:0; font-family:inherit }
-    .primary {
-      background:var(--accent); color:white; width:100%; margin-top:14px;
-      padding:13px 15px; border-radius:12px; font-weight:800; font-size:14px;
-      cursor:pointer; box-shadow:0 5px 12px #5145e51c;
-    }
-    .primary:disabled { opacity:.42; cursor:not-allowed; box-shadow:none }
-    .status { font-size:13px; margin-top:12px; white-space:pre-wrap; overflow-wrap:anywhere }
-    .status.error { color:#b42318 }
-    .status.success { color:var(--good) }
-    .results { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:12px; margin-top:16px }
-    .result { border:1px solid var(--line); border-radius:13px; padding:10px; background:#fff; text-align:center; min-width:0 }
-    .result img { max-width:100%; height:100px; object-fit:contain; display:block; margin:0 auto 8px }
-    .result a { font-size:12px; color:var(--accent); font-weight:800; text-decoration:none }
-    .adslot {
-      margin:22px 0; border:1px dashed #cbd1df; border-radius:14px;
-      text-align:center; padding:17px; color:#929bb0; background:#ffffff80;
-      font-size:11px; min-height:68px; letter-spacing:.3px;
-    }
-    .benefits { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:22px }
-    .benefit { padding:17px; background:#fff; border:1px solid var(--line); border-radius:15px }
-    .benefit b { display:block; font-size:14px; margin:5px 0 }
-    .benefit span { font-size:12px; color:var(--muted) }
-    .content-section {
-      margin-top:22px; padding:22px 23px; background:#fff;
-      border:1px solid var(--line); border-radius:18px;
-    }
-    .content-section h2 { font-size:20px; margin:0 0 10px }
-    .content-section h3 { font-size:16px; margin:18px 0 5px }
-    .content-section p,.content-section li { color:var(--muted); font-size:14px }
-    .content-section p { margin:7px 0 }
-    .content-section ul { padding-left:21px; margin:8px 0 }
-    footer {
-      color:var(--muted); font-size:13px; padding:24px 16px;
-      text-align:center; border-top:1px solid var(--line); background:#fff;
-    }
-    footer a { margin:0 7px; text-decoration:none }
-    @media(max-width:760px) {
-      header { padding-bottom:52px }
-      .hero { margin-top:34px }
-      .hero p { font-size:15px }
-      .tools { grid-template-columns:1fr }
-      .card { padding:19px; border-radius:18px }
-      .benefits { grid-template-columns:1fr }
-      .benefit { display:flex; gap:12px; align-items:flex-start }
-      .benefit b { margin-top:0 }
-      .topbar .navtag { font-size:11px }
-    }
-  </style>
+  });
+
+})();
+</script>
+
+</body>
+</html>
