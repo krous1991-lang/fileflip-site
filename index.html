@@ -3,24 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Free PDF to PNG & JPG Converter | Images to PDF – FileFlip</title>
-
-<meta name="description" content="Convert PDF pages to PNG images or combine JPG and PNG photos into one PDF for free. Fast, private and secure online file converter. No signup required.">
-
-<meta name="robots" content="index, follow, max-image-preview:large">
+<title>Free PDF to PNG, JPG & Image to PDF Converter | FileFlip</title>
+<meta name="description" content="Convert PDF pages to PNG or JPG images and combine JPG and PNG images into one PDF for free. Fast, private, browser-based file conversion with FileFlip.">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://fileflipconver.com/">
 <meta name="theme-color" content="#29246d">
-
 <meta property="og:type" content="website">
-<meta property="og:title" content="FileFlip – Free PDF & Image Converter">
-<meta property="og:description" content="Convert PDF to PNG and JPG, or combine images into PDF. Free, private and easy to use.">
+<meta property="og:title" content="FileFlip - Free PDF and Image Converter">
+<meta property="og:description" content="Convert PDF to PNG or JPG and images to PDF. Free, simple and private file conversion in your browser.">
 <meta property="og:url" content="https://fileflipconver.com/">
 <meta property="og:site_name" content="FileFlip">
-
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FileFlip – Free PDF & Image Converter">
-<meta name="twitter:description" content="Convert PDF pages to images and combine images into PDF for free.">
+<meta name="twitter:title" content="FileFlip - Free PDF and Image Converter">
+<meta name="twitter:description" content="Convert PDF pages to images and images to PDF for free.">
 
 <script type="application/ld+json">
 {
@@ -30,754 +25,314 @@
   "url":"https://fileflipconver.com/",
   "applicationCategory":"UtilitiesApplication",
   "operatingSystem":"Any",
-  "description":"Free online PDF to PNG converter and JPG PNG images to PDF converter.",
-  "offers":{
-    "@type":"Offer",
-    "price":"0",
-    "priceCurrency":"USD"
-  }
+  "description":"Free browser-based PDF to PNG, PDF to JPG and image to PDF converter.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
 }
 </script>
-
-<style>
-:root {
-  --bg:#f4f5fb;
-  --card:#ffffff;
-  --ink:#172033;
-  --muted:#687386;
-  --primary:#5145e5;
-  --line:#e2e6ef;
-  --green:#16845f;
-}
-* {box-sizing:border-box}
-body {
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--ink);
-  line-height:1.65;
-}
-header {
-  color:white;
-  background:linear-gradient(135deg,#171b43,#5145e5);
-  padding:25px 18px 65px;
-}
-.topbar {
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-}
-.brand {
-  font-size:30px;
-  font-weight:900;
-  letter-spacing:-1px;
-}
-.brand span {color:#aaa4ff}
-.navtag {
-  border:1px solid #7775b9;
-  border-radius:30px;
-  padding:8px 16px;
-  font-size:12px;
-  font-weight:bold;
-}
-.hero {
-  max-width:850px;
-  margin:55px auto 0;
-  text-align:center;
-}
-.hero .eyebrow {
-  display:inline-block;
-  border:1px solid #8582c5;
-  padding:8px 18px;
-  border-radius:30px;
-  font-size:13px;
-  font-weight:bold;
-}
-.hero h1 {
-  font-size:clamp(30px,6vw,54px);
-  line-height:1.12;
-  margin:25px 0;
-  letter-spacing:-1.5px;
-}
-.hero p {
-  font-size:19px;
-  color:#e4e4ff;
-  max-width:700px;
-  margin:auto;
-}
-main {
-  max-width:1060px;
-  margin:-35px auto 50px;
-  padding:0 16px;
-}
-.privacy {
-  background:#edfff5;
-  border:1px solid #c8f0d9;
-  color:#176447;
-  border-radius:22px;
-  padding:20px;
-  margin-bottom:24px;
-}
-.tools {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-}
-.card {
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:25px;
-  padding:25px;
-  box-shadow:0 8px 30px rgba(20,30,70,.045);
-}
-.card-head {
-  display:flex;
-  align-items:center;
-  gap:15px;
-  margin-bottom:20px;
-}
-.tool-icon {
-  background:#f0efff;
-  border-radius:17px;
-  padding:13px;
-  font-size:29px;
-}
-.card h2 {
-  font-size:23px;
-  line-height:1.25;
-  margin:0;
-}
-.card-head p {
-  color:var(--muted);
-  margin:5px 0 0;
-}
-.drop {
-  display:block;
-  border:2px dashed #cbd0df;
-  border-radius:20px;
-  padding:25px 15px;
-  text-align:center;
-  background:#fafaff;
-  cursor:pointer;
-  margin:15px 0;
-}
-.drop:hover {border-color:var(--primary)}
-.drop .big {font-size:38px}
-.drop strong {
-  display:block;
-  font-size:19px;
-  margin:8px 0;
-}
-.drop small {color:var(--muted)}
-.drop input {
-  display:block;
-  max-width:100%;
-  margin:14px auto 0;
-}
-.options {
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:15px 0;
-}
-.options label {color:var(--muted)}
-select {
-  padding:11px 14px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:white;
-  font-size:15px;
-}
-.files {
-  color:var(--muted);
-  font-size:13px;
-  overflow-wrap:anywhere;
-  margin:12px 0;
-}
-button,.download {
-  display:inline-block;
-  border:0;
-  border-radius:14px;
-  padding:15px 20px;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
-  text-align:center;
-  text-decoration:none;
-}
-.primary {
-  width:100%;
-  background:var(--primary);
-  color:white;
-  box-shadow:0 7px 18px #5145e52a;
-}
-.primary:disabled {
-  opacity:.5;
-  cursor:not-allowed;
-}
-.status {
-  margin-top:14px;
-  font-size:14px;
-  color:var(--green);
-  overflow-wrap:anywhere;
-}
-.results {
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
-  gap:12px;
-  margin-top:15px;
-}
-.result {
-  border:1px solid var(--line);
-  border-radius:15px;
-  padding:10px;
-  text-align:center;
-  background:#fff;
-}
-.result img {
-  width:100%;
-  height:150px;
-  object-fit:contain;
-  background:#f7f7fb;
-  border-radius:9px;
-}
-.result a {
-  display:block;
-  color:var(--primary);
-  font-weight:bold;
-  margin-top:8px;
-  text-decoration:none;
-}
-.adslot {
-  margin:24px 0;
-  border:1px dashed #cbd0df;
-  text-align:center;
-  padding:22px;
-  color:#929bad;
-  border-radius:18px;
-  font-size:13px;
-  min-height:65px;
-}
-.benefits {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  margin-top:25px;
-}
-.benefit {
-  padding:18px;
-  background:white;
-  border:1px solid var(--line);
-  border-radius:18px;
-}
-.benefit b {display:block;margin-bottom:5px}
-.benefit span {color:var(--muted);font-size:13px}
-.content-section {
-  margin-top:25px;
-  padding:25px;
-  border:1px solid var(--line);
-  background:white;
-  border-radius:20px;
-}
-.content-section h2 {font-size:24px}
-.content-section h3 {font-size:18px}
-.content-section p,.content-section li {color:#566174}
-.content-section a {color:var(--primary)}
-.faq-item {
-  padding:13px 0;
-  border-bottom:1px solid var(--line);
-}
-.faq-item:last-child {border:0}
-.faq-item h3 {margin:0 0 5px}
-footer {
-  text-align:center;
-  padding:30px 15px;
-  color:var(--muted);
-  font-size:13px;
-  border-top:1px solid var(--line);
-}
-footer a {
-  color:var(--primary);
-  margin:0 7px;
-  text-decoration:none;
-}
-@media(max-width:760px) {
-  .tools {grid-template-columns:1fr}
-  .benefits {grid-template-columns:1fr}
-  header {padding-bottom:55px}
-  .hero {margin-top:38px}
-  .hero p {font-size:16px}
-  .card {padding:19px}
-  .topbar .navtag {font-size:10px}
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <div class="topbar">
-    <div class="brand">File<span>Flip</span></div>
-    <div class="navtag">FREE ONLINE FILE TOOLS</div>
-  </div>
-
-  <section class="hero">
-    <div class="eyebrow">✦ SIMPLE · PRIVATE · IN YOUR BROWSER</div>
-    <h1>Free PDF to PNG & JPG Converter</h1>
-    <p>
-      Convert PDF pages into clear PNG images, or combine
-      JPG and PNG photos into one PDF. FileFlip is free,
-      easy to use, and processes your files in your browser.
-    </p>
-  </section>
-</header>
-
-<main>
-
-  <div class="privacy">
-    <strong>🔒 Your files stay on your device.</strong><br>
-    Conversions run locally in your browser. Files are not
-    uploaded to a FileFlip server.
-  </div>
-
-  <div class="tools">
-
-    <article class="card">
-      <div class="card-head">
-        <div class="tool-icon">📄</div>
-        <div>
-          <h2>PDF to PNG Converter</h2>
-          <p>Turn every page of a PDF into a downloadable PNG image.</p>
-        </div>
-      </div>
-
-      <label class="drop" for="pdfInput">
-        <span class="big">📄</span>
-        <strong>Choose a PDF file</strong>
-        <small>One PDF at a time · processed locally</small>
-        <input id="pdfInput" type="file" accept="application/pdf,.pdf">
-      </label>
-
-      <div class="options">
-        <label for="quality">Image quality:</label>
-        <select id="quality">
-          <option value="1.5">Standard</option>
-          <option value="2.5" selected>High</option>
-          <option value="3.5">Very High</option>
-        </select>
-      </div>
-
-      <div class="files" id="pdfName">No file selected</div>
-      <button class="primary" id="convertPdf" disabled>
-        Convert PDF to PNG
-      </button>
-      <div class="status" id="pdfStatus" role="status"></div>
-      <div class="results" id="pngResults"></div>
-    </article>
-
-    <article class="card">
-      <div class="card-head">
-        <div class="tool-icon">🖼️</div>
-        <div>
-          <h2>PNG / JPG to PDF</h2>
-          <p>Combine one or more images into a single PDF.</p>
-        </div>
-      </div>
-
-      <label class="drop" for="imgInput">
-        <span class="big">🖼️</span>
-        <strong>Choose image files</strong>
-        <small>PNG, JPG or JPEG · select multiple</small>
-        <input id="imgInput" type="file"
-          accept="image/png,image/jpeg,.png,.jpg,.jpeg" multiple>
-      </label>
-
-      <div class="options">
-        <label for="pageSize">PDF page size:</label>
-        <select id="pageSize">
-          <option value="a4">A4</option>
-          <option value="letter">Letter</option>
-          <option value="image">Fit to image</option>
-        </select>
-      </div>
-
-      <div class="files" id="imgNames">No images selected</div>
-      <button class="primary" id="convertImg" disabled>
-        Convert images to PDF
-      </button>
-      <div class="status" id="imgStatus" role="status"></div>
-      <div id="pdfResult"></div>
-    </article>
-
-  </div>
-
-  <div class="adslot">
-    Advertisement space — ad placement subject to network approval
-  </div>
-
-  <section class="benefits">
-    <div class="benefit">
-      <b>🔒 Private by design</b>
-      <span>Your files are processed locally in your browser.</span>
-    </div>
-    <div class="benefit">
-      <b>⚡ Easy to use</b>
-      <span>Simple tools with no account or registration required.</span>
-    </div>
-    <div class="benefit">
-      <b>💻 Browser based</b>
-      <span>Use FileFlip on desktop, tablet or mobile.</span>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <h2>Free Online PDF and Image Converter</h2>
-    <p>
-      FileFlip provides simple online tools to convert PDF
-      documents into PNG images and combine JPG or PNG
-      pictures into a single PDF file. You can use these
-      tools directly in your browser without creating an account.
-    </p>
-
-    <h3>Convert PDF pages to PNG images</h3>
-    <p>
-      Select a PDF document and choose your preferred image
-      quality. FileFlip converts each page into a separate
-      PNG image that you can download individually.
-    </p>
-
-    <h3>Combine JPG and PNG images into PDF</h3>
-    <p>
-      Select one or more JPG, JPEG or PNG images and create
-      a single PDF document. Choose A4, Letter or image-sized
-      pages before starting the conversion.
-    </p>
-
-    <h3>Is FileFlip free?</h3>
-    <p>
-      Yes. FileFlip offers these PDF and image conversion
-      tools free of charge. No account is required.
-    </p>
-
-    <h3>Are my files private?</h3>
-    <p>
-      File conversion takes place in your browser. Your
-      selected files are not sent to a FileFlip upload server.
-      Your browser and device still control local file access.
-    </p>
-  </section>
-
-  <section class="content-section">
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-      <h3>How do I convert PDF to PNG?</h3>
-      <p>Select your PDF file, choose image quality, click
-      Convert PDF to PNG, then download each page.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Can I convert multiple images into one PDF?</h3>
-      <p>Yes. Select multiple JPG or PNG images and click
-      Convert images to PDF.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Do I need to install software?</h3>
-      <p>No. FileFlip works directly in a modern web browser.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Are my files uploaded?</h3>
-      <p>No. These conversions are performed locally in your browser.</p>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <p>© <span id="year"></span> FileFlip. All rights reserved.</p>
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="about.html">About Us</a>
-  <a href="contact.html">Contact Us</a>
-</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
+<style>
+:root{--primary:#5145e5;--dark:#20243b;--muted:#697386;--bg:#f5f6fb;--line:#e4e7ef}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--dark);font-family:Arial,Helvetica,sans-serif;line-height:1.65}
+a{color:var(--primary)}
+header{background:linear-gradient(135deg,#24205e,#5145e5);color:white;padding:25px 18px 65px;text-align:center}
+nav{max-width:1050px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{font-size:30px;font-weight:900;color:white;text-decoration:none}
+nav a{color:white;text-decoration:none;margin:5px;font-size:14px}
+.hero{max-width:800px;margin:55px auto 0}
+.hero h1{font-size:clamp(30px,6vw,48px);line-height:1.15;margin:15px 0}
+.hero p{font-size:18px;color:#e8e8ff}
+.pill{display:inline-block;border:1px solid #aaa6;padding:6px 15px;border-radius:30px;font-size:13px}
+main{max-width:1000px;margin:-35px auto 50px;padding:0 16px}
+.notice{background:#e9fff4;border:1px solid #b9ead0;color:#176348;border-radius:18px;padding:20px;margin-bottom:22px}
+.card{background:white;border:1px solid var(--line);border-radius:22px;padding:25px;margin:22px 0;box-shadow:0 5px 20px #2221}
+.card h2{font-size:25px;margin:0 0 5px}
+.sub{color:var(--muted);margin-top:0}
+.upload{border:2px dashed #cbd0df;border-radius:18px;padding:35px 15px;text-align:center;background:#fafaff;margin:20px 0}
+.upload strong{display:block;font-size:21px}
+.upload input{max-width:100%;margin:15px}
+button,.download{display:inline-block;background:var(--primary);color:white;border:0;border-radius:13px;padding:15px 22px;font-weight:bold;font-size:16px;cursor:pointer;text-decoration:none}
+button:disabled{opacity:.55;cursor:not-allowed}
+select{padding:12px;border:1px solid var(--line);border-radius:10px;background:white;font-size:16px}
+.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:15px 0}
+.status{margin:15px 0;color:#147653;font-weight:bold;overflow-wrap:anywhere}
+.preview{display:flex;flex-wrap:wrap;gap:12px;margin-top:15px}
+.preview a{display:block;border:1px solid var(--line);padding:10px;border-radius:12px;text-align:center}
+.preview img{display:block;max-width:180px;max-height:220px;object-fit:contain;margin:auto auto 8px}
+.content{background:white;border:1px solid var(--line);border-radius:18px;padding:25px;margin:22px 0}
+.content h2{font-size:23px}
+.content h3{font-size:18px}
+footer{text-align:center;padding:30px 15px;color:var(--muted);border-top:1px solid var(--line)}
+footer a{margin:0 8px}
+@media(max-width:600px){header{padding-bottom:55px}.hero{margin-top:35px}.card{padding:19px}.upload{padding:25px 10px}nav{justify-content:center}}
+</style>
+</head>
+
+<body>
+<header>
+<nav>
+<a class="logo" href="/">FileFlip</a>
+<div>
+<a href="#pdfpng">PDF to PNG</a>
+<a href="#pdfjpg">PDF to JPG</a>
+<a href="#imgpdf">Images to PDF</a>
+</div>
+</nav>
+<section class="hero">
+<span class="pill">✦ SIMPLE · FREE · PRIVATE</span>
+<h1>Free PDF to PNG, JPG & Image to PDF Converter</h1>
+<p>Convert PDF pages into clear images, or combine JPG and PNG photos into one PDF. FileFlip is free and easy to use.</p>
+</section>
+</header>
+
+<main>
+<div class="notice">
+<strong>🔒 Private by design</strong><br>
+Your files are processed locally in your browser. They are not uploaded to a FileFlip server.
+</div>
+
+<section class="card" id="pdfpng">
+<h2>📄 PDF to PNG Converter</h2>
+<p class="sub">Convert every page of a PDF into a downloadable PNG image.</p>
+<div class="upload">
+<strong>Choose a PDF file</strong>
+<p>One PDF at a time · processed locally</p>
+<input type="file" id="pngFile" accept="application/pdf,.pdf">
+</div>
+<div class="controls">
+<label for="pngScale">Image quality:</label>
+<select id="pngScale"><option value="1.5">Standard</option><option value="2.5" selected>High</option><option value="3.5">Very high</option></select>
+<button id="pngBtn" onclick="convertPDF('png')">Convert PDF to PNG</button>
+</div>
+<div class="status" id="pngStatus" aria-live="polite"></div>
+<div class="preview" id="pngResult"></div>
+</section>
+
+<section class="card" id="pdfjpg">
+<h2>🖼️ PDF to JPG Converter</h2>
+<p class="sub">Turn PDF pages into downloadable JPG images.</p>
+<div class="upload">
+<strong>Choose a PDF file</strong>
+<input type="file" id="jpgFile" accept="application/pdf,.pdf">
+</div>
+<div class="controls">
+<label for="jpgScale">Image quality:</label>
+<select id="jpgScale"><option value="1.5">Standard</option><option value="2.5" selected>High</option><option value="3.5">Very high</option></select>
+<button id="jpgBtn" onclick="convertPDF('jpg')">Convert PDF to JPG</button>
+</div>
+<div class="status" id="jpgStatus" aria-live="polite"></div>
+<div class="preview" id="jpgResult"></div>
+</section>
+
+<section class="card" id="imgpdf">
+<h2>📷 JPG / PNG to PDF Converter</h2>
+<p class="sub">Combine one or more images into a single PDF document.</p>
+<div class="upload">
+<strong>Choose image files</strong>
+<p>JPG, JPEG or PNG · select multiple</p>
+<input type="file" id="images" accept="image/jpeg,image/png,.jpg,.jpeg,.png" multiple>
+</div>
+<div class="controls">
+<label for="pageSize">PDF page size:</label>
+<select id="pageSize">
+<option value="a4">A4</option>
+<option value="letter">Letter</option>
+<option value="fit">Fit image</option>
+</select>
+<button id="imgBtn" onclick="convertImages()">Convert images to PDF</button>
+</div>
+<div class="status" id="imgStatus" aria-live="polite"></div>
+<div id="pdfResult"></div>
+</section>
+
+<section class="content">
+<h2>How to convert PDF files with FileFlip</h2>
+<h3>Convert PDF to PNG or JPG</h3>
+<p>Select your PDF file, choose your preferred image quality, and click the conversion button. Each page will be converted into an image that you can download separately.</p>
+<h3>Convert images to PDF</h3>
+<p>Select one or more JPG or PNG images, choose A4, Letter or Fit image, then click Convert images to PDF. Your images will be combined into one downloadable PDF.</p>
+<h2>Why use FileFlip?</h2>
+<ul>
+<li>Free online PDF and image conversion.</li>
+<li>No account or registration required.</li>
+<li>Files are processed locally in your browser.</li>
+<li>Supports PDF, PNG, JPG and JPEG files.</li>
+<li>Works on mobile phones, tablets and computers.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<h3>Is FileFlip free?</h3>
+<p>Yes. FileFlip provides free PDF and image conversion tools.</p>
+<h3>Are my files uploaded?</h3>
+<p>No. Conversion takes place locally in your browser. Your files are not sent to a FileFlip server.</p>
+<h3>Can I convert multiple images into one PDF?</h3>
+<p>Yes. Select multiple JPG or PNG images and combine them into a single PDF.</p>
+<h3>Does FileFlip work on mobile?</h3>
+<p>Yes. You can use FileFlip from a modern mobile or desktop browser.</p>
+</section>
+
+<section class="content" id="about">
+<h2>About FileFlip</h2>
+<p>FileFlip is a simple online utility designed to help people convert PDF pages into images and combine images into PDF documents. Our goal is to provide easy-to-use tools with privacy in mind.</p>
+</section>
+
+<section class="content" id="privacy">
+<h2>Privacy Policy</h2>
+<p>FileFlip processes selected files locally in your browser using browser-based tools. We do not upload your selected files to our own server. Your browser may store temporary data while using the website. Avoid using public or shared devices for sensitive documents.</p>
+<p>Third-party services, such as advertising providers, may use cookies or similar technologies according to their own privacy policies if they are enabled on this website.</p>
+</section>
+
+<section class="content" id="contact">
+<h2>Contact Us</h2>
+<p>For questions, feedback or support, contact us at:</p>
+<p><a href="mailto:contact@fileflipconver.com">contact@fileflipconver.com</a></p>
+<p>Replace this address with your real working email if it is different.</p>
+</section>
+</main>
+
+<footer>
+<p>© <span id="year"></span> FileFlip. All rights reserved.</p>
+<a href="#about">About</a>
+<a href="#privacy">Privacy Policy</a>
+<a href="#contact">Contact</a>
+</footer>
+
 <script>
-(() => {
-  "use strict";
+document.getElementById("year").textContent=new Date().getFullYear();
 
-  const $ = id => document.getElementById(id);
+if(window.pdfjsLib){
+pdfjsLib.GlobalWorkerOptions.workerSrc=
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+}
 
-  $("year").textContent = new Date().getFullYear();
+async function convertPDF(type){
+const prefix=type==="png"?"png":"jpg";
+const file=document.getElementById(prefix+"File").files[0];
+const status=document.getElementById(prefix+"Status");
+const result=document.getElementById(prefix+"Result");
+const button=document.getElementById(prefix+"Btn");
+const scale=Number(document.getElementById(prefix+"Scale").value);
 
-  if (window.pdfjsLib) {
-    pdfjsLib.GlobalWorkerOptions.workerSrc =
-      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-  }
+result.innerHTML="";
+if(!file){status.textContent="Please select a PDF file first.";return;}
+if(file.type!=="application/pdf"&&!file.name.toLowerCase().endsWith(".pdf")){
+status.textContent="Please select a valid PDF file.";return;
+}
+if(!window.pdfjsLib){status.textContent="PDF library could not load. Check your internet connection.";return;}
 
-  let pdfFile = null;
-  let imageFiles = [];
+button.disabled=true;
+status.textContent="Converting your PDF...";
+try{
+const data=new Uint8Array(await file.arrayBuffer());
+const pdf=await pdfjsLib.getDocument({data}).promise;
+for(let i=1;i<=pdf.numPages;i++){
+status.textContent="Converting page "+i+" of "+pdf.numPages+"...";
+const page=await pdf.getPage(i);
+const viewport=page.getViewport({scale});
+const canvas=document.createElement("canvas");
+const ctx=canvas.getContext("2d");
+canvas.width=Math.ceil(viewport.width);
+canvas.height=Math.ceil(viewport.height);
+await page.render({canvasContext:ctx,viewport}).promise;
+const mime=type==="png"?"image/png":"image/jpeg";
+const dataUrl=canvas.toDataURL(mime,type==="jpg"?0.92:undefined);
+const link=document.createElement("a");
+link.href=dataUrl;
+link.download="fileflip-page-"+i+"."+(type==="png"?"png":"jpg");
+const img=document.createElement("img");
+img.src=dataUrl;
+img.alt="Converted PDF page "+i;
+link.appendChild(img);
+const label=document.createElement("strong");
+label.textContent="Download page "+i;
+link.appendChild(label);
+result.appendChild(link);
+canvas.width=0;canvas.height=0;
+}
+status.textContent="Done! Converted "+pdf.numPages+" page(s). Download each image below.";
+}catch(e){
+console.error(e);
+status.textContent="Conversion failed. The PDF may be damaged or unsupported.";
+}finally{button.disabled=false;}
+}
 
-  function setStatus(id, message) {
-    $(id).textContent = message;
-  }
+async function convertImages(){
+const input=document.getElementById("images");
+const files=Array.from(input.files);
+const status=document.getElementById("imgStatus");
+const result=document.getElementById("pdfResult");
+const button=document.getElementById("imgBtn");
+result.innerHTML="";
+if(!files.length){status.textContent="Please select at least one image.";return;}
+if(files.some(f=>!["image/jpeg","image/png"].includes(f.type))){
+status.textContent="Only JPG and PNG images are supported.";return;
+}
+if(!window.jspdf){status.textContent="PDF library could not load. Check your internet connection.";return;}
 
-  function prettyBytes(bytes) {
-    if (bytes < 1024) return bytes + " B";
-    if (bytes < 1024 * 1024)
-      return (bytes / 1024).toFixed(1) + " KB";
-    return (bytes / (1024 * 1024)).toFixed(2) + " MB";
-  }
-
-  function safeFileName(name) {
-    return name.replace(/[^a-z0-9_-]/gi, "_");
-  }
-
-  $("pdfInput").addEventListener("change", event => {
-    pdfFile = event.target.files[0] || null;
-
-    $("pdfName").textContent = pdfFile
-      ? pdfFile.name + " · " + prettyBytes(pdfFile.size)
-      : "No file selected";
-
-    $("convertPdf").disabled = !pdfFile;
-    $("pngResults").replaceChildren();
-    setStatus("pdfStatus", "");
-  });
-
-  $("imgInput").addEventListener("change", event => {
-    imageFiles = Array.from(event.target.files).filter(file =>
-      ["image/png", "image/jpeg"].includes(file.type)
-    );
-
-    $("imgNames").textContent = imageFiles.length
-      ? imageFiles.map(file =>
-          file.name + " (" + prettyBytes(file.size) + ")"
-        ).join(" · ")
-      : "No valid images selected";
-
-    $("convertImg").disabled = imageFiles.length === 0;
-    $("pdfResult").replaceChildren();
-    setStatus("imgStatus", "");
-  });
-
-  $("convertPdf").addEventListener("click", async () => {
-    if (!pdfFile || !window.pdfjsLib) {
-      setStatus("pdfStatus", "PDF library is not available. Check your internet connection.");
-      return;
-    }
-
-    const button = $("convertPdf");
-    button.disabled = true;
-    $("pngResults").replaceChildren();
-
-    try {
-      setStatus("pdfStatus", "Reading PDF...");
-
-      const bytes = await pdfFile.arrayBuffer();
-      const doc = await pdfjsLib.getDocument({
-        data: bytes
-      }).promise;
-
-      const scale = Number($("quality").value);
-      const baseName = safeFileName(
-        pdfFile.name.replace(/\.pdf$/i, "")
-      );
-
-      for (let i = 1; i <= doc.numPages; i++) {
-        setStatus(
-          "pdfStatus",
-          "Converting page " + i + " of " + doc.numPages + "..."
-        );
-
-        const page = await doc.getPage(i);
-        const viewport = page.getViewport({ scale });
-
-        const canvas = document.createElement("canvas");
-        const context = canvas.getContext("2d");
-
-        canvas.width = Math.ceil(viewport.width);
-        canvas.height = Math.ceil(viewport.height);
-
-        await page.render({
-          canvasContext: context,
-          viewport: viewport
-        }).promise;
-
-        const blob = await new Promise(resolve =>
-          canvas.toBlob(resolve, "image/png")
-        );
-
-        if (!blob) throw new Error("Could not create PNG image.");
-
-        const url = URL.createObjectURL(blob);
-
-        const card = document.createElement("div");
-        card.className = "result";
-
-        const preview = document.createElement("img");
-        preview.src = url;
-        preview.alt = "Converted PDF page " + i;
-        preview.loading = "lazy";
-
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = baseName + "-page-" + i + ".png";
-        link.textContent = "Download page " + i;
-
-        card.append(preview, link);
-        $("pngResults").append(card);
-
-        canvas.width = 1;
-        canvas.height = 1;
-      }
-
-      setStatus(
-        "pdfStatus",
-        "Done! Converted " + doc.numPages + " page(s). Download each PNG below."
-      );
-
-    } catch (error) {
-      console.error(error);
-      setStatus(
-        "pdfStatus",
-        "Conversion failed. Please try another PDF file."
-      );
-    } finally {
-      button.disabled = !pdfFile;
-    }
-  });
-
-  $("convertImg").addEventListener("click", async () => {
-    if (!imageFiles.length || !window.jspdf) {
-      setStatus("imgStatus", "PDF library is not available. Check your internet connection.");
-      return;
-    }
-
-    const button = $("convertImg");
-    button.disabled = true;
-    $("pdfResult").replaceChildren();
-
-    try {
-      const { jsPDF } = window.jspdf;
-      const size = $("pageSize").value;
-      let pdf = null;
-
-      for (let i = 0; i < imageFiles.length; i++) {
-        const file = imageFiles[i];
-
-        setStatus(
-          "imgStatus",
-          "Adding image " + (i + 1) + " of " + imageFiles.length + "..."
-        );
-
-        const dataUrl = await new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result);
-          reader.onerror = () => reject(new Error("Could not read image."));
-          reader.readAsDataURL(file);
-        });
-
-        const dimensions = await new Promise((resolve, reject) => {
-          const img = new Image();
-          img.onload = () => resolve({
-            width: img.naturalWidth,
-            height: img.naturalHeight
-          });
-          img.onerror = () => reject(new Error("Invalid image."));
-          img.src = dataUrl;
-        });
-
-        const orientation =
-          dimensions.width >= dimensions.height ? "landscape" : "portrait";
-
-        if (!pdf) {
-          if (size === "image") {
-            pdf = new jsPDF({
-              orientation,
-              unit: "px",
-              format: [dimensions.width, dimensions.height],
-              hotfixes: ["px_scaling"]
-            });
-          } else {
-            pdf = new jsPDF({
-              orientation,
-              unit: "mm",
-              format: size
-            });
-          }
-        } else if (size === "image") {
-          pdf.addPage(
-            [dimensions.width, dimensions.height],
-            orientation
-          );
-        } else {
-          pdf.addPage(size, orientation);
-        }
-
-        const pageWidth = pdf.internal.pageSize.getWidth();
-        const pageHeight = pdf.internal.pageSize.getHeight();
-
-        const ratio = Math.min(
-          pageWidth / dimensions.width,
-          pageHeight / dimensions.height
-        );
-
-        const width = dimensions.width * ratio;
-        const height = dimensions.height * ratio;
-
-        const x = (pageWidth - width) / 2;
-        const y = (pageHeight - height) / 2;
-
-        const format = file.type === "image/png" ? "PNG" : "JPEG";
-
-        pdf.addImage(
-          dataUrl,
-          format,
-          x,
-          y,
-          width,
-          height
-        );
-      }
-
-      const blob = pdf.output("blob");
-      const url = URL.createObjectURL(blob);
-
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "fileflip-converted.pdf";
-      link.className = "download";
-      link.textContent = "Download your PDF";
-
-      $("pdfResult").append(link);
-
-      setStatus(
-        "imgStatus",
-        "Done! Combined " + imageFiles.length +
-        " image(s) into one PDF (" + prettyBytes(blob.size) + ")."
-      );
-
-    } catch (error) {
-      console.error(error);
-      setStatus(
-        "imgStatus",
-        "Conversion failed. Please check your image files and try again."
-      );
-    } finally {
-      button.disabled = imageFiles.length === 0;
-    }
-  });
-
-})();
+button.disabled=true;
+status.textContent="Creating your PDF...";
+try{
+const {jsPDF}=window.jspdf;
+const size=document.getElementById("pageSize").value;
+let doc=null;
+for(let i=0;i<files.length;i++){
+status.textContent="Adding image "+(i+1)+" of "+files.length+"...";
+const file=files[i];
+const dataUrl=await new Promise((resolve,reject)=>{
+const reader=new FileReader();
+reader.onload=()=>resolve(reader.result);
+reader.onerror=reject;
+reader.readAsDataURL(file);
+});
+const dimensions=await new Promise((resolve,reject)=>{
+const img=new Image();
+img.onload=()=>resolve({w:img.width,h:img.height});
+img.onerror=reject;
+img.src=dataUrl;
+});
+const landscape=dimensions.w>dimensions.h;
+let format=size==="letter"?"letter":"a4";
+let orientation=landscape?"landscape":"portrait";
+if(size==="fit"){
+const width=dimensions.w*0.264583;
+const height=dimensions.h*0.264583;
+if(!doc){
+doc=new jsPDF({orientation:width>height?"landscape":"portrait",unit:"mm",format:[width,height]});
+}else{
+doc.addPage([width,height],width>height?"landscape":"portrait");
+}
+doc.addImage(dataUrl,file.type==="image/png"?"PNG":"JPEG",0,0,width,height);
+}else{
+if(!doc){
+doc=new jsPDF({orientation,unit:"mm",format});
+}else{
+doc.addPage(format,orientation);
+}
+const pw=doc.internal.pageSize.getWidth();
+const ph=doc.internal.pageSize.getHeight();
+const margin=8;
+const ratio=Math.min((pw-2*margin)/dimensions.w,(ph-2*margin)/dimensions.h);
+const w=dimensions.w*ratio;
+const h=dimensions.h*ratio;
+doc.addImage(dataUrl,file.type==="image/png"?"PNG":"JPEG",(pw-w)/2,(ph-h)/2,w,h);
+}
+}
+const blob=doc.output("blob");
+const url=URL.createObjectURL(blob);
+const link=document.createElement("a");
+link.href=url;
+link.download="fileflip-images-to-pdf.pdf";
+link.className="download";
+link.textContent="Download your PDF";
+result.appendChild(link);
+status.textContent="Done! Combined "+files.length+" image(s) into one PDF.";
+}catch(e){
+console.error(e);
+status.textContent="Conversion failed. Please check your images and try again.";
+}finally{button.disabled=false;}
+}
 </script>
-
 </body>
 </html>
