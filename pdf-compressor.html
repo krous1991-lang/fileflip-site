@@ -4,235 +4,876 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free PDF Compressor Online | FileFlip</title>
-<meta name="description" content="Compress PDF files online for free. Reduce PDF file size with adjustable image quality directly in your browser using FileFlip.">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://fileflipconver.com/pdf-compressor.html">
+
+<title>Free PDF Compressor Online | Reduce PDF File Size - FileFlip</title>
+<meta name="description" content="Compress PDF files online for free with FileFlip. Reduce PDF file size with High, Balanced or Strong compression. Private browser-based processing with no upload required.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://fileflipiconver.com/pdf-compressor.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free PDF Compressor Online | FileFlip">
+<meta property="og:description" content="Reduce PDF file size online for free. Choose your compression level and download your compressed PDF.">
+<meta property="og:url" content="https://fileflipiconver.com/pdf-compressor.html">
+<meta property="og:site_name" content="FileFlip">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free PDF Compressor Online | FileFlip">
+<meta name="twitter:description" content="Compress PDF files online for free with private browser-based processing.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "FileFlip PDF Compressor",
+      "url": "https://fileflipiconver.com/pdf-compressor.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "description": "A free browser-based PDF compression tool.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this PDF compressor free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. FileFlip PDF Compressor is free to use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my PDF files uploaded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Your PDF is processed locally in your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will every PDF become smaller?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Results depend on the original PDF and selected quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the compressed PDF keep selectable text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pages are converted to images, so text and interactive elements may no longer be selectable."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#f3f5fa;color:#202124;font-family:Arial,sans-serif;line-height:1.7}
-header{background:#171d3a;color:white;text-align:center;padding:22px}
-main{max-width:850px;margin:30px auto;padding:0 16px}
-.card{background:white;padding:25px;margin-bottom:20px;border-radius:18px;box-shadow:0 5px 20px #0000000d}
-h1{font-size:30px;line-height:1.3}
-.drop{display:block;border:2px dashed #c9cfdd;border-radius:16px;padding:30px 15px;text-align:center;background:#fafaff;cursor:pointer}
-input[type=file]{display:none}
-button,.btn{display:inline-block;background:#5145e5;color:white;border:0;border-radius:12px;padding:15px 22px;font-size:17px;font-weight:bold;cursor:pointer}
-button:disabled{opacity:.5}
-select{padding:12px;border:1px solid #ddd;border-radius:10px;font-size:16px}
-.status{margin-top:12px;white-space:pre-wrap}
-a{color:#5145e5}
-footer{text-align:center;padding:25px;color:#666}
+:root {
+  --primary:#5145e5;
+  --primary-dark:#4035c7;
+  --ink:#202437;
+  --muted:#687086;
+  --line:#e5e8f0;
+  --surface:#fff;
+  --page:#f5f6fb;
+  --success:#16834a;
+  --danger:#c0393a;
+  --shadow:0 12px 35px rgba(27,35,70,.08);
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  background:var(--page);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.65;
+}
+
+a { color:var(--primary); }
+
+header {
+  background:#171d3a;
+  color:white;
+  padding:18px 16px;
+}
+
+.topbar {
+  max-width:1050px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.brand {
+  color:white;
+  text-decoration:none;
+  font-size:23px;
+  font-weight:800;
+}
+
+.nav {
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.nav a {
+  color:#e8eaff;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.hero {
+  max-width:850px;
+  margin:30px auto 22px;
+  padding:0 16px;
+  text-align:center;
+}
+
+.eyebrow {
+  display:inline-block;
+  color:var(--primary);
+  background:#ecebff;
+  border-radius:999px;
+  padding:5px 12px;
+  font-size:13px;
+  font-weight:700;
+}
+
+h1 {
+  font-size:clamp(28px,5vw,42px);
+  line-height:1.2;
+  margin:14px 0 10px;
+}
+
+.hero p {
+  color:var(--muted);
+  margin:0 auto;
+  max-width:680px;
+}
+
+main {
+  max-width:850px;
+  margin:0 auto 36px;
+  padding:0 16px;
+}
+
+.card {
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:24px;
+  margin-bottom:18px;
+  box-shadow:var(--shadow);
+}
+
+.drop {
+  display:block;
+  border:2px dashed #b8b9d8;
+  background:#fafaff;
+  border-radius:14px;
+  padding:28px 16px;
+  text-align:center;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.drop:hover,
+.drop.dragover {
+  border-color:var(--primary);
+  background:#f1f0ff;
+}
+
+.drop-icon {
+  font-size:38px;
+  display:block;
+}
+
+.drop strong {
+  display:block;
+  font-size:18px;
+  margin:6px 0;
+}
+
+.drop small { color:var(--muted); }
+
+input[type="file"] {
+  position:absolute;
+  width:1px;
+  height:1px;
+  opacity:0;
+  pointer-events:none;
+}
+
+.file-info {
+  margin-top:14px;
+  padding:12px 14px;
+  background:#f5f6fb;
+  border-radius:10px;
+  color:var(--muted);
+  overflow-wrap:anywhere;
+  font-size:14px;
+}
+
+.field-label {
+  display:block;
+  font-weight:700;
+  margin:20px 0 8px;
+}
+
+select {
+  width:100%;
+  padding:13px;
+  border:1px solid #d7dbea;
+  border-radius:10px;
+  background:white;
+  color:var(--ink);
+  font-size:16px;
+}
+
+.quality-help {
+  color:var(--muted);
+  font-size:13px;
+  margin:7px 0 0;
+}
+
+button,.button {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  width:100%;
+  border:0;
+  border-radius:11px;
+  padding:14px 18px;
+  margin-top:18px;
+  background:var(--primary);
+  color:white;
+  font-size:16px;
+  font-weight:700;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+button:hover,.button:hover {
+  background:var(--primary-dark);
+}
+
+button:disabled {
+  opacity:.5;
+  cursor:not-allowed;
+}
+
+.status {
+  margin-top:14px;
+  color:var(--muted);
+  white-space:pre-wrap;
+  font-size:14px;
+}
+
+.status.error { color:var(--danger); }
+.status.success { color:var(--success); }
+
+.progress-wrap {
+  display:none;
+  margin-top:14px;
+}
+
+.progress-track {
+  height:10px;
+  background:#eceef5;
+  border-radius:99px;
+  overflow:hidden;
+}
+
+.progress-bar {
+  height:100%;
+  width:0;
+  background:var(--primary);
+  transition:width .2s;
+}
+
+.progress-label {
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:6px;
+}
+
+.result {
+  display:none;
+  margin-top:18px;
+  padding:16px;
+  background:#f1fbf5;
+  border:1px solid #cdebd8;
+  border-radius:12px;
+}
+
+.stats {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:12px 0;
+}
+
+.stat {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px;
+  text-align:center;
+}
+
+.stat strong {
+  display:block;
+  font-size:18px;
+}
+
+.stat span {
+  color:var(--muted);
+  font-size:12px;
+}
+
+h2 {
+  font-size:23px;
+  line-height:1.3;
+  margin:0 0 10px;
+}
+
+h3 {
+  font-size:17px;
+  margin:18px 0 5px;
+}
+
+.card p,.card li { color:#4f566b; }
+
+.privacy {
+  background:#f0f8ff;
+  border:1px solid #d8eaff;
+  border-radius:12px;
+  padding:13px 15px;
+  color:#315577;
+  font-size:14px;
+  margin-top:16px;
+}
+
+.tool-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 18px;
+}
+
+footer {
+  text-align:center;
+  padding:25px 16px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+footer a {
+  text-decoration:none;
+  margin:0 6px;
+}
+
+@media(max-width:560px) {
+  .card { padding:18px; }
+  .stats { grid-template-columns:1fr; }
+  .nav { gap:10px; }
+}
 </style>
 </head>
-<body>
-<header><strong>FileFlip</strong> · Free Online PDF Tools</header>
-<main>
-<section class="card">
-<h1>Free PDF Compressor Online</h1>
-<p>Reduce the size of your PDF files online for free. Choose a quality level and create a smaller PDF directly in your browser.</p>
 
-<label class="drop" for="pdfFile">
-<div style="font-size:35px">📄</div>
-<strong>Select your PDF file</strong>
-<p>Choose one PDF document</p>
-<button type="button">Choose PDF</button>
+<body>
+
+<header>
+  <div class="topbar">
+    <a class="brand" href="/">FileFlip</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">FREE · SIMPLE · PRIVATE</span>
+  <h1>Free PDF Compressor Online</h1>
+  <p>Reduce the size of your PDF files in your browser. Choose a quality level, compress your document and download the smaller PDF.</p>
+</section>
+
+<main>
+
+<section class="card" aria-labelledby="compress-heading">
+
+<h2 id="compress-heading">Compress a PDF file</h2>
+
+<label class="drop" id="dropZone" for="pdfFile">
+  <span class="drop-icon" aria-hidden="true">📄</span>
+  <strong>Choose a PDF file</strong>
+  <small>Tap to browse or drag and drop a PDF here · Maximum 50 MB</small>
 </label>
 
 <input id="pdfFile" type="file" accept="application/pdf,.pdf">
 
-<p id="fileInfo">No PDF selected.</p>
+<div class="file-info" id="fileInfo" aria-live="polite">
+  No PDF selected.
+</div>
 
-<label for="quality">Compression quality:</label>
+<label class="field-label" for="quality">
+  Compression level
+</label>
+
 <select id="quality">
-<option value="0.9">High quality</option>
-<option value="0.7" selected>Balanced</option>
-<option value="0.45">Smaller file</option>
+  <option value="high">High quality · Larger file</option>
+  <option value="balanced" selected>Balanced · Recommended</option>
+  <option value="strong">Strong compression · Smaller file</option>
 </select>
 
-<p><button id="compress" disabled>Compress PDF</button></p>
-<div id="status" class="status" role="status"></div>
-<div id="result"></div>
+<p class="quality-help" id="qualityHelp">
+  Balanced quality is a good choice for most documents.
+</p>
+
+<button id="compressBtn" type="button" disabled>
+  Compress PDF
+</button>
+
+<div class="progress-wrap" id="progressWrap">
+  <div class="progress-label">
+    <span id="progressText">Preparing…</span>
+    <span id="progressPercent">0%</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+</div>
+
+<div class="status" id="status" role="status" aria-live="polite"></div>
+
+<div class="result" id="result" aria-live="polite">
+  <h3>Your compressed PDF is ready</h3>
+
+  <div class="stats">
+    <div class="stat">
+      <strong id="originalSize">—</strong>
+      <span>Original size</span>
+    </div>
+
+    <div class="stat">
+      <strong id="newSize">—</strong>
+      <span>New size</span>
+    </div>
+
+    <div class="stat">
+      <strong id="savedSize">—</strong>
+      <span>Size change</span>
+    </div>
+  </div>
+
+  <a class="button" id="downloadLink" href="#" download>
+    Download compressed PDF
+  </a>
+</div>
+
+<div class="privacy">
+  <strong>Privacy:</strong>
+  Your PDF is processed in your browser. This tool does not upload your selected file to FileFlip servers.
+</div>
+
 </section>
 
 <section class="card">
-<h2>How to Compress a PDF</h2>
+<h2>How to compress a PDF</h2>
 <ol>
-<li>Select a PDF file from your device.</li>
-<li>Choose your preferred image quality.</li>
-<li>Press Compress PDF and wait for processing.</li>
-<li>Download your new PDF file.</li>
+  <li>Select a PDF file from your device.</li>
+  <li>Choose High, Balanced or Strong compression.</li>
+  <li>Press the Compress PDF button and wait for processing to finish.</li>
+  <li>Compare the file sizes and download your new PDF.</li>
 </ol>
 </section>
 
 <section class="card">
-<h2>About PDF Compression</h2>
-<p>This tool recreates PDF pages as compressed images. It can reduce the size of some documents, especially scanned PDFs. The result may have lower image quality and text will no longer be selectable or searchable.</p>
-<p>Processing takes place in your browser. Your selected PDF is not uploaded to our server by this tool.</p>
+<h2>About PDF compression</h2>
+
+<p>
+FileFlip PDF Compressor reduces PDF file size by rendering each page and placing it into a new PDF using JPEG image compression. The result depends on the original document and the selected quality. A file is not guaranteed to become smaller.
+</p>
+
+<p>
+<strong>Important:</strong>
+Because pages are converted to images, text may no longer be selectable or searchable. Links, forms, bookmarks, accessibility information and other interactive PDF features may not be preserved. Keep your original file if you need those features.
+</p>
 </section>
 
 <section class="card">
-<h2>Frequently Asked Questions</h2>
+<h2>Frequently asked questions</h2>
+
 <h3>Is this PDF compressor free?</h3>
-<p>Yes. You can use this tool for free.</p>
-<h3>Are my files uploaded?</h3>
-<p>No. The conversion runs locally in your browser.</p>
+<p>Yes. You can use this PDF compressor for free.</p>
+
+<h3>Are my PDF files uploaded?</h3>
+<p>No. Processing takes place locally in your browser. Your selected PDF is not uploaded to our server by this tool.</p>
+
 <h3>Will every PDF become smaller?</h3>
-<p>No. The result depends on the original PDF and the selected quality.</p>
+<p>No. The result depends on the original PDF and the selected quality. Some PDFs may become larger after compression.</p>
+
+<h3>Will the compressed PDF keep selectable text?</h3>
+<p>This tool converts pages into images. Text, links, forms and other interactive elements may no longer work as they did in the original document.</p>
+
+<h3>Is there a file size limit?</h3>
+<p>This page accepts PDF files up to 50 MB. Large or complex documents may need more memory and processing time on your device.</p>
 </section>
 
 <section class="card">
-<h2>More Free File Conversion Tools</h2>
-<p><a href="/">FileFlip Homepage</a></p>
-<p><a href="/pdf-to-jpg.html">PDF to JPG Converter</a></p>
-<p><a href="/pdf-to-png.html">PDF to PNG Converter</a></p>
-<p><a href="/jpg-to-pdf.html">JPG to PDF Converter</a></p>
-<p><a href="/png-to-pdf.html">PNG to PDF Converter</a></p>
+<h2>More free file tools</h2>
+<div class="tool-links">
+  <a href="/">FileFlip Homepage</a>
+  <a href="/pdf-to-jpg.html">PDF to JPG</a>
+  <a href="/pdf-to-png.html">PDF to PNG</a>
+  <a href="/jpg-to-pdf.html">JPG to PDF</a>
+  <a href="/png-to-pdf.html">PNG to PDF</a>
+</div>
 </section>
+
 </main>
 
 <footer>
-<a href="/">Home</a> |
-<a href="/about.html">About</a> |
-<a href="/contact.html">Contact</a> |
-<a href="/privacy-policy.html">Privacy Policy</a>
-<p>© FileFlip</p>
+  <a href="/">Home</a> |
+  <a href="/about.html">About Us</a> |
+  <a href="/contact.html">Contact</a> |
+  <a href="/privacy-policy.html">Privacy Policy</a> |
+  <a href="/terms.html">Terms</a>
+
+  <p>© <span id="year"></span> FileFlip. All rights reserved.</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script>
-pdfjsLib.GlobalWorkerOptions.workerSrc =
-'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-const fileInput = document.getElementById('pdfFile');
-const info = document.getElementById('fileInfo');
-const button = document.getElementById('compress');
-const statusBox = document.getElementById('status');
-const result = document.getElementById('result');
+<script>
+(() => {
+"use strict";
+
+const $ = (id) => document.getElementById(id);
+
+const fileInput = $("pdfFile");
+const dropZone = $("dropZone");
+const fileInfo = $("fileInfo");
+const qualitySelect = $("quality");
+const qualityHelp = $("qualityHelp");
+const compressBtn = $("compressBtn");
+const statusBox = $("status");
+const progressWrap = $("progressWrap");
+const progressBar = $("progressBar");
+const progressText = $("progressText");
+const progressPercent = $("progressPercent");
+const resultBox = $("result");
+const downloadLink = $("downloadLink");
+
+const MAX_FILE_SIZE = 50 * 1024 * 1024;
 
 let selectedFile = null;
+let currentOutputUrl = null;
 
-function formatSize(bytes) {
-  return bytes < 1024 * 1024
-    ? (bytes / 1024).toFixed(1) + ' KB'
-    : (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+$("year").textContent = new Date().getFullYear();
+
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 }
 
-fileInput.addEventListener('change', () => {
-  selectedFile = fileInput.files[0] || null;
-  result.innerHTML = '';
-  statusBox.textContent = '';
+function formatSize(bytes) {
+  if (!Number.isFinite(bytes) || bytes < 0) return "—";
 
-  if (!selectedFile) {
-    info.textContent = 'No PDF selected.';
-    button.disabled = true;
-    return;
+  if (bytes < 1024) {
+    return bytes + " B";
   }
 
-  if (selectedFile.type !== 'application/pdf' &&
-      !selectedFile.name.toLowerCase().endsWith('.pdf')) {
+  if (bytes < 1024 * 1024) {
+    return (bytes / 1024).toFixed(1) + " KB";
+  }
+
+  return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+}
+
+function setStatus(message, type = "") {
+  statusBox.textContent = message;
+  statusBox.className = "status" + (type ? " " + type : "");
+}
+
+function setProgress(done, total, label) {
+  const percent = total ? Math.round((done / total) * 100) : 0;
+
+  progressBar.style.width = percent + "%";
+  progressPercent.textContent = percent + "%";
+  progressText.textContent = label;
+}
+
+function clearPreviousResult() {
+  resultBox.style.display = "none";
+
+  if (currentOutputUrl) {
+    URL.revokeObjectURL(currentOutputUrl);
+    currentOutputUrl = null;
+  }
+
+  downloadLink.removeAttribute("href");
+}
+
+function acceptFile(file) {
+  clearPreviousResult();
+  setStatus("");
+
+  if (!file) {
     selectedFile = null;
-    info.textContent = 'Please select a PDF file.';
-    button.disabled = true;
+    fileInfo.textContent = "No PDF selected.";
+    compressBtn.disabled = true;
     return;
   }
 
-  info.textContent = selectedFile.name + ' · ' + formatSize(selectedFile.size);
-  button.disabled = false;
+  const looksLikePdf =
+    file.type === "application/pdf" ||
+    file.name.toLowerCase().endsWith(".pdf");
+
+  if (!looksLikePdf) {
+    selectedFile = null;
+    fileInfo.textContent = "Please choose a PDF file.";
+    compressBtn.disabled = true;
+    setStatus("The selected file does not appear to be a PDF.", "error");
+    return;
+  }
+
+  if (file.size > MAX_FILE_SIZE) {
+    selectedFile = null;
+    fileInfo.textContent = "File is larger than 50 MB.";
+    compressBtn.disabled = true;
+    setStatus("Please choose a PDF file smaller than 50 MB.", "error");
+    return;
+  }
+
+  if (file.size === 0) {
+    selectedFile = null;
+    fileInfo.textContent = "The selected file is empty.";
+    compressBtn.disabled = true;
+    setStatus("This file is empty. Please choose another PDF.", "error");
+    return;
+  }
+
+  selectedFile = file;
+  fileInfo.textContent = file.name + " · " + formatSize(file.size);
+  compressBtn.disabled = false;
+}
+
+fileInput.addEventListener("change", () => {
+  acceptFile(fileInput.files[0]);
 });
 
-button.addEventListener('click', async () => {
+["dragenter", "dragover"].forEach((eventName) => {
+  dropZone.addEventListener(eventName, (event) => {
+    event.preventDefault();
+    dropZone.classList.add("dragover");
+  });
+});
+
+["dragleave", "drop"].forEach((eventName) => {
+  dropZone.addEventListener(eventName, (event) => {
+    event.preventDefault();
+    dropZone.classList.remove("dragover");
+  });
+});
+
+dropZone.addEventListener("drop", (event) => {
+  const file = event.dataTransfer &&
+    event.dataTransfer.files[0];
+
+  acceptFile(file);
+});
+
+qualitySelect.addEventListener("change", () => {
+  const help = {
+    high: "Higher image quality. The resulting PDF may be larger.",
+    balanced: "A good balance between image quality and file size.",
+    strong: "Lower image quality. Usually creates a smaller PDF."
+  };
+
+  qualityHelp.textContent = help[qualitySelect.value];
+});
+
+function getSettings(level) {
+  if (level === "high") {
+    return { jpegQuality: 0.88, scale: 1.65 };
+  }
+
+  if (level === "strong") {
+    return { jpegQuality: 0.48, scale: 1.15 };
+  }
+
+  return { jpegQuality: 0.68, scale: 1.4 };
+}
+
+compressBtn.addEventListener("click", async () => {
   if (!selectedFile) return;
 
-  button.disabled = true;
-  result.innerHTML = '';
-  statusBox.textContent = 'Starting compression...';
+  if (!window.pdfjsLib ||
+      !window.jspdf ||
+      !window.jspdf.jsPDF) {
+    setStatus(
+      "Required PDF libraries could not load. Check your internet connection and reload this page.",
+      "error"
+    );
+    return;
+  }
 
-  let outputUrl = null;
+  const fileAtStart = selectedFile;
+  const settings = getSettings(qualitySelect.value);
+
+  compressBtn.disabled = true;
+  fileInput.disabled = true;
+  qualitySelect.disabled = true;
+
+  clearPreviousResult();
+
+  progressWrap.style.display = "block";
+  setProgress(0, 1, "Reading PDF…");
+
+  setStatus("Starting compression. Please keep this page open.");
 
   try {
-    const quality = Number(document.getElementById('quality').value);
-    const bytes = await selectedFile.arrayBuffer();
+    const bytes = await fileAtStart.arrayBuffer();
 
     const pdf = await pdfjsLib.getDocument({
-      data: new Uint8Array(bytes)
+      data: new Uint8Array(bytes),
+      isEvalSupported: false
     }).promise;
+
+    if (!pdf.numPages) {
+      throw new Error("This PDF does not contain any pages.");
+    }
 
     const { jsPDF } = window.jspdf;
     let output = null;
 
-    for (let i = 1; i <= pdf.numPages; i++) {
-      statusBox.textContent =
-        'Processing page ' + i + ' of ' + pdf.numPages + '...';
+    for (
+      let pageNumber = 1;
+      pageNumber <= pdf.numPages;
+      pageNumber++
+    ) {
+      setProgress(
+        pageNumber - 1,
+        pdf.numPages,
+        "Compressing page " + pageNumber +
+        " of " + pdf.numPages + "…"
+      );
 
-      const page = await pdf.getPage(i);
-      const viewport = page.getViewport({ scale: 1.5 });
+      const page = await pdf.getPage(pageNumber);
 
-      const canvas = document.createElement('canvas');
-      const context = canvas.getContext('2d');
+      const viewport = page.getViewport({
+        scale: settings.scale
+      });
+
+      const maxCanvasSide = 10000;
+
+      if (
+        viewport.width > maxCanvasSide ||
+        viewport.height > maxCanvasSide
+      ) {
+        throw new Error(
+          "A page is too large to process safely. Try another PDF or a lower quality level."
+        );
+      }
+
+      const canvas = document.createElement("canvas");
+
+      const context = canvas.getContext("2d", {
+        alpha: false
+      });
+
+      if (!context) {
+        throw new Error("Your browser could not create a canvas.");
+      }
 
       canvas.width = Math.ceil(viewport.width);
       canvas.height = Math.ceil(viewport.height);
 
       await page.render({
         canvasContext: context,
-        viewport: viewport
+        viewport: viewport,
+        background: "rgb(255,255,255)"
       }).promise;
 
-      const image = canvas.toDataURL('image/jpeg', quality);
+      const imageData = canvas.toDataURL(
+        "image/jpeg",
+        settings.jpegQuality
+      );
 
-      const width = viewport.width;
-      const height = viewport.height;
-      const orientation = width > height ? 'landscape' : 'portrait';
+      const pageWidth = viewport.width * 72 / 96;
+      const pageHeight = viewport.height * 72 / 96;
+
+      const orientation =
+        pageWidth > pageHeight ? "landscape" : "portrait";
 
       if (!output) {
         output = new jsPDF({
           orientation,
-          unit: 'pt',
-          format: [width, height],
-          compress: true
+          unit: "pt",
+          format: [pageWidth, pageHeight],
+          compress: true,
+          putOnlyUsedFonts: true
         });
       } else {
-        output.addPage([width, height], orientation);
+        output.addPage(
+          [pageWidth, pageHeight],
+          orientation
+        );
       }
 
       output.addImage(
-        image, 'JPEG', 0, 0, width, height, undefined, 'FAST'
+        imageData,
+        "JPEG",
+        0,
+        0,
+        pageWidth,
+        pageHeight,
+        undefined,
+        "FAST"
       );
 
       canvas.width = 1;
       canvas.height = 1;
+
+      page.cleanup();
+
+      setProgress(
+        pageNumber,
+        pdf.numPages,
+        "Compressed page " + pageNumber +
+        " of " + pdf.numPages
+      );
     }
 
-    const blob = output.output('blob');
-    outputUrl = URL.createObjectURL(blob);
+    if (!output) {
+      throw new Error("Could not create the compressed PDF.");
+    }
 
-    const link = document.createElement('a');
-    link.href = outputUrl;
-    link.download = selectedFile.name.replace(/\.pdf$/i, '') + '-compressed.pdf';
-    link.textContent = 'Download compressed PDF';
-    link.className = 'btn';
-
-    result.appendChild(link);
-
-    const difference = selectedFile.size - blob.size;
-    statusBox.textContent =
-      'Finished! Original: ' + formatSize(selectedFile.size) +
-      '\nNew PDF: ' + formatSize(blob.size) +
-      (difference > 0
-        ? '\nReduced by ' + formatSize(difference) + '.'
-        : '\nThe new PDF is not smaller than the original.');
-
-  } catch (error) {
-    console.error(error);
-    statusBox.textContent =
-      'Compression failed. Please try another PDF or a smaller file.';
-    if (outputUrl) URL.revokeObjectURL(outputUrl);
-  } finally {
-    button.disabled = false;
-  }
-});
-</script>
-</body>
-</html>
+    setProgress(
+      pdf.numPages,
+      pdf.numPages,
+      "Pre
