@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Free PDF and Image Converter Online | FileFlip</title>
-<meta name="description" content="Use FileFlip to convert PDF pages to PNG or JPG, combine JPG and PNG images into a PDF, compress image-based PDFs, and convert JPG and WebP images. Learn how each tool works and understand its limits.">
+<meta name="description" content="Use FileFlip to convert PDF pages to PNG or JPG, combine JPG and PNG images into a PDF, compress image-based PDFs, and convert JPG and WebP images. Learn how each tool works and understand file-format limitations.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#39328b">
 <meta property="og:site_name" content="FileFlip">
@@ -33,243 +33,13 @@ gtag('config','G-1FL2CWNTS6');
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
-:root {
-  --bg:#f5f6fb;
-  --card:#ffffff;
-  --ink:#172033;
-  --muted:#737e92;
-  --line:#e3e6ef;
-  --accent:#594bd6;
-  --light:#eeedff;
-  --green:#168653;
-  --red:#c03939;
-}
-*{box-sizing:border-box}
-.skip-link{
-  position:absolute;
-  left:-9999px;
-  top:8px;
-  z-index:100;
-  background:#fff;
-  color:#172033;
-  padding:10px 14px;
-  border-radius:8px;
-}
-.skip-link:focus{left:8px}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:Arial,Helvetica,sans-serif;
-  line-height:1.6;
-}
-header{
-  background:linear-gradient(135deg,#171b3a,#39328b,#6559ee);
-  color:white;
-  padding:24px 18px 65px;
-  text-align:center;
-}
-.logo{
-  font-size:30px;
-  font-weight:900;
-  letter-spacing:-1px;
-}
-.logo span{color:#c5c0ff}
-header p{color:#e4e3ff;margin:5px 0}
-.hero{
-  max-width:760px;
-  margin:32px auto 0;
-}
-.hero h1{
-  font-size:clamp(30px,6vw,48px);
-  line-height:1.15;
-  margin:12px 0;
-}
-.hero p{font-size:16px}
-main{
-  width:min(1000px,100%);
-  margin:-32px auto 0;
-  padding:0 15px 40px;
-  position:relative;
-}
-.privacy{
-  background:#effaf4;
-  border:1px solid #ccebd9;
-  color:#285d40;
-  border-radius:15px;
-  padding:15px;
-  margin-bottom:20px;
-  font-size:14px;
-}
-.tools{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:20px;
-}
-.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:23px;
-  box-shadow:0 8px 28px rgba(30,40,80,.05);
-  min-width:0;
-}
-.card-head{
-  display:flex;
-  align-items:flex-start;
-  gap:13px;
-  margin-bottom:18px;
-}
-.tool-icon{
-  flex:0 0 54px;
-  width:54px;
-  height:54px;
-  border-radius:16px;
-  background:var(--light);
-  display:grid;
-  place-items:center;
-  font-size:28px;
-}
-h2{
-  font-size:21px;
-  line-height:1.3;
-  margin:0 0 6px;
-}
-.sub{
-  color:var(--muted);
-  font-size:14px;
-  margin:0;
-}
-.file-picker{
-  position:relative;
-  display:block;
-  min-height:175px;
-  isolation:isolate;
-}
-.drop{
-  min-height:175px;
-  border:2px dashed #c4c8d8;
-  border-radius:17px;
-  background:#fafaff;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px 12px;
-  cursor:pointer;
-  position:relative;
-  overflow:hidden;
-  touch-action:manipulation;
-}
-.drop:hover,.drop.has-file{
-  border-color:var(--accent);
-  background:var(--light);
-  }
-.drop .big-icon{font-size:38px}
-.drop strong{font-size:19px;margin:5px 0}
-.drop small{color:var(--muted);font-size:13px}
-.filebtn{
-  display:inline-block;
-  background:#efeff7;
-  color:var(--ink);
-  padding:9px 18px;
-  border-radius:12px;
-  font-weight:700;
-  margin-top:8px;
-  pointer-events:none;
-}
-.file-picker input[type=file]{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  opacity:0;
-  z-index:10;
-  cursor:pointer;
-  display:block;
-  font-size:100px;
-  -webkit-tap-highlight-color:transparent;
-  touch-action:manipulation;
-}
-.options{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin:15px 0;
-  flex-wrap:wrap;
-}
-.options label{color:var(--muted);font-size:14px}
-select{
-  padding:10px 13px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:white;
-  color:var(--ink);
-  font-size:15px;
-}
-.files{
-  color:var(--muted);
-  font-size:13px;
-  margin:12px 0;
-  overflow-wrap:anywhere;
-}
-.primary{
-  width:100%;
-  border:0;
-  border-radius:13px;
-  padding:14px;
-  background:var(--accent);
-  color:white;
-  font-size:16px;
-  font-weight:700;
-  cursor:pointer;
-}
-.primary:disabled{
-  opacity:.45;
-  cursor:not-allowed;
-}
-.status{font-size:13px;margin-top:10px}
-.results{margin-top:12px}
-.result{
-  padding:10px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  margin-top:8px;
-  overflow-wrap:anywhere;
-}
-.result a{color:var(--accent);font-weight:700}
-.subnote{font-size:12px;color:var(--muted)}
-.content{
-  background:white;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:22px;
-  margin:20px 0;
-}
-.content h2{margin-top:20px}
-.content h2:first-child{margin-top:0}
-.content p{color:#4d5870}
-.content li{margin-bottom:8px}
-footer{
-  text-align:center;
-  padding:25px 15px;
-  color:var(--muted);
-  font-size:13px;
-}
-footer a{color:var(--accent);margin:0 8px}
-.guide-table-wrap{overflow-x:auto;margin:14px 0 22px}
-.guide-table{width:100%;border-collapse:collapse;min-width:560px;font-size:14px}
-.guide-table th,.guide-table td{border:1px solid var(--line);padding:11px;text-align:left;vertical-align:top}
-.guide-table th{background:#f5f5ff;color:var(--ink)}
-.guide-callout{background:#f7f7ff;border-left:4px solid var(--accent);padding:13px 15px;border-radius:8px;margin:15px 0;color:#39435a}
-.content h3{font-size:17px;line-height:1.4;margin:18px 0 6px}
-.content a{color:var(--accent)}
-@media(max-width:700px){
-  .tools{grid-template-columns:1fr}
-  .card{padding:18px}
-  header{padding-bottom:55px}
-}
+:root{--bg:#f5f7fc;--paper:#fff;--ink:#172033;--muted:#667085;--line:#e5e9f2;--brand:#5145cd;--brand2:#766bf0;--tint:#f0efff;--good:#168653;--shadow:0 18px 50px rgba(24,32,65,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}a{color:var(--brand)}.skip-link{position:absolute;left:-9999px;top:8px;z-index:100;background:#fff;padding:10px 14px;border-radius:10px}.skip-link:focus{left:12px}
+header{color:#fff;background:radial-gradient(ellipse at 85% 10%,rgba(159,151,255,.38),transparent 35%),linear-gradient(130deg,#141936 0%,#302b78 55%,#5145cd 100%);padding:20px 20px 88px;text-align:left;position:relative;overflow:hidden}.topbar{max-width:1120px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{display:flex;align-items:center;gap:10px;font-size:25px;font-weight:850;letter-spacing:-.8px}.logo img{width:44px;height:44px;object-fit:contain}.logo span{color:#c9c5ff}.topnav{display:flex;gap:22px;align-items:center}.topnav a{color:#eeedff;text-decoration:none;font-size:14px;font-weight:650}.topnav a:hover{text-decoration:underline}.hero{max-width:1120px;margin:65px auto 0}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.09);padding:6px 12px;border-radius:999px;color:#e6e4ff;font-size:12px;font-weight:750;letter-spacing:.08em;text-transform:uppercase}.hero h1{font-size:clamp(36px,6vw,62px);line-height:1.06;letter-spacing:-2px;max-width:780px;margin:20px 0 16px}.hero p{max-width:700px;color:#e3e2ff;font-size:18px;margin:0}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.hero-actions a{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:750}.hero-actions a:first-child{background:#fff;color:#302b78}.hero-actions a:last-child{border:1px solid rgba(255,255,255,.35);color:#fff}
+main{max-width:1120px;margin:-42px auto 0;padding:0 20px 60px;position:relative}.privacy{background:#f0fbf5;border:1px solid #ccebd9;color:#245b3c;border-radius:16px;padding:17px 20px;margin-bottom:24px;font-size:14px;box-shadow:0 8px 25px rgba(24,32,65,.04)}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:38px 0 18px}.section-heading h2{font-size:28px;line-height:1.2;letter-spacing:-.7px;margin:0}.section-heading p{max-width:540px;margin:0;color:var(--muted);font-size:14px}.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow);min-width:0;transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-2px);box-shadow:0 22px 55px rgba(24,32,65,.12)}.card-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}.tool-icon{flex:0 0 52px;width:52px;height:52px;border-radius:16px;background:var(--tint);display:grid;place-items:center;font-size:27px}.card h2{font-size:20px;line-height:1.25;letter-spacing:-.3px;margin:0 0 5px}.sub{color:var(--muted);font-size:14px;margin:0}.file-picker{position:relative;display:block;min-height:164px;isolation:isolate}.drop{min-height:164px;border:2px dashed #c6cbe0;border-radius:16px;background:#fafaff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px 12px;cursor:pointer;position:relative;overflow:hidden;touch-action:manipulation;transition:.2s}.drop:hover,.drop.has-file{border-color:var(--brand);background:var(--tint)}.drop .big-icon{font-size:34px}.drop strong{font-size:17px;margin:5px 0}.drop small{color:var(--muted);font-size:12px}.filebtn{display:inline-block;background:#eae9ff;color:#38318d;padding:8px 16px;border-radius:10px;font-weight:750;margin-top:8px;pointer-events:none;font-size:13px}.file-picker input[type=file]{position:absolute;inset:0;width:100%;height:100%;opacity:0;z-index:10;cursor:pointer;display:block;font-size:100px;-webkit-tap-highlight-color:transparent;touch-action:manipulation}.options{display:flex;align-items:center;gap:10px;margin:14px 0;flex-wrap:wrap}.options label{color:var(--muted);font-size:13px;font-weight:650}select{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);font-size:14px;max-width:100%}.files{color:var(--muted);font-size:12px;margin:12px 0;overflow-wrap:anywhere;min-height:20px}.primary{width:100%;border:0;border-radius:12px;padding:13px 16px;background:linear-gradient(110deg,var(--brand),var(--brand2));color:#fff;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 7px 16px rgba(81,69,205,.2)}.primary:disabled{opacity:.42;cursor:not-allowed;box-shadow:none}.status{font-size:13px;margin-top:10px}.results{margin-top:12px}.result{padding:11px;border:1px solid var(--line);border-radius:10px;margin-top:8px;overflow-wrap:anywhere;background:#fbfbff}.result a{color:var(--brand);font-weight:750}.subnote{font-size:12px;color:var(--muted)}
+.content{background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,42px);margin:26px 0;box-shadow:0 10px 35px rgba(24,32,65,.04)}.content h2{font-size:25px;line-height:1.25;letter-spacing:-.5px;margin:34px 0 10px}.content h2:first-child{margin-top:0}.content h3{font-size:18px;line-height:1.4;margin:22px 0 7px}.content p,.content li{color:#4c5870}.content li{margin-bottom:8px}.content a{color:var(--brand);font-weight:650}.guide-table-wrap{overflow-x:auto;margin:16px 0 24px}.guide-table{width:100%;border-collapse:collapse;min-width:560px;font-size:14px}.guide-table th,.guide-table td{border:1px solid var(--line);padding:12px;text-align:left;vertical-align:top}.guide-table th{background:#f5f5ff;color:var(--ink)}.guide-callout{background:#f5f4ff;border-left:4px solid var(--brand);padding:15px 17px;border-radius:10px;margin:18px 0;color:#39435a}.content .tool-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0;list-style:none}.tool-index li{border:1px solid var(--line);border-radius:12px;padding:13px;margin:0;background:#fcfcff}.tool-index strong{display:block;color:var(--ink)}footer{background:#151a35;color:#d9dcf2;text-align:center;padding:34px 18px;font-size:13px}footer p{margin:0 0 12px}footer a{color:#d9dcf2;margin:0 10px;text-decoration:none}footer a:hover{text-decoration:underline}
+@media(max-width:760px){header{padding:16px 17px 72px}.topbar{align-items:flex-start}.topnav{gap:12px;flex-wrap:wrap;justify-content:flex-end}.topnav a{font-size:12px}.hero{margin:52px auto 0}.hero h1{letter-spacing:-1.2px}.hero p{font-size:16px}.tools{grid-template-columns:1fr}.section-heading{display:block}.section-heading p{margin-top:7px}.content .tool-index{grid-template-columns:1fr}}
+@media(max-width:420px){.logo{font-size:21px}.logo img{width:36px;height:36px}.topnav{gap:8px}.topnav a{font-size:11px}.card{padding:18px}.hero h1{font-size:36px}}
 </style>
 </head>
 <body>
@@ -277,24 +47,26 @@ footer a{color:var(--accent);margin:0 8px}
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <header>
-  <div class="logo">
-  <img src="/logo.png" alt="FileFlip Logo" style="width:110px;height:110px;object-fit:contain;display:block;margin:0 auto 10px;">
-  <span style="color:white;">FileFlip.</span>
+  <div class="topbar">
+    <div class="logo"><img src="/logo.png" alt="" onerror="this.style.display='none'"><span>FileFlip</span></div>
+    <nav class="topnav" aria-label="Main navigation"><a href="#tools">Tools</a><a href="#guide">How it works</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav>
   </div>
-  <p>Free Online PDF & Image Tools</p>
-
   <div class="hero">
-    <h1>Convert Your Files Easily</h1>
-    <p>Convert PDF files and images online with free, simple tools. Turn PDF pages into PNG or JPG images, combine pictures into PDF files, compress PDFs, and convert JPG and WebP images. Fast processing directly in your browser.</p>
+    <span class="eyebrow">Free browser-based file tools</span>
+    <h1>Simple PDF and image tools. Clear results.</h1>
+    <p>Convert PDF pages, combine pictures into a PDF, and change image formats with practical controls and straightforward guidance. Your selected files are processed in your browser.</p>
+    <div class="hero-actions"><a href="#tools">Explore the six tools</a><a href="#guide">Read the conversion guide</a></div>
   </div>
 </header>
-  <main id="main">
+
+<main id="main">
 
   <div class="privacy">
     🔒 <strong>Your privacy matters.</strong><br>
     Your files are processed locally in your browser. They are not uploaded to our server. You stay in control of your files during conversion.
   </div>
 
+  <div class="section-heading" id="tools"><div><h2>Choose a file conversion tool</h2><p>Select a tool below, add your file, choose the available settings, and download the result.</p></div></div>
   <section class="tools">
 
     <!-- PDF TO PNG -->
@@ -408,65 +180,65 @@ footer a{color:var(--accent);margin:0 8px}
         <div class="tool-icon">🗜️</div>
         <div>
           <h2>PDF Compressor</h2>
-          <p class="sub">Reduce PDF file size with simple compression settings.</p>
+          <p class="sub">Reduce the size of image-based PDF files.</p>
         </div>
       </div>
 
       <div class="file-picker">
-        <label class="drop" for="compressInput" id="compressDrop">
+        <label class="drop" for="compressPdfInput" id="compressPdfDrop">
           <span class="big-icon">🗜️</span>
           <strong>Choose a PDF file</strong>
-          <small>Maximum file size: 50 MB</small>
+          <small>Image-based PDFs work best</small>
           <span class="filebtn">Select PDF</span>
         </label>
-        <input id="compressInput" type="file" accept=".pdf,application/pdf">
+        <input id="compressPdfInput" type="file" accept=".pdf,application/pdf">
       </div>
 
       <div class="options">
         <label for="compressQuality">Compression:</label>
         <select id="compressQuality">
-          <option value="high">High quality</option>
-          <option value="balanced" selected>Balanced</option>
-          <option value="strong">Strong compression</option>
+          <option value="0.75">Smaller file</option>
+          <option value="0.85" selected>Balanced</option>
+          <option value="0.92">Higher quality</option>
         </select>
       </div>
-      <div class="files" id="compressName">No file selected</div>
-      <button class="primary" id="compressButton" disabled>Compress PDF</button>
-      <div class="status" id="compressStatus"></div>
-      <div class="results" id="compressResults"></div>
-      <p class="subnote">Note: Compression converts PDF pages into images. Selectable text, links and forms may not be preserved.</p>
+
+      <div class="files" id="compressPdfName">No file selected</div>
+      <button class="primary" id="compressPdfButton" disabled>Compress PDF</button>
+      <div class="status" id="compressPdfStatus"></div>
+      <div class="results" id="compressPdfResults"></div>
     </article>
 
     <!-- JPG TO WEBP -->
     <article class="card">
       <div class="card-head">
-        <div class="tool-icon">🌄</div>
+        <div class="tool-icon">🌐</div>
         <div>
           <h2>JPG to WebP Converter</h2>
-          <p class="sub">Convert JPG images into smaller WebP files.</p>
+          <p class="sub">Convert JPG images into efficient WebP files.</p>
         </div>
       </div>
 
       <div class="file-picker">
         <label class="drop" for="jpgWebpInput" id="jpgWebpDrop">
-          <span class="big-icon">🌄</span>
-          <strong>Choose JPG images</strong>
-          <small>JPG or JPEG · multiple files supported</small>
+          <span class="big-icon">🖼️</span>
+          <strong>Choose a JPG image</strong>
+          <small>JPG or JPEG image</small>
           <span class="filebtn">Select JPG</span>
         </label>
-        <input id="jpgWebpInput" type="file" accept="image/jpeg,.jpg,.jpeg" multiple>
+        <input id="jpgWebpInput" type="file" accept="image/jpeg,.jpg,.jpeg">
       </div>
 
       <div class="options">
-        <label for="webpQuality">Quality:</label>
+        <label for="webpQuality">Image quality:</label>
         <select id="webpQuality">
-          <option value="0.65">Smaller file</option>
-          <option value="0.8" selected>Balanced</option>
-          <option value="0.95">High quality</option>
+          <option value="0.7">Smaller file</option>
+          <option value="0.82" selected>Balanced</option>
+          <option value="0.95">Higher quality</option>
         </select>
       </div>
 
-      <div class="files" id="jpgWebpName">No files selected</div>
+      <div class="files" id="jpgWebpName">No file selected</div>
       <button class="primary" id="jpgWebpButton" disabled>Convert JPG to WebP</button>
       <div class="status" id="jpgWebpStatus"></div>
       <div class="results" id="jpgWebpResults"></div>
@@ -475,7 +247,7 @@ footer a{color:var(--accent);margin:0 8px}
     <!-- WEBP TO JPG -->
     <article class="card">
       <div class="card-head">
-        <div class="tool-icon">🖼️</div>
+        <div class="tool-icon">🔄</div>
         <div>
           <h2>WebP to JPG Converter</h2>
           <p class="sub">Convert WebP images into widely compatible JPG files.</p>
@@ -484,259 +256,235 @@ footer a{color:var(--accent);margin:0 8px}
 
       <div class="file-picker">
         <label class="drop" for="webpJpgInput" id="webpJpgDrop">
-          <span class="big-icon">🖼️</span>
-          <strong>Choose WebP images</strong>
-          <small>WebP · multiple files supported</small>
+          <span class="big-icon">🔄</span>
+          <strong>Choose a WebP image</strong>
+          <small>WebP image file</small>
           <span class="filebtn">Select WebP</span>
         </label>
-        <input id="webpJpgInput" type="file" accept="image/webp,.webp" multiple>
+        <input id="webpJpgInput" type="file" accept="image/webp,.webp">
       </div>
 
       <div class="options">
-        <label for="jpgOutQuality">JPG quality:</label>
-        <select id="jpgOutQuality">
-          <option value="0.65">Smaller file</option>
-          <option value="0.85" selected>High quality</option>
-          <option value="0.95">Best quality</option>
+        <label for="jpgQuality">JPG quality:</label>
+        <select id="jpgQuality">
+          <option value="0.75">Smaller file</option>
+          <option value="0.88" selected>Balanced</option>
+          <option value="0.95">Higher quality</option>
         </select>
       </div>
 
-      <div class="files" id="webpJpgName">No files selected</div>
+      <div class="files" id="webpJpgName">No file selected</div>
       <button class="primary" id="webpJpgButton" disabled>Convert WebP to JPG</button>
       <div class="status" id="webpJpgStatus"></div>
       <div class="results" id="webpJpgResults"></div>
     </article>
 
   </section>
-    <section class="content" aria-labelledby="fileflip-guide-title">
-    <h2 id="fileflip-guide-title">FileFlip: Practical Guide to PDF and Image Conversion</h2>
-    <p>
-      FileFlip provides six separate tools for common document and image tasks.
-      The guide below explains when to use each tool, the choices available on
-      this page, and the limitations to check before downloading a result.
-    </p>
+    <section class="content" id="guide">
 
-    <h2>Choose the right tool</h2>
+    <h2>How to use FileFlip</h2>
+
+    <p>FileFlip provides six browser-based tools for common PDF and image conversion tasks. Each tool is designed for a specific file type and produces a downloadable result. Choose the tool that matches your task, select your file, review the available settings, and start the conversion.</p>
+
+    <h3>Before you start</h3>
     <ul>
-      <li><strong>PDF to PNG:</strong> use this when you need clear page images, for example to place a document page in a presentation.</li>
-      <li><strong>JPG &amp; PNG to PDF:</strong> use this to put several photos or scanned pages into one PDF file.</li>
-      <li><strong>PDF to JPG:</strong> use this when smaller, widely compatible page images are more useful than PNG files.</li>
-      <li><strong>PDF Compressor:</strong> use this when you are willing to trade some page detail and searchable text for an image-based PDF.</li>
-      <li><strong>JPG to WebP:</strong> use this to create WebP copies of JPG images for workflows that support WebP.</li>
-      <li><strong>WebP to JPG:</strong> use this when an app or website accepts JPG but does not accept WebP.</li>
+      <li>Make sure your file is in a supported format.</li>
+      <li>Keep a copy of your original file in case you need it again.</li>
+      <li>For large PDFs, allow enough time for every page to be processed.</li>
+      <li>Check the downloaded result before sharing or printing it.</li>
     </ul>
 
-    <h2>How to convert a PDF into PNG images</h2>
+    <div class="guide-callout">
+      <strong>Important:</strong> Conversion quality depends on the original file. Converting a low-resolution image into another format does not restore missing detail. Compressing a PDF may also reduce image quality.
+    </div>
+
+    <h2>1. How to convert PDF to PNG</h2>
+
+    <p>PDF documents can contain text, vector graphics, photographs, and several pages. A PNG conversion turns each selected PDF page into a separate raster image. PNG is useful when you want to preserve sharp edges, diagrams, screenshots, or graphics without introducing JPEG-style compression artifacts.</p>
+
+    <h3>Steps</h3>
     <ol>
-      <li>Open the PDF to PNG card and select one PDF file.</li>
+      <li>Open the PDF to PNG tool at the top of this page.</li>
+      <li>Select the PDF document from your device.</li>
       <li>Choose Standard, High, or Very high image quality.</li>
-      <li>Select <strong>Convert PDF to PNG</strong> and keep this page open while the pages are processed.</li>
-      <li>Download the page images from the results area. Each page is provided as a separate PNG file.</li>
+      <li>Start the conversion and wait for the pages to finish rendering.</li>
+      <li>Download the generated PNG images.</li>
     </ol>
-    <p>
-      PNG is a lossless image format and is useful when crisp text or graphics matter.
-      The Very high setting renders pages at a larger scale, which can increase image
-      dimensions, memory use, processing time, and download size. If your device is
-      struggling, try Standard or High.
-    </p>
 
-    <h2>How to convert a PDF into JPG images</h2>
+    <h3>When should you use PNG?</h3>
+    <p>PNG is a good choice for charts, diagrams, screenshots, interface captures, and documents containing fine lines or text. It uses lossless image compression, which means it does not discard image information in the same way as lossy JPEG compression. However, PNG files can be larger, especially for photographic pages.</p>
+
+    <h2>2. How to convert JPG and PNG images to PDF</h2>
+
+    <p>Combining images into a PDF is useful when you want to organize scanned pages, receipts, photographs, or forms into one document. The images are placed into PDF pages in the order in which they are selected by your device or browser.</p>
+
+    <h3>Steps</h3>
     <ol>
-      <li>Select one PDF file in the PDF to JPG card.</li>
-      <li>Choose Standard, High, or Very high quality.</li>
-      <li>Start the conversion and wait for the page counter to finish.</li>
-      <li>Download the generated JPG files from the results area.</li>
+      <li>Open the JPG and PNG to PDF tool.</li>
+      <li>Select one or more JPG, JPEG, or PNG images.</li>
+      <li>Choose A4, Letter, or Fit to image page sizing.</li>
+      <li>Start the conversion.</li>
+      <li>Download the combined PDF and check the page order.</li>
     </ol>
-    <p>
-      JPG uses lossy compression and is commonly supported by photo viewers,
-      office applications, and websites. It can create smaller files than PNG,
-      but fine text and sharp edges may show compression artifacts. Use PNG when
-      preserving crisp page detail is more important than file size.
-    </p>
 
-    <h2>How to combine images into one PDF</h2>
+    <h3>Choosing a page size</h3>
+    <p>A4 is commonly used for documents in many countries. Letter is common in the United States and some other regions. Fit to image creates pages based on the dimensions of each image, which can be useful when you do not want a fixed paper size.</p>
+
+    <div class="guide-callout">
+      <strong>Practical tip:</strong> If you are creating a document for printing, use images with sufficient resolution and check that important text is not cropped near the page edges.
+    </div>
+
+    <h2>3. How to convert PDF to JPG</h2>
+
+    <p>JPG is a widely supported image format, particularly for photographs and images shared on websites or messaging applications. Converting a PDF to JPG renders each page as an image. This is useful when a recipient needs an image rather than a PDF document.</p>
+
+    <h3>Steps</h3>
     <ol>
-      <li>Open the JPG &amp; PNG to PDF card.</li>
-      <li>Select the images you want to include. The tool supports multiple JPG, JPEG, and PNG files.</li>
-      <li>Choose A4 or Letter for a standard page size, or Fit to image to size each PDF page to its image.</li>
-      <li>Select <strong>Convert Images to PDF</strong> and download the PDF when it appears.</li>
+      <li>Select a PDF file in the PDF to JPG tool.</li>
+      <li>Choose the image quality setting.</li>
+      <li>Click the conversion button.</li>
+      <li>Wait for the pages to be converted.</li>
+      <li>Download the resulting JPG images.</li>
     </ol>
-    <p>
-      A4 and Letter are useful for documents intended for printing. Fit to image
-      is useful when you want each page to follow the dimensions of its source image.
-      Check the order of the selected files before converting, because that order
-      determines the page sequence in the resulting document.
-    </p>
 
-    <h2>What the PDF Compressor changes</h2>
-    <p>
-      The compressor renders each PDF page as an image and builds a new PDF from
-      those images. It offers High quality, Balanced, and Strong compression.
-      High quality keeps more visual detail and generally creates larger output;
-      Strong compression uses lower resolution and image quality to try to reduce
-      the file size. Balanced is between those settings.
-    </p>
-    <p>
-      This is image-based compression, not a way to preserve the original PDF
-      structure. Text may no longer be selectable or searchable, and links, forms,
-      accessibility structure, bookmarks, and other interactive features may be
-      lost. Some original PDFs are already highly compressed, so the new PDF can
-      be larger. Compare the original and result before replacing your source file.
-    </p>
+    <h3>PNG or JPG: which should you choose?</h3>
+    <p>JPG is usually more suitable for photographs and smaller image files. PNG is often preferable for screenshots, diagrams, and text-heavy pages where sharp edges matter. Both formats convert PDF pages into images, so searchable PDF text and document structure are not preserved in the resulting pictures.</p>
 
-    <h2>Convert JPG to WebP</h2>
-    <p>
-      Select one or more JPG or JPEG images in the JPG to WebP card. Choose Smaller
-      file, Balanced, or High quality, then start conversion. Smaller file uses a
-      lower quality value and may produce more visible compression; High quality
-      aims to retain more visual detail but may create larger WebP files. The result
-      depends on the image content and dimensions.
-    </p>
+    <h2>4. Understanding PDF compression</h2>
 
-    <h2>Convert WebP to JPG</h2>
-    <p>
-      Select one or more WebP images, choose the JPG quality, and start conversion.
-      Each image is saved as a separate JPG. JPG does not support transparency, so
-      transparent parts of a WebP image are filled with white in the JPG result.
-      If transparency is important, keep the original WebP file instead.
-    </p>
+    <p>PDF files can contain text, fonts, vector graphics, photographs, and scanned page images. These elements affect file size in different ways. Image-based PDFs may become smaller when their pages are rendered and recompressed at a lower image quality. Text-heavy or vector-based PDFs may not become smaller using this method.</p>
 
-    <h2>File limits and device requirements</h2>
+    <h3>Compression settings</h3>
     <ul>
-      <li>The PDF tools accept PDF files up to 50 MB.</li>
-      <li>The PDF tools support documents up to 150 pages.</li>
-      <li>The image-to-PDF tool accepts JPG, JPEG, and PNG images.</li>
-      <li>The JPG-to-WebP tool accepts JPG and JPEG images.</li>
-      <li>The WebP-to-JPG tool accepts WebP images.</li>
+      <li><strong>Smaller file:</strong> Uses stronger image compression and may produce more visible quality loss.</li>
+      <li><strong>Balanced:</strong> A middle setting intended to balance file size and image appearance.</li>
+      <li><strong>Higher quality:</strong> Retains more visual detail but may produce a larger file.</li>
     </ul>
-    <p>
-      Conversion takes place in your browser. Large files, high rendering quality,
-      and documents with many pages can use substantial memory and may take longer
-      on phones or older computers. Keep the tab open until the result is ready.
-      If a conversion fails, reload the page, check that the file opens normally,
-      and try a smaller file or a lower quality setting.
-    </p>
 
-    <h2>Common questions and troubleshooting</h2>
-    <h3>Why does my PDF fail to open?</h3>
-    <p>
-      Confirm that the file is a valid PDF, is not password-protected, and is no
-      larger than 50 MB. A damaged PDF may not be readable by the browser's PDF
-      processing library.
-    </p>
-    <h3>Why is a conversion slow on my phone?</h3>
-    <p>
-      Rendering pages and creating images requires device memory and processing
-      power. Try a lower quality setting, close unused tabs, or process a shorter
-      document.
-    </p>
-    <h3>Why is the compressed PDF not smaller?</h3>
-    <p>
-      The original may already contain optimized images or compressed content.
-      Rebuilding pages as images can sometimes increase the final file size.
-    </p>
-    <h3>Can I close the browser during conversion?</h3>
-    <p>
-      No. Keep the FileFlip tab open until the conversion finishes and the download
-      links appear. If you close or reload the tab, the in-progress result may be lost.
-    </p>
+    <h3>Important limitations</h3>
+    <p>Image-based compression is not the same as full structural PDF optimization. Re-rendering pages can remove selectable text, links, form fields, bookmarks, accessibility information, and other interactive document features. The resulting file may not be suitable when these features must be preserved.</p>
 
-    <h2>Privacy and file handling</h2>
-    <p>
-      FileFlip's conversion code reads and processes the selected files in the
-      browser rather than uploading them to a FileFlip file-processing server.
-      The site may still load third-party libraries and use analytics or advertising
-      services. Read the <a href="/privacy-policy.html">Privacy Policy</a> for
-      information about website data, cookies, and third-party services.
-    </p>
-    <p>
-      FileFlip is a convenience tool and does not replace a dedicated PDF editor
-      or document-management system. Keep an unchanged copy of important originals,
-      and review converted files before sharing or relying on them.
-    </p>
+    <div class="guide-callout">
+      <strong>Keep your original PDF.</strong> Always compare the compressed file with the original before using it for official, legal, financial, or archival purposes.
+    </div>
 
-    <h2>PDF, PNG, JPG, and WebP: which format should you use?</h2>
-    <p>
-      These formats solve different problems. A PDF is designed to keep pages
-      together in a document, while PNG, JPG, and WebP are image formats. Choosing
-      a format depends on whether you need editable document content, sharp text,
-      smaller image files, or broad compatibility.
-    </p>
+    <h2>5. How to convert JPG to WebP</h2>
+
+    <p>WebP is an image format developed for efficient delivery on the web. It supports lossy and lossless compression, transparency, and animation. A JPG to WebP conversion can reduce the size of some photographic images, depending on the original image and the selected quality.</p>
+
+    <h3>Steps</h3>
+    <ol>
+      <li>Select a JPG or JPEG image.</li>
+      <li>Choose the desired WebP quality.</li>
+      <li>Start the conversion.</li>
+      <li>Download the generated WebP image.</li>
+      <li>Open the downloaded file to check its appearance.</li>
+    </ol>
+
+    <p>WebP can be useful for websites because smaller image files may reduce the amount of data visitors need to download. The actual size reduction is not guaranteed: results depend on image content, dimensions, and encoding settings.</p>
+
+    <h2>6. How to convert WebP to JPG</h2>
+
+    <p>JPG is supported by a wide range of image viewers, editing applications, and older software. Converting WebP to JPG can help when an application or service does not accept WebP files.</p>
+
+    <h3>Steps</h3>
+    <ol>
+      <li>Select a WebP image from your device.</li>
+      <li>Choose the JPG quality setting.</li>
+      <li>Start the conversion.</li>
+      <li>Download the JPG result.</li>
+      <li>Check the image before using it.</li>
+    </ol>
+
+    <p>JPG does not support transparency. If the original WebP image has transparent areas, those areas need to be represented by a background color in the JPG output. JPG also uses lossy compression, so some image detail may be lost during conversion.</p>
+
+    <h2>Image format comparison</h2>
+
+    <p>Choosing the right format depends on how you plan to use the image. The table below summarizes common characteristics of the formats supported by FileFlip.</p>
+
     <div class="guide-table-wrap">
       <table class="guide-table">
         <thead>
-          <tr><th>Format</th><th>Useful for</th><th>Important trade-off</th></tr>
+          <tr>
+            <th>Format</th>
+            <th>Best suited for</th>
+            <th>Transparency</th>
+            <th>Compression</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td><strong>PDF</strong></td><td>Multi-page documents, sharing, and printing</td><td>Some PDFs contain selectable text and links; image-based PDFs may not.</td></tr>
-          <tr><td><strong>PNG</strong></td><td>Diagrams, screenshots, and page images with crisp edges</td><td>Files can be larger than JPG images.</td></tr>
-          <tr><td><strong>JPG</strong></td><td>Photographs and general-purpose image sharing</td><td>Lossy compression can soften text and fine details.</td></tr>
-           <tr><td><strong>WebP</strong></td><td>Web images where the receiving platform supports WebP</td><td>Some older apps and workflows may require JPG or PNG instead.</td></tr>
+          <tr>
+            <td>PNG</td>
+            <td>Screenshots, diagrams, graphics and text</td>
+            <td>Yes</td>
+            <td>Lossless</td>
+          </tr>
+          <tr>
+            <td>JPG / JPEG</td>
+            <td>Photographs and general image sharing</td>
+            <td>No</td>
+            <td>Lossy</td>
+          </tr>
+          <tr>
+            <td>WebP</td>
+            <td>Web images and efficient image delivery</td>
+            <td>Yes</td>
+            <td>Lossy or lossless</td>
+          </tr>
+          <tr>
+            <td>PDF</td>
+            <td>Documents, multi-page files and printing</td>
+            <td>Depends on document content</td>
+            <td>Depends on document content</td>
+          </tr>
         </tbody>
       </table>
     </div>
 
-    <h2>Before converting: a quick quality checklist</h2>
-    <ul>
-      <li><strong>Check the source file.</strong> Open it first and make sure it is not damaged or password-protected.</li>
-      <li><strong>Choose the output for its purpose.</strong> Use PNG for page images with fine text, JPG for broadly compatible photos, and PDF when you need a document with multiple pages.</li>
-      <li><strong>Think about file size.</strong> Higher rendering scales and image quality can increase output size and memory use.</li>
-      <li><strong>Keep the original.</strong> Conversion can change image quality or remove document features. Save a copy before replacing any source file.</li>
-      <li><strong>Review every result.</strong> Open the downloaded file and check page order, readability, orientation, transparency, and file size.</li>
-    </ul>
+    <h2>File privacy and browser processing</h2>
 
-    <h2>Common conversion examples</h2>
-    <h3>Preparing scanned paperwork for email</h3>
-    <p>
-      If you have several scans saved as JPG or PNG images, use JPG &amp; PNG to PDF
-      to place them in one document. Select the images in the order you want them
-      to appear, choose A4 or Letter if the recipient may print the file, and check
-      the finished PDF before attaching it to an email. If the scans are not in the
-      correct order, rename or select them in the intended sequence and create the PDF again.
-    </p>
-    <h3>Adding a page from a PDF to a slide</h3>
-    <p>
-      Use PDF to PNG when you need a page as an image for a presentation or report.
-      Start with High quality for a balance between detail and file size. Use Very
-      high only when the extra pixel dimensions are useful and your device has enough
-      memory. After downloading, zoom in on small text to confirm it remains readable.
-    </p>
-    <h3>Sending a PDF when the attachment is too large</h3>
-    <p>
-      Try the PDF Compressor and compare the resulting file with the original.
-      Because this tool rebuilds pages as images, the new PDF may lose searchable
-      text, links, forms, and other interactive elements. If you need those features,
-      use a PDF optimizer that preserves the document structure instead of this
-      image-based compressor.
-    </p>
+    <p>FileFlip is designed to process selected files in your browser rather than upload them to a FileFlip file-storage service. The conversion code runs on your device using browser capabilities and the required JavaScript libraries.</p>
 
-    <h2>Understanding conversion quality</h2>
-    <p>
-      A higher quality setting does not always mean a better choice. For PDF page
-      rendering, a larger scale creates more pixels and may make small details easier
-      to read, but it also uses more memory and creates larger images. For JPG and
-      WebP, quality settings control lossy compression: lower values usually reduce
-      file size while increasing visible artifacts. The best setting is the one that
-      keeps the details you need at a file size you can use.
-    </p>
-    <div class="guide-callout">
-      <strong>Practical tip:</strong> For important documents, compare the first,
-      middle, and last pages of the converted file. Check small print, signatures,
-      charts, and page orientation before sharing the result.
-    </div>
+    <p>Processing locally does not mean that every aspect of browsing is offline. The website may load scripts and resources from third-party content delivery networks, and the website may use analytics or advertising technologies as described in its privacy policy.</p>
 
-    <h2>More help</h2>
-    <p>
-      For information about the website and its purpose, visit the
-      <a href="/about.html">About FileFlip</a> page. Read the
-      <a href="/privacy-policy.html">Privacy Policy</a> to understand website
-      data and third-party services, or use the <a href="/contact.html">Contact</a>
-      page to report a problem or ask a question. The
-      <a href="/terms.html">Terms of Use</a> explain the conditions for using the tools.
-    </p>
-  </section>
+    <p>For sensitive documents, use a device and browser you trust. Avoid using public or shared devices for confidential files, and delete downloaded copies when they are no longer needed.</p>
 
-</main>
+    <h2>Frequently asked questions</h2>
+
+    <h3>Are the FileFlip tools free?</h3>
+    <p>The six conversion tools presented on this page are offered for use without a conversion fee. Internet access and a compatible browser are required to load the website and its libraries.</p>
+
+    <h3>Are my files uploaded to FileFlip?</h3>
+    <p>The tools are designed to process files locally in the browser. The website does not provide a FileFlip server upload workflow for these conversions. Third-party scripts and website technologies are covered by the privacy policy.</p>
+
+    <h3>Can I convert a multi-page PDF?</h3>
+    <p>Yes. The PDF to PNG and PDF to JPG tools are designed to render PDF pages individually. Processing time depends on the number of pages, document complexity, and the capabilities of your device.</p>
+
+    <h3>Why is my converted image larger than the original?</h3>
+    <p>Image dimensions, resolution, and compression settings affect file size. PNG images and high-resolution PDF page renders can be larger than the source document. A conversion does not always reduce file size.</p>
+
+    <h3>Will PDF compression always make a file smaller?</h3>
+    <p>No. The result depends on the PDF's contents. Image-heavy PDFs may shrink, while some text-based or already optimized PDFs may remain similar in size or become larger.</p>
+
+    <h3>Does converting PDF pages preserve selectable text?</h3>
+    <p>No. PDF to PNG and PDF to JPG create pictures of pages. The text in those pictures is not automatically converted into selectable or searchable text.</p>
+
+    <h3>What happens if a conversion fails?</h3>
+    <p>Check that the file is valid and supported, try a smaller file, and make sure your browser is up to date. Very large files may require more memory than your device can provide.</p>
+
+    <h3>Can I use the converted files commercially?</h3>
+    <p>FileFlip converts files supplied by the user. You are responsible for ensuring that you have the rights and permissions required to use, modify, share, or publish those files.</p>
+
+    <h2>About FileFlip</h2>
+
+    <p>FileFlip aims to make common PDF and image conversion tasks easier to understand and perform. Our goal is to provide focused tools alongside practical explanations of file formats, conversion quality, privacy considerations, and technical limitations.</p>
+
+    <p>We encourage users to review their converted files and keep original copies whenever document accuracy or image quality is important. For questions or feedback, visit our <a href="/contact.html">Contact page</a>.</p>
+
+    <p>Read more about our website on the <a href="/about.html">About page</a>, and learn how information is handled in our <a href="/privacy-policy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Use</a>.</p>
+
+    </section>
+    </main>
 
 <footer>
   <p>© 2026 FileFlip. All rights reserved.</p>
@@ -907,53 +655,62 @@ $("pdfPngButton").addEventListener("click",async function(){
     const scale=Number($("pngScale").value);
 
     for(let i=1;i<=doc.numPages;i++){
-      status(
-        "pdfPngStatus",
-        "Converting page "+i+" of "+doc.numPages+"..."
-      );
+      status("pdfPngStatus","Converting page "+i+" of "+doc.numPages+"...");
 
-      const result=await renderPage(doc,i,scale);
-      const blob=await canvasBlob(result.canvas,"image/png");
-
-      const base=file.name.replace(/\.pdf$/i,"");
+      const {canvas}=await renderPage(doc,i,scale);
+      const blob=await canvasBlob(canvas,"image/png");
 
       addDownload(
         "pdfPngResults",
         blob,
-        base+"-page-"+i+".png",
-        "Download page "+i+" (PNG)"
+        "page-"+i+".png"
       );
 
-      result.canvas.width=1;
-      result.canvas.height=1;
-      result.page.cleanup();
+      canvas.width=0;
+      canvas.height=0;
     }
 
-    status(
-      "pdfPngStatus",
-      "Done! "+doc.numPages+" PNG image(s) created.",
-      "success"
-    );
-    }catch(e){
-    console.error(e);
-    status("pdfPngStatus","Conversion failed: "+e.message,"error");
+    status("pdfPngStatus","PDF converted successfully.","success");
+
+  }catch(error){
+    status("pdfPngStatus",error.message,"error");
   }finally{
-    button.disabled=pdfPngFiles.get().length===0;
+    button.disabled=false;
   }
 });
+  /* IMAGES TO PDF */
 
-
-/* IMAGES TO PDF */
-
-const imageFiles=setupInput(
+const imagesPdfFiles=setupInput(
   "imagesPdfInput",
   "imagesPdfName",
   "imagesPdfButton",
   true
 );
 
+function readImage(file){
+  return new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+
+    reader.onload=()=>resolve(reader.result);
+    reader.onerror=()=>reject(new Error("Could not read image: "+file.name));
+
+    reader.readAsDataURL(file);
+  });
+}
+
+function loadImage(src){
+  return new Promise((resolve,reject)=>{
+    const img=new Image();
+
+    img.onload=()=>resolve(img);
+    img.onerror=()=>reject(new Error("Invalid image file."));
+
+    img.src=src;
+  });
+}
+
 $("imagesPdfButton").addEventListener("click",async function(){
-  const files=imageFiles.get();
+  const files=imagesPdfFiles.get();
   if(!files.length) return;
 
   const button=this;
@@ -961,125 +718,116 @@ $("imagesPdfButton").addEventListener("click",async function(){
   $("imagesPdfResults").innerHTML="";
 
   try{
-    if(!window.jspdf){
+    if(!window.jspdf || !window.jspdf.jsPDF){
       throw new Error("PDF library could not load. Reload the page.");
     }
 
-    const {jsPDF}=window.jspdf;
-    const pageSize=$("imagePageSize").value;
+    status("imagesPdfStatus","Preparing images...");
 
+    const pageSize=$("imagePageSize").value;
     let pdf=null;
 
     for(let i=0;i<files.length;i++){
+      const file=files[i];
+
+      if(!["image/jpeg","image/png"].includes(file.type)){
+        throw new Error("Unsupported image: "+file.name);
+      }
+
       status(
         "imagesPdfStatus",
         "Adding image "+(i+1)+" of "+files.length+"..."
       );
 
-      const file=files[i];
-      const imageURL=URL.createObjectURL(file);
+      const data=await readImage(file);
+      const img=await loadImage(data);
 
-      try{
-        const img=new Image();
+      const orientation=img.width>=img.height?"landscape":"portrait";
 
-        await new Promise((resolve,reject)=>{
-          img.onload=resolve;
-          img.onerror=()=>reject(new Error("Could not read "+file.name));
-          img.src=imageURL;
-        });
+      let pageWidth,pageHeight;
 
-        const width=img.naturalWidth;
-        const height=img.naturalHeight;
+      if(pageSize==="fit"){
+        pageWidth=img.width*0.264583;
+        pageHeight=img.height*0.264583;
+      }else{
+        const dimensions=pageSize==="letter"
+          ? [215.9,279.4]
+          : [210,297];
 
-        if(!width || !height){
-          throw new Error("Invalid image: "+file.name);
-        }
+        pageWidth=orientation==="landscape"
+          ? dimensions[1]
+          : dimensions[0];
 
-        if(pageSize==="fit"){
-          const orientation=width>height?"landscape":"portrait";
-
-          if(!pdf){
-            pdf=new jsPDF({
-              orientation,
-              unit:"px",
-              format:[width,height]
-            });
-          }else{
-            pdf.addPage([width,height],orientation);
-          }
-
-          pdf.addImage(
-            img,
-            file.type.toLowerCase().includes("png") ? "PNG" : "JPEG",
-            0,
-            0,
-            width,
-            height
-          );
-
-        }else{
-          const orientation=width>height?"landscape":"portrait";
-
-          if(!pdf){
-            pdf=new jsPDF({
-              orientation,
-              unit:"mm",
-              format:pageSize
-            });
-          }else{
-            pdf.addPage(pageSize,orientation);
-          }
-
-          const pageW=pdf.internal.pageSize.getWidth();
-          const pageH=pdf.internal.pageSize.getHeight();
-
-          const ratio=Math.min(
-            pageW/width,
-            pageH/height
-          );
-
-          const w=width*ratio;
-          const h=height*ratio;
-
-          pdf.addImage(
-            img,
-            file.type.toLowerCase().includes("png") ? "PNG" : "JPEG",
-            (pageW-w)/2,
-            (pageH-h)/2,
-            w,
-            h
-          );
-        }
-
-      }finally{
-        URL.revokeObjectURL(imageURL);
+        pageHeight=orientation==="landscape"
+          ? dimensions[0]
+          : dimensions[1];
       }
+
+      if(!pdf){
+        pdf=new jspdf.jsPDF({
+          orientation:orientation,
+          unit:"mm",
+          format:pageSize==="fit"
+            ? [pageWidth,pageHeight]
+            : pageSize
+        });
+      }else{
+        pdf.addPage(
+          pageSize==="fit"
+            ? [pageWidth,pageHeight]
+            : pageSize,
+          orientation
+        );
+      }
+
+      const margin=pageSize==="fit"?0:10;
+
+      const availableWidth=pageWidth-margin*2;
+      const availableHeight=pageHeight-margin*2;
+
+      const ratio=Math.min(
+        availableWidth/img.width,
+        availableHeight/img.height
+      );
+
+      const width=img.width*ratio;
+      const height=img.height*ratio;
+
+      const x=(pageWidth-width)/2;
+      const y=(pageHeight-height)/2;
+
+      const format=file.type==="image/png"?"PNG":"JPEG";
+
+      pdf.addImage(
+        data,
+        format,
+        x,
+        y,
+        width,
+        height
+      );
     }
 
     const blob=pdf.output("blob");
-    const filename="fileflip-images.pdf";
 
     addDownload(
       "imagesPdfResults",
       blob,
-      filename,
-      "Download PDF"
+      "fileflip-images.pdf",
+      "Download combined PDF"
     );
 
-    status(
-      "imagesPdfStatus",
-      "Done! PDF created successfully.",
-      "success"
-    );
+    status("imagesPdfStatus","PDF created successfully.","success");
 
-  }catch(e){
-    console.error(e);
-    status("imagesPdfStatus","Conversion failed: "+e.message,"error");
+  }catch(error){
+    status("imagesPdfStatus",error.message,"error");
   }finally{
-    button.disabled=imageFiles.get().length===0;
+    button.disabled=false;
   }
 });
-  /* PDF TO JPG */
+
+
+/* PDF TO JPG */
 
 const pdfJpgFiles=setupInput(
   "pdfJpgInput",
@@ -1106,7 +854,6 @@ $("pdfJpgButton").addEventListener("click",async function(){
     }
 
     const scale=Number($("jpgScale").value);
-    const base=file.name.replace(/\.pdf$/i,"");
 
     for(let i=1;i<=doc.numPages;i++){
       status(
@@ -1114,60 +861,57 @@ $("pdfJpgButton").addEventListener("click",async function(){
         "Converting page "+i+" of "+doc.numPages+"..."
       );
 
-      const result=await renderPage(doc,i,scale);
+      const {canvas}=await renderPage(doc,i,scale);
 
       const blob=await canvasBlob(
-        result.canvas,
+        canvas,
         "image/jpeg",
-        0.88
+        0.92
       );
 
       addDownload(
         "pdfJpgResults",
         blob,
-        base+"-page-"+i+".jpg",
-        "Download page "+i+" (JPG)"
+        "page-"+i+".jpg"
       );
 
-      result.canvas.width=1;
-      result.canvas.height=1;
-      result.page.cleanup();
+      canvas.width=0;
+      canvas.height=0;
     }
 
-    status(
-      "pdfJpgStatus",
-      "Done! JPG images created successfully.",
-      "success"
-    );
+    status("pdfJpgStatus","PDF converted successfully.","success");
 
-  }catch(e){
-    console.error(e);
-    status("pdfJpgStatus","Conversion failed: "+e.message,"error");
+  }catch(error){
+    status("pdfJpgStatus",error.message,"error");
   }finally{
-    button.disabled=pdfJpgFiles.get().length===0;
+    button.disabled=false;
   }
 });
+  /* PDF COMPRESSOR */
 
-
-/* PDF COMPRESSOR */
-
-const compressFiles=setupInput(
-  "compressInput",
-  "compressName",
-  "compressButton",
+const compressPdfFiles=setupInput(
+  "compressPdfInput",
+  "compressPdfName",
+  "compressPdfButton",
   false
 );
 
-$("compressButton").addEventListener("click",async function(){
-  const file=compressFiles.get()[0];
+$("compressPdfButton").addEventListener("click",async function(){
+
+  const file=compressPdfFiles.get()[0];
   if(!file) return;
 
   const button=this;
   button.disabled=true;
-  $("compressResults").innerHTML="";
+  $("compressPdfResults").innerHTML="";
 
   try{
-    status("compressStatus","Opening PDF...");
+
+    if(!window.jspdf || !window.jspdf.jsPDF){
+      throw new Error("PDF library could not load. Reload the page.");
+    }
+
+    status("compressPdfStatus","Opening PDF...");
 
     const doc=await getPDF(file);
 
@@ -1175,269 +919,400 @@ $("compressButton").addEventListener("click",async function(){
       throw new Error("Maximum supported length is 150 pages.");
     }
 
-    if(!window.jspdf){
-      throw new Error("PDF library could not load. Reload the page.");
-    }
+    const quality=Number($("compressQuality").value);
 
-    const {jsPDF}=window.jspdf;
-    const quality=$("compressQuality").value;
+    let output=null;
 
-    let scale=1.35;
-    let jpgQuality=0.68;
-
-    if(quality==="high"){
-      scale=1.65;
-      jpgQuality=0.88;
-    }
-    const result=await renderPage(doc,i,scale);
-
-      const blob=await canvasBlob(
-        result.canvas,
-        "image/jpeg",
-        jpgQuality
-      );
-
-      const imageURL=URL.createObjectURL(blob);
-
-      try{
-        const img=new Image();
-
-        await new Promise((resolve,reject)=>{
-          img.onload=resolve;
-          img.onerror=()=>reject(new Error("Could not compress page "+i));
-          img.src=imageURL;
-        });
-
-        const width=result.canvas.width;
-        const height=result.canvas.height;
-        const orientation=width>height?"landscape":"portrait";
-
-        if(!output){
-          output=new jsPDF({
-            orientation:orientation,
-            unit:"px",
-            format:[width,height],
-            compress:true
-          });
-        }else{
-          output.addPage([width,height],orientation);
-        }
-
-        output.addImage(
-          img,
-          "JPEG",
-          0,
-          0,
-          width,
-          height,
-          undefined,
-          "FAST"
-        );
-
-      }finally{
-        URL.revokeObjectURL(imageURL);
-      }
-
-      result.canvas.width=1;
-      result.canvas.height=1;
-      result.page.cleanup();
-    }
-
-    const compressed=output.output("blob");
-    const base=file.name.replace(/\.pdf$/i,"");
-    const percent=Math.round(
-      (1-compressed.size/file.size)*100
-    );
-
-    addDownload(
-      "compressResults",
-      compressed,
-      base+"-compressed.pdf",
-      "Download Compressed PDF"
-    );
-
-    let message="Compression complete. Original: "+
-      formatSize(file.size)+
-      " · New: "+formatSize(compressed.size);
-
-    if(percent>0){
-      message+=" · Reduced by "+percent+"%";
-    }else{
-      message+=" · The new file is not smaller than the original.";
-    }
-
-    status("compressStatus",message,"success");
-
-  }catch(e){
-    console.error(e);
-    status("compressStatus","Compression failed: "+e.message,"error");
-  }finally{
-    button.disabled=compressFiles.get().length===0;
-  }
-});
-
-
-/* IMAGE FORMAT CONVERTER */
-
-function setupImageConverter(config){
-
-  const files=setupInput(
-    config.input,
-    config.name,
-    config.button,
-    true
-  );
-
-  $(config.button).addEventListener("click",async function(){
-
-    const selected=files.get();
-    if(!selected.length) return;
-
-    const button=this;
-    button.disabled=true;
-    $(config.results).innerHTML="";
-
-    try{
-
-      for(let i=0;i<selected.length;i++){
-
-        const file=selected[i];
-
-        status(
-          config.status,
-          "Converting "+(i+1)+" of "+selected.length+"..."
-        );
-
-        const imageURL=URL.createObjectURL(file);
-
-        try{
-
-          const img=new Image();
-
-          await new Promise((resolve,reject)=>{
-            img.onload=resolve;
-            img.onerror=()=>reject(
-              new Error("Cannot read image: "+file.name)
-            );
-            img.src=imageURL;
-          });
-
-          const canvas=document.createElement("canvas");
-          canvas.width=img.naturalWidth;
-          canvas.height=img.naturalHeight;
-
-          const ctx=canvas.getContext("2d");
-
-          if(config.output==="image/jpeg"){
-            ctx.fillStyle="#ffffff";
-            ctx.fillRect(0,0,canvas.width,canvas.height);
-          }
-
-          ctx.drawImage(img,0,0);
-
-          const quality=Number($(config.quality).value);
-
-          const blob=await canvasBlob(
-            canvas,
-            config.output,
-            quality
-          );
-
-          const base=file.name.replace(/\.[^/.]+$/,"");
-          const extension=config.extension;
-
-          addDownload(
-            config.results,
-            blob,
-            base+"."+extension,
-            "Download "+base+"."+extension
-          );
-
-          canvas.width=1;
-          canvas.height=1;
-
-        }finally{
-          URL.revokeObjectURL(imageURL);
-        }
-      }
+    for(let i=1;i<=doc.numPages;i++){
 
       status(
-        config.status,
-        "Done! "+selected.length+" image(s) converted successfully.",
+        "compressPdfStatus",
+        "Processing page "+i+" of "+doc.numPages+"..."
+      );
+
+      const {canvas,page}=await renderPage(doc,i,1.35);
+
+      const imageBlob=await canvasBlob(
+        canvas,
+        "image/jpeg",
+        quality
+      );
+
+      const imageData=await new Promise((resolve,reject)=>{
+        const reader=new FileReader();
+
+        reader.onload=()=>resolve(reader.result);
+        reader.onerror=()=>reject(new Error("Could not process page image."));
+
+        reader.readAsDataURL(imageBlob);
+      });
+
+      const viewport=page.getViewport({scale:1});
+
+      const width=viewport.width*0.264583;
+      const height=viewport.height*0.264583;
+
+      const orientation=width>=height?"landscape":"portrait";
+
+      if(!output){
+
+        output=new jspdf.jsPDF({
+          orientation:orientation,
+          unit:"mm",
+          format:[width,height],
+          compress:true
+        });
+
+      }else{
+
+        output.addPage(
+          [width,height],
+          orientation
+        );
+
+      }
+
+      output.addImage(
+        imageData,
+        "JPEG",
+        0,
+        0,
+        width,
+        height,
+        undefined,
+        "FAST"
+      );
+
+      canvas.width=0;
+      canvas.height=0;
+    }
+
+    const result=output.output("blob");
+
+    const originalSize=file.size;
+    const newSize=result.size;
+    const difference=originalSize-newSize;
+
+    addDownload(
+      "compressPdfResults",
+      result,
+      "compressed-"+file.name.replace(/\.pdf$/i,"")+".pdf",
+      "Download compressed PDF"
+    );
+
+    if(difference>0){
+
+      const percentage=((difference/originalSize)*100).toFixed(1);
+
+      status(
+        "compressPdfStatus",
+        "Finished. File size reduced by "+percentage+
+        "%. Original: "+formatSize(originalSize)+
+        " · New: "+formatSize(newSize),
         "success"
       );
 
-    }catch(e){
-      console.error(e);
-      status(config.status,"Conversion failed: "+e.message,"error");
-    }finally{
-      button.disabled=files.get().length===0;
+    }else{
+
+      status(
+        "compressPdfStatus",
+        "Conversion finished, but the new PDF is not smaller. Original: "+
+        formatSize(originalSize)+" · New: "+formatSize(newSize)+
+        ". Keep the original file if it is smaller.",
+        "error"
+      );
+
     }
 
-  });
-}
+  }catch(error){
+
+    status(
+      "compressPdfStatus",
+      error.message,
+      "error"
+    );
+
+  }finally{
+
+    button.disabled=false;
+
+  }
+
+});
 
 
-/* JPG TO WEBP */
+/* IMAGE FORMAT CONVERSION HELPER */
 
-setupImageConverter({
-  input:"jpgWebpInput",
-  name:"jpgWebpName",
-  button:"jpgWebpButton",
-  status:"jpgWebpStatus",
-  results:"jpgWebpResults",
-  quality:"webpQuality",
-  output:"image/webp",
-  extension:"webp"
+async function convertImage(
+  file,
+  outputType,
+  quality,
+  resultId,
+  statusId,
+  outputName
+){
+
+  if(!file){
+    throw new Error("Please select an image first.");
+  }
+
+  const supportedTypes=[
+    "image/jpeg",
+    "image/png",
+    "image/webp"
+  ];
+
+  if(!supportedTypes.includes(file.type)){
+    throw new Error("Unsupported image format.");
+  }
+
+  if(file.size>25*1024*1024){
+    throw new Error("Maximum image size is 25 MB.");
+  }
+
+  status(statusId,"Reading image...");
+
+  const imageData=await readImage(file);
+  const img=await loadImage(imageData);
+
+  if(img.width*img.height>25000000){
+    throw new Error("Image dimensions are too large.");
+  }
+
+  status(statusId,"Converting image...");
+
+  const canvas=document.createElement("canvas");
+
+  canvas.width=img.naturalWidth;
+  canvas.height=img.naturalHeight;
+
+  const ctx=canvas.getContext("2d");
+
+  if(outputType==="image/jpeg"){
+
+    ctx.fillStyle="#ffffff";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  }
+
+  ctx.drawImage(
+    img,
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+  const blob=await canvasBlob(
+    canvas,
+    outputType,
+    quality
+  );
+
+  canvas.width=0;
+  canvas.height=0;
+
+  const extension=outputType==="image/webp"?"webp":"jpg";
+
+  addDownload(
+    resultId,
+    blob,
+    outputName+"."+extension
+  );
+
+  status(
+    statusId,
+    "Image converted successfully. New size: "+formatSize(blob.size),
+    "success"
+  );
+
+  return blob;
+
+         }
+  /* JPG TO WEBP */
+
+const jpgWebpFiles=setupInput(
+  "jpgWebpInput",
+  "jpgWebpName",
+  "jpgWebpButton",
+  false
+);
+
+$("jpgWebpButton").addEventListener("click",async function(){
+
+  const file=jpgWebpFiles.get()[0];
+  if(!file) return;
+
+  const button=this;
+  button.disabled=true;
+  $("jpgWebpResults").innerHTML="";
+
+  try{
+
+    if(file.type!=="image/jpeg"){
+      throw new Error("Please select a JPG or JPEG image.");
+    }
+
+    const quality=Number($("webpQuality").value);
+
+    await convertImage(
+      file,
+      "image/webp",
+      quality,
+      "jpgWebpResults",
+      "jpgWebpStatus",
+      file.name.replace(/\.[^.]+$/,"") 
+    );
+
+  }catch(error){
+
+    status(
+      "jpgWebpStatus",
+      error.message,
+      "error"
+    );
+
+  }finally{
+
+    button.disabled=false;
+
+  }
+
 });
 
 
 /* WEBP TO JPG */
 
-setupImageConverter({
-  input:"webpJpgInput",
-  name:"webpJpgName",
-  button:"webpJpgButton",
-  status:"webpJpgStatus",
-  results:"webpJpgResults",
-  quality:"jpgOutQuality",
-  output:"image/jpeg",
-  extension:"jpg"
+const webpJpgFiles=setupInput(
+  "webpJpgInput",
+  "webpJpgName",
+  "webpJpgButton",
+  false
+);
+
+$("webpJpgButton").addEventListener("click",async function(){
+
+  const file=webpJpgFiles.get()[0];
+  if(!file) return;
+
+  const button=this;
+  button.disabled=true;
+  $("webpJpgResults").innerHTML="";
+
+  try{
+
+    if(file.type!=="image/webp"){
+      throw new Error("Please select a WebP image.");
+    }
+
+    const quality=Number($("jpgQuality").value);
+
+    await convertImage(
+      file,
+      "image/jpeg",
+      quality,
+      "webpJpgResults",
+      "webpJpgStatus",
+      file.name.replace(/\.[^.]+$/,"")
+    );
+
+  }catch(error){
+
+    status(
+      "webpJpgStatus",
+      error.message,
+      "error"
+    );
+
+  }finally{
+
+    button.disabled=false;
+
+  }
+
 });
 
 
-/* STARTUP CHECK */
+/* FILE SIZE AND FORMAT INFORMATION */
 
-window.addEventListener("load",function(){
+function updateFileInformation(inputId,statusId){
 
-  if(!window.pdfjsLib){
-    console.error("PDF.js failed to load.");
-  }
+  const input=$(inputId);
 
-  if(!window.jspdf){
-    console.error("jsPDF failed to load.");
-  }
+  if(!input) return;
+
+  input.addEventListener("change",function(){
+
+    const file=input.files && input.files[0];
+
+    if(!file) return;
+
+    status(
+      statusId,
+      "Selected: "+file.name+" · "+formatSize(file.size),
+      "success"
+    );
+
+  });
+
+}
+
+updateFileInformation("pdfPngInput","pdfPngStatus");
+updateFileInformation("imagesPdfInput","imagesPdfStatus");
+updateFileInformation("pdfJpgInput","pdfJpgStatus");
+updateFileInformation("compressPdfInput","compressPdfStatus");
+updateFileInformation("jpgWebpInput","jpgWebpStatus");
+updateFileInformation("webpJpgInput","webpJpgStatus");
+
+
+/* CLEAR OLD RESULTS WHEN A NEW FILE IS SELECTED */
+
+function clearResultsOnChange(inputId,resultId){
+
+  const input=$(inputId);
+
+  if(!input) return;
+
+  input.addEventListener("change",function(){
+
+    const result=$(resultId);
+
+    if(result){
+      result.innerHTML="";
+    }
+
+  });
+
+}
+
+clearResultsOnChange("pdfPngInput","pdfPngResults");
+clearResultsOnChange("imagesPdfInput","imagesPdfResults");
+clearResultsOnChange("pdfJpgInput","pdfJpgResults");
+clearResultsOnChange("compressPdfInput","compressPdfResults");
+clearResultsOnChange("jpgWebpInput","jpgWebpResults");
+clearResultsOnChange("webpJpgInput","webpJpgResults");
+  /* FINAL CLEANUP */
+
+window.addEventListener("beforeunload",function(){
+
+  document.querySelectorAll(".result a").forEach(function(link){
+
+    if(link.href.startsWith("blob:")){
+      URL.revokeObjectURL(link.href);
+    }
+
+  });
 
 });
+
+
+/* INITIALIZATION */
+
+console.log("FileFlip conversion tools initialized.");
 
 })();
+
 </script>
 
 </body>
 </html>
-
-
-    if(quality==="strong"){
-      scale=1.05;
-      jpgQuality=0.48;
-    }
-
-    let output=null;
-
-    for(let i=1;i<=doc.numPages;i++){
-      status(
-        "compressStatus",
-        "Compressing page "+i+" of "+doc.numPages+"..."
-      );
-      
-      
