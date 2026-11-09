@@ -1046,6 +1046,14 @@ $("imagesPdfButton").addEventListener("click",async function(){
     status("imagesPdfStatus","Conversion failed: "+e.message,"error");
   }finally{
     button.disabled=imageFiles.get().length===0;
+    pdf.addImage(
+  img,
+  file.type==="image/png" ? "PNG" : "JPEG",
+  0,
+  0,
+  width,
+  height
+);
   }
 });
   /* PDF TO JPG */
