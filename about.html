@@ -1,407 +1,223 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>About FileFlip | Free PDF and Image Converter Tools</title>
-
-<meta name="description" content="Discover FileFlip's free PDF and image conversion tools. Learn how to convert PDF pages, combine images into PDF, compress documents, and convert JPG and WebP images.">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About FileFlip | Free PDF and Image Tools</title>
+<meta name="description" content="Learn how FileFlip's PDF and image conversion tools work, compare file formats, and understand conversion quality, privacy, and limitations.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://fileflipconver.com/about.html">
 <link rel="icon" href="/favicon.png">
-
 <style>
-:root {
-  --bg: #f5f6fb;
-  --ink: #172033;
-  --muted: #596579;
-  --line: #e3e6ef;
-  --accent: #594bd6;
-  --soft: #eeedff;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font: 16px/1.75 Arial, Helvetica, sans-serif;
-}
-
-header {
-  text-align: center;
-  padding: 30px 16px 58px;
-  color: white;
-  background: linear-gradient(135deg, #171b3a, #39328b, #6559ee);
-}
-
-header a {
-  color: white;
-  text-decoration: none;
-}
-
-header img {
-  width: 72px;
-  height: 72px;
-  object-fit: contain;
-  display: block;
-  margin: auto;
-}
-
-header strong {
-  font-size: 28px;
-  letter-spacing: -1px;
-}
-
-header p {
-  color: #e4e3ff;
-  margin: 8px 0 0;
-}
-
-main {
-  max-width: 900px;
-  margin: -28px auto 0;
-  padding: 0 16px 40px;
-}
-
-article {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: clamp(20px, 5vw, 42px);
-  box-shadow: 0 8px 28px #1e28500d;
-}
-
-h1 {
-  font-size: clamp(30px, 5vw, 42px);
-  line-height: 1.2;
-  margin: 0 0 14px;
-}
-
-h2 {
-  font-size: 23px;
-  line-height: 1.35;
-  margin: 34px 0 10px;
-}
-
-h3 {
-  font-size: 18px;
-}
-
-p, li {
-  color: var(--muted);
-}
-
-a {
-  color: var(--accent);
-}
-
-.intro {
-  font-size: 18px;
-}
-
-.tools {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  list-style: none;
-  padding: 0;
-}
-
-.tools li {
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 15px;
-  background: #fafaff;
-}
-
-.tools strong {
-  display: block;
-  color: var(--ink);
-  margin-bottom: 5px;
-}
-
-.tools a {
-  font-weight: bold;
-}
-
-.table-wrap {
-  overflow-x: auto;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  min-width: 520px;
-}
-
-th, td {
-  text-align: left;
-  padding: 11px;
-  border-bottom: 1px solid var(--line);
-  vertical-align: top;
-}
-
-th {
-  background: #fafaff;
-  color: var(--ink);
-}
-
-.note {
-  padding: 15px;
-  border-left: 4px solid var(--accent);
-  background: var(--soft);
-  border-radius: 8px;
-}
-
-footer {
-  text-align: center;
-  padding: 25px 16px;
-  font-size: 13px;
-  color: var(--muted);
-}
-
-footer a {
-  margin: 0 8px;
-}
-
-@media (max-width: 600px) {
-  .tools {
-    grid-template-columns: 1fr;
-  }
-
-  article {
-    padding: 22px 18px;
-  }
+:root{--bg:#f5f6fb;--ink:#172033;--muted:#596579;--line:#e3e6ef;--accent:#594bd6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 Arial,sans-serif}
+header{text-align:center;padding:28px 16px 58px;color:white;background:linear-gradient(135deg,#171b3a,#39328b,#6559ee)}
+header img{width:72px;height:72px;object-fit:contain;display:block;margin:auto}
+header a{color:white;text-decoration:none}
+header strong{font-size:28px}
+header p{color:#e4e3ff}
+main{max-width:900px;margin:-28px auto 0;padding:0 16px 40px}
+article{background:white;border:1px solid var(--line);border-radius:18px;padding:clamp(20px,5vw,42px);box-shadow:0 8px 28px #1e28500d}
+h1{font-size:clamp(30px,5vw,42px);line-height:1.2;margin:0}
+h2{font-size:23px;line-height:1.35;margin:32px 0 8px}
+h3{font-size:18px;margin:0 0 6px}
+p,li{color:var(--muted)}
+a{color:var(--accent)}
+.intro{font-size:18px}
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;padding:0}
+.tools li{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fafaff}
+.tools strong{display:block;color:var(--ink);margin-bottom:5px}
+.tablewrap{width:100%;overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px}
+th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#fafaff}
+.note{padding:14px;border-left:4px solid var(--accent);background:#eeedff;border-radius:8px}
+.faq{padding:14px 0;border-bottom:1px solid var(--line)}
+.faq:last-child{border-bottom:0}
+.faq p{margin:4px 0}
+footer{text-align:center;padding:24px;font-size:13px;color:var(--muted)}
+footer a{margin:0 8px}
+@media(max-width:600px){
+.tools{grid-template-columns:1fr}
+article{padding:22px 18px}
 }
 </style>
 </head>
-
 <body>
-
 <header>
-  <a href="/" aria-label="FileFlip homepage">
-    <img src="/logo.png" alt="FileFlip logo">
-    <strong>FileFlip</strong>
-  </a>
-  <p>Free online PDF and image tools</p>
+<a href="/">
+<img src="/logo.png" alt="FileFlip logo">
+<strong>FileFlip</strong>
+</a>
+<p>Free online PDF and image tools</p>
 </header>
 
 <main>
 <article>
-
 <h1>About FileFlip</h1>
+<p class="intro">FileFlip brings practical PDF and image conversion tools together in one place. Use the tools to prepare documents for sharing, turn PDF pages into images, combine pictures into a PDF, or convert images for web and app compatibility—without installing a desktop program.</p>
 
-<p class="intro">
-FileFlip is an online collection of practical PDF and image conversion tools. It helps users prepare documents for sharing, convert PDF pages into images, combine pictures into PDF documents, and change image formats for different devices and websites.
-</p>
-
-<h2>Our Online Conversion Tools</h2>
-
-<p>
-FileFlip provides tools for common document and image tasks. Each tool is designed for a specific conversion:
-</p>
+<h2>Our online conversion tools</h2>
+<p>Choose the tool that matches your input file and the result you need. Each tool is designed for a specific conversion.</p>
 
 <ul class="tools">
-
 <li>
 <strong><a href="/pdf-to-png.html">PDF to PNG</a></strong>
-Convert PDF pages into PNG images. PNG is useful for diagrams, screenshots, illustrations, and pages containing text.
+Convert PDF pages into PNG images. PNG is useful for diagrams, screenshots, illustrations, and pages containing sharp text.
 </li>
-
 <li>
 <strong><a href="/jpg-to-pdf.html">JPG to PDF</a></strong>
-Combine JPG photographs or scanned images into a PDF document that is easier to share or store.
+Combine JPG photographs or scanned pages into one PDF document for sharing or storage.
 </li>
-
 <li>
 <strong><a href="/png-to-pdf.html">PNG to PDF</a></strong>
 Place one or multiple PNG images into a single PDF file for document preparation and sharing.
 </li>
-
 <li>
 <strong><a href="/pdf-to-jpg.html">PDF to JPG</a></strong>
 Convert PDF pages into JPG images for common image-sharing and upload workflows.
 </li>
-
 <li>
 <strong><a href="/pdf-compressor.html">PDF Compressor</a></strong>
-Create a more compact PDF from rendered document pages. Results depend on the original file and image quality settings.
+Create a new image-based PDF from rendered pages. Review the quality and text limitations explained below.
 </li>
-
 <li>
-<strong><a href="/#jpg-webp">JPG to WebP</a></strong>
-Convert JPG images into WebP format, which is widely used to deliver images on websites.
+<strong><a href="/jpg-webp.html">JPG to WebP</a></strong>
+Convert JPG images to WebP, a modern image format widely used for website images.
 </li>
-
 <li>
-<strong><a href="/#webp-jpg">WebP to JPG</a></strong>
-Convert WebP images into JPG format for applications and services that do not support WebP.
+<strong><a href="/webp-jpg.html">WebP to JPG</a></strong>
+Convert WebP images to JPG for apps and services that do not accept WebP.
 </li>
-
 </ul>
 
-<h2>How to Use FileFlip</h2>
-
-<p>
-Using an online converter is straightforward. Follow these steps:
-</p>
-
+<h2>How to use FileFlip</h2>
+<p>Using an online converter is straightforward. Follow these steps:</p>
 <ol>
 <li>Choose the conversion tool that matches your file and desired output.</li>
 <li>Select a supported file from your phone, tablet, or computer.</li>
-<li>Review the available options, such as image quality or page settings.</li>
+<li>Review available options, such as image quality or page settings.</li>
 <li>Start the conversion and keep the browser tab open while processing takes place.</li>
 <li>When the result is ready, download it and open the file to check that it looks correct.</li>
 </ol>
 
-<h2>Understanding Common File Formats</h2>
+<h2>Understanding common file formats</h2>
+<p>Different file formats are designed for different purposes. Choosing the right one can help balance image quality, compatibility, and file size.</p>
 
-<p>
-Different file formats are designed for different purposes. Choosing the right one can help you balance image quality, compatibility, and file size.
-</p>
-
-<div class="table-wrap">
+<div class="tablewrap">
 <table>
 <thead>
 <tr>
 <th>Format</th>
-<th>Common Uses</th>
-<th>Important Details</th>
+<th>Common uses</th>
+<th>Important details</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>PNG</td>
-<td>Screenshots, diagrams, graphics, and sharp text</td>
+<td>Diagrams, screenshots, graphics, and sharp text</td>
 <td>Supports transparency and lossless image compression, but photographs may produce larger files.</td>
 </tr>
-
 <tr>
 <td>JPG / JPEG</td>
 <td>Photographs and everyday image sharing</td>
 <td>Uses lossy compression, which can reduce file size but may affect image quality.</td>
 </tr>
-
 <tr>
 <td>WebP</td>
 <td>Website images and online content</td>
-<td>Can provide efficient image compression, although some older applications may not support it.</td>
+<td>Can provide efficient image compression, although some older apps may not support it.</td>
 </tr>
-
 <tr>
 <td>PDF</td>
 <td>Multi-page documents, forms, and document sharing</td>
-<td>Can contain text, images, links, forms, and other elements.</td>
+<td>Can contain selectable text, links, images, forms, and page layouts.</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<h2>What Happens When You Convert a PDF to an Image?</h2>
+<h2>What happens when you convert a PDF to an image?</h2>
+<p>A PDF-to-image converter renders each selected PDF page as a picture. The resulting PNG or JPG shows the page visually, but it is not the same as the original editable PDF.</p>
+<p>For example, text that could previously be selected and copied from a PDF may become part of the image. Links, form fields, bookmarks, and other interactive PDF features are generally not available in a simple page image.</p>
 
-<p>
-A PDF-to-image converter renders each selected PDF page as a picture. The resulting PNG or JPG file shows the page visually, but it is not the same as the original editable PDF.
-</p>
+<h2>How PDF compression works</h2>
+<p>PDF compression methods can work in different ways. Some methods optimize images, fonts, and other internal PDF resources. FileFlip's PDF Compressor renders document pages as images and then creates a new PDF from those images.</p>
+<p class="note">When a PDF is rebuilt from page images, the resulting file may be smaller, but this is not guaranteed. Image-based compression can also make text non-selectable and may affect fine details. Keep your original PDF and compare the result before relying on it.</p>
 
-<p>
-For example, text that could previously be selected and copied from a PDF may become part of the image. Links, form fields, bookmarks, and other interactive PDF features are generally not available in a simple page image.
-</p>
-
-<h2>How PDF Compression Works</h2>
-
-<p>
-PDF compression methods can work in different ways. Some methods optimize images, fonts, and other internal PDF resources. Other methods render document pages as images and create a new PDF from those images.
-</p>
-
-<p class="note">
-When a PDF is rebuilt from page images, the resulting file may be smaller, but this is not guaranteed. Image-based compression can also remove selectable text, links, forms, bookmarks, accessibility information, and other interactive features. Always keep your original document and compare the compressed version before using it.
-</p>
-
-<h2>Tips for Better Conversion Results</h2>
-
+<h2>Tips for better conversion results</h2>
 <ul>
 <li><strong>Keep your original files:</strong> Save a copy before converting or compressing important documents.</li>
-
 <li><strong>Choose the right image format:</strong> PNG is often suitable for text and diagrams, while JPG is commonly used for photographs.</li>
-
 <li><strong>Check image quality:</strong> Lower image quality can reduce file size, but excessive compression may create visible artifacts.</li>
-
 <li><strong>Review every page:</strong> Check multi-page conversions for missing content, incorrect rotation, or cut-off edges.</li>
-
 <li><strong>Consider file size:</strong> Large PDFs and high-resolution images may take longer to process and require more browser memory.</li>
-
-<li><strong>Use a compatible browser:</strong> Keep your browser updated for better compatibility with modern file formats and web applications.</li>
+<li><strong>Use a compatible browser:</strong> Keep your browser updated for better compatibility with modern file formats.</li>
 </ul>
 
-<h2>File Processing and Privacy</h2>
+<h2>File processing and privacy</h2>
+<p>The conversion code is designed to process selected files in the visitor's browser rather than upload them to a FileFlip file-processing server. Browser-based processing can help users work with files without sending them to a dedicated conversion server.</p>
+<p>Some website resources, such as software libraries, may be loaded from third-party content delivery networks. Advertising, analytics, or other website services may also use cookies or similar technologies.</p>
+<p>For more details about website data and third-party services, please read our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
 
-<p>
-FileFlip's conversion tools are designed to process selected files in the visitor's browser rather than upload them to a FileFlip file-processing server. Browser processing can help users work with files without sending them to a dedicated conversion server.
-</p>
+<h2>File size and processing considerations</h2>
+<p>The PDF tools currently state a maximum file size of 50 MB and a maximum document length of 150 pages. Actual processing time and success may also depend on the browser, device memory, document complexity, and image resolution.</p>
+<p>If a large document cannot be processed, try closing other demanding browser tabs or splitting the document into smaller files.</p>
 
-<p>
-Some website resources, such as software libraries, may be loaded from third-party content delivery networks. Advertising, analytics, or other website services may also use cookies or similar technologies.
-</p>
+<h2>Frequently asked questions</h2>
 
-<p>
-For more details about website data and third-party services, please read our
-<a href="/privacy-policy.html">Privacy Policy</a>.
-</p>
+<section class="faq">
+<h3>Are FileFlip's conversion tools free?</h3>
+<p>FileFlip provides online PDF and image conversion tools for visitors to use. Check each tool page for its current file limits and available settings.</p>
+</section>
 
-<h2>File Size and Processing Considerations</h2>
+<section class="faq">
+<h3>Will converting a PDF to JPG or PNG keep selectable text?</h3>
+<p>No. Each converted page becomes an image, so text is normally no longer selectable or searchable as text in the output image.</p>
+</section>
 
-<p>
-The PDF tools currently state a maximum file size of 50 MB and a maximum document length of 150 pages. Actual processing time and success may also depend on the browser, device memory, document complexity, and image resolution.
-</p>
+<section class="faq">
+<h3>Will compressing a PDF always make it smaller?</h3>
+<p>No. The result depends on the original PDF, page content, and image quality settings. Some files may become larger after being rebuilt as images.</p>
+</section>
 
-<p>
-If a large document cannot be processed, try closing other demanding browser tabs or splitting the document into smaller parts before converting it.
-</p>
+<section class="faq">
+<h3>Why can a conversion take a long time?</h3>
+<p>Large files, many pages, high-resolution images, and limited device memory can increase processing time. Keep the page open until the conversion finishes.</p>
+</section>
 
-<h2>Our Goal</h2>
+<section class="faq">
+<h3>Can I use FileFlip on my phone?</h3>
+<p>Yes. The website is designed to adapt to mobile screens. Large documents may process more reliably on a device with more available memory.</p>
+</section>
 
-<p>
-Our goal is to make common PDF and image conversion tasks easier to understand and complete. FileFlip brings several practical tools together and provides information about file formats, conversion methods, and possible limitations.
-</p>
+<section class="faq">
+<h3>What should I do if the output looks incorrect?</h3>
+<p>Try the conversion again, review the available quality or page settings, and compare the result with your original file. Keep the original until you have checked the output.</p>
+</section>
 
-<p>
-Converted files should always be checked before being used for important legal, financial, academic, or professional purposes.
-</p>
+<h2>Our goal</h2>
+<p>Our goal is to make common PDF and image conversion tasks easier to understand and complete. FileFlip brings practical tools together and provides information about file formats, conversion methods, and possible limitations.</p>
+<p>Converted files should always be checked before being used for important legal, financial, academic, or professional purposes.</p>
 
-<h2>Contact and Feedback</h2>
-
-<p>
-Questions, suggestions, and reports about technical problems help improve the service. If you need assistance or want to share feedback, please visit our
-<a href="/contact.html">Contact page</a>.
-</p>
-
-<p>
-You can also review our
-<a href="/terms.html">Terms of Use</a>
-for information about using the website.
-</p>
-
+<h2>Contact and feedback</h2>
+<p>Questions, suggestions, and reports about technical problems help improve the service. If you need assistance or want to share feedback, please visit our <a href="/contact.html">Contact page</a>.</p>
+<p>You can also review our <a href="/terms.html">Terms of Use</a> for information about using the website.</p>
 </article>
 </main>
 
 <footer>
 <p>© 2026 FileFlip. All rights reserved.</p>
-
 <p>
 <a href="/">Home</a>
+<a href="/about.html">About</a>
 <a href="/privacy-policy.html">Privacy Policy</a>
 <a href="/contact.html">Contact</a>
 <a href="/terms.html">Terms</a>
 </p>
 </footer>
-
 </body>
 </html>
