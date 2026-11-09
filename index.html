@@ -16,6 +16,30 @@ main{margin-top:-38px}.trust{background:#edfaf5;border:1px solid #ccebdd;border-
 @media(max-width:760px){.navlinks{gap:12px}.navlinks a{font-size:.82rem}.tools{grid-template-columns:1fr}.hero{padding-top:48px}.tool{padding:18px}.section-head{display:block}}
 @media(max-width:420px){.wrap{width:min(100% - 24px,1120px)}.navlinks a:nth-child(2){display:none}.hero h1{letter-spacing:-1px}}
  @media(max-width:420px){
+/* Responsive comparison table: keep every column readable on phones */
+@media(max-width:600px){
+ .tablewrap{overflow:visible}
+ .tablewrap table,.tablewrap tbody,.tablewrap tr,.tablewrap td{
+  display:block;width:100%;min-width:0
+ }
+ .tablewrap thead{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0
+ }
+ .tablewrap tr{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  margin:12px 0;overflow:hidden
+ }
+ .tablewrap td{
+  display:grid;grid-template-columns:minmax(105px,38%) minmax(0,1fr);
+  gap:12px;padding:10px 12px;overflow-wrap:anywhere
+ }
+ .tablewrap td::before{font-weight:750;color:var(--ink)}
+ .tablewrap td:nth-child(1)::before{content:"Format"}
+ .tablewrap td:nth-child(2)::before{content:"Common uses"}
+ .tablewrap td:nth-child(3)::before{content:"Transparency"}
+ .tablewrap td:nth-child(4)::before{content:"Compression"}
+}
 </style>
 </head>
 <body>
