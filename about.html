@@ -2,99 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About FileFlip - Free Online File Tools</title>
-  <meta name="description" content="Learn about FileFlip, free browser-based tools for converting and compressing PDF and image files.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About FileFlip | Free Online PDF and Image Tools</title>
+  <meta name="description" content="Learn about FileFlip, its free browser-based PDF and image conversion tools, how they work, and how files are handled.">
+  <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://fileflipconver.com/about.html">
+  <link rel="icon" href="/favicon.png">
   <style>
+    :root {
+      --bg: #f5f6fb;
+      --card: #ffffff;
+      --ink: #172033;
+      --muted: #596579;
+      --line: #e3e6ef;
+      --accent: #594bd6;
+      --accent-light: #eeedff;
+    }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6fb;
-      color: #263247;
-      line-height: 1.8;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
     }
     header {
-      padding: 24px;
-      color: white;
-      background: linear-gradient(120deg, #202b63, #5142d8);
-      font-size: 30px;
-      font-weight: bold;
-    }
-    main {
-      max-width: 850px;
-      margin: 28px auto;
-      padding: 30px;
-      background: white;
-      border-radius: 22px;
-    }
-    h1, h2 { color: #202b63; line-height: 1.3; }
-    h1 { font-size: 36px; }
-    h2 { margin-top: 32px; font-size: 24px; }
-    p, li { font-size: 18px; }
-    a { color: #5142d8; }
-    footer {
+      padding: 28px 18px 58px;
       text-align: center;
-      padding: 25px;
-      color: #667085;
+      color: #fff;
+      background: linear-gradient(135deg, #171b3a, #39328b, #6559ee);
     }
-    @media(max-width:600px) {
-      main { margin: 15px; padding: 22px; }
-      h1 { font-size: 30px; }
-      p, li { font-size: 17px; }
+    .brand { display: inline-block; color: #fff; text-decoration: none; }
+    .brand img {
+      display: block;
+      width: 82px;
+      height: 82px;
+      object-fit: contain;
+      margin: 0 auto 8px;
+    }
+    .brand strong { font-size: 28px; letter-spacing: -1px; }
+    header p { margin: 8px 0 0; color: #e4e3ff; }
+    main {
+      width: min(850px, 100%);
+      margin: -28px auto 0;
+      padding: 0 16px 42px;
+      position: relative;
+    }
+    .content {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: clamp(20px, 5vw, 38px);
+      box-shadow: 0 8px 28px rgba(30, 40, 80, .05);
+    }
+    h1 { margin: 0 0 12px; font-size: clamp(30px, 5vw, 40px); line-height: 1.2; }
+    h2 { margin: 30px 0 8px; font-size: 22px; line-height: 1.3; }
+    h2:first-of-type { margin-top: 28px; }
+    p, li { color: var(--muted); }
+    ul, ol { padding-left: 24px; }
+    li { margin: 7px 0; }
+    a { color: var(--accent); }
+    .intro { font-size: 17px; }
+    .tool-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .tool-list li {
+      margin: 0;
+      padding: 13px 15px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fafaff;
+    }
+    .tool-list strong { display: block; color: var(--ink); }
+    .note {
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-light);
+      border-radius: 8px;
+    }
+    footer {
+      padding: 24px 14px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer a { margin: 0 8px; }
+    @media (max-width: 600px) {
+      .tool-list { grid-template-columns: 1fr; }
+      header { padding-bottom: 52px; }
     }
   </style>
 </head>
 <body>
-  <header>FileFlip</header>
+  <header>
+    <a class="brand" href="/" aria-label="FileFlip home">
+      <img src="/logo.png" alt="FileFlip logo">
+      <strong>FileFlip</strong>
+    </a>
+    <p>Free online PDF and image tools</p>
+  </header>
 
   <main>
-    <h1>About FileFlip</h1>
+    <article class="content">
+      <h1>About FileFlip</h1>
+      <p class="intro">
+        FileFlip is a browser-based platform for everyday PDF and image conversion tasks.
+        It brings a small set of practical file tools together in one place, so visitors can
+        select a file, choose an available setting, process it, and download the result.
+      </p>
 
-    <p>
-      FileFlip is a simple, free online utility project built to make
-      everyday file conversion easier on phones, tablets, and computers.
-    </p>
+      <h2>Tools Available on FileFlip</h2>
+      <p>FileFlip currently provides the following six tools:</p>
+      <ul class="tool-list">
+        <li><strong>PDF to PNG</strong>Converts each page of a PDF into a separate PNG image.</li>
+        <li><strong>JPG &amp; PNG to PDF</strong>Combines one or more JPG or PNG images into a PDF.</li>
+        <li><strong>PDF to JPG</strong>Converts PDF pages into separate JPG images.</li>
+        <li><strong>PDF Compressor</strong>Recreates PDF pages as compressed images in a new PDF.</li>
+        <li><strong>JPG to WebP</strong>Converts JPG images into WebP files.</li>
+        <li><strong>WebP to JPG</strong>Converts WebP images into JPG files.</li>
+      </ul>
 
-    <h2>What you can do</h2>
-    <ul>
-      <li>Convert PDF pages into downloadable PNG images.</li>
-      <li>Convert JPG and PNG images into a single PDF.</li>
-      <li>Convert PDF pages into JPG images.</li>
-      <li>Compress PDF files to reduce their file size.</li>
-      <li>Convert JPG images into WebP format.</li>
-      <li>Convert WebP images into JPG format.</li>
-    </ul>
+      <h2>How the Tools Work</h2>
+      <ol>
+        <li>Open the tool you want to use on the <a href="/">FileFlip home page</a>.</li>
+        <li>Select a supported file from your device.</li>
+        <li>Choose from the quality, page-size, or compression settings available for that tool.</li>
+        <li>Start the conversion and wait for it to finish.</li>
+        <li>Use the download link shown in the results area to save the output.</li>
+      </ol>
+      <p>
+        The PDF tools support files up to 50 MB and documents up to 150 pages.
+        Actual processing time can vary depending on file size, page count, browser,
+        and the memory available on your device.
+      </p>
 
-    <h2>Privacy-focused by design</h2>
-    <p>
-      File conversions are designed to run locally in your browser.
-      Selected files are not intentionally uploaded to a FileFlip
-      file-processing server. Some website services, such as analytics
-      and consent tools, may process technical information as explained
-      in our Privacy Policy.
-    </p>
+      <h2>File Processing and Privacy</h2>
+      <p>
+        The conversion code on FileFlip uses browser-based technologies. Selected files
+        are read and processed in the visitor's browser; the conversion code does not send
+        those files to a FileFlip file-processing server. Some libraries used by the site
+        are loaded from third-party content delivery networks, and the site may use
+        analytics or advertising services. For details about data and cookies, please
+        read the <a href="/privacy-policy.html">Privacy Policy</a>.
+      </p>
 
-    <h2>Our goal</h2>
-    <p>
-      Our goal is to provide useful tools with a simple experience.
-      You can use the available conversion tools without creating an account.
-      Very large files may depend on your device's available memory and performance.
-    </p>
+      <h2>Important Information About PDF Compression</h2>
+      <p class="note">
+        FileFlip's PDF Compressor converts PDF pages into images and then creates a new PDF.
+        As a result, selectable text, links, forms, and other interactive PDF elements may
+        not be preserved. The resulting file may not always be smaller than the original.
+      </p>
 
-    <p><a href="/">← Back to FileFlip</a></p>
+      <h2>Our Approach</h2>
+      <p>
+        Our aim is to make common file conversions straightforward by providing clear
+        controls, visible processing status, and downloadable results. We describe the
+        current behavior and limitations of each tool so visitors can choose the right
+        option for their files.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        If you have a question, notice a problem, or want to share feedback about FileFlip,
+        please visit our <a href="/contact.html">Contact page</a>.
+      </p>
+    </article>
   </main>
 
   <footer>
-    FileFlip · Free browser-based file tools
-    <p>
-      <a href="/">Home</a> |
-      <a href="/privacy.html">Privacy Policy</a> |
-      <a href="/terms.html">Terms</a> |
-      <a href="/contact.html">Contact</a>
-    </p>
-    © 2026 FileFlip. All rights reserved.
+    <p>© 2026 FileFlip. All rights reserved.</p>
+    <a href="/">Home</a>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/terms.html">Terms</a>
   </footer>
 </body>
 </html>
