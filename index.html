@@ -165,7 +165,7 @@ h2{
 .drop:hover,.drop.has-file{
   border-color:var(--accent);
   background:var(--light);
-}
+  }
 .drop .big-icon{font-size:38px}
 .drop strong{font-size:19px;margin:5px 0}
 .drop small{color:var(--muted);font-size:13px}
@@ -238,7 +238,7 @@ select{
   margin-top:8px;
   overflow-wrap:anywhere;
 }
-  .result a{color:var(--accent);font-weight:700}
+.result a{color:var(--accent);font-weight:700}
 .subnote{font-size:12px;color:var(--muted)}
 .content{
   background:white;
@@ -288,8 +288,7 @@ footer a{color:var(--accent);margin:0 8px}
     <p>Convert PDF files and images online with free, simple tools. Turn PDF pages into PNG or JPG images, combine pictures into PDF files, compress PDFs, and convert JPG and WebP images. Fast processing directly in your browser.</p>
   </div>
 </header>
-
-<main id="main">
+  <main id="main">
 
   <div class="privacy">
     🔒 <strong>Your privacy matters.</strong><br>
@@ -431,7 +430,6 @@ footer a{color:var(--accent);margin:0 8px}
           <option value="strong">Strong compression</option>
         </select>
       </div>
-
       <div class="files" id="compressName">No file selected</div>
       <button class="primary" id="compressButton" disabled>Compress PDF</button>
       <div class="status" id="compressStatus"></div>
@@ -478,7 +476,7 @@ footer a{color:var(--accent);margin:0 8px}
     <article class="card">
       <div class="card-head">
         <div class="tool-icon">🖼️</div>
-                <div>
+        <div>
           <h2>WebP to JPG Converter</h2>
           <p class="sub">Convert WebP images into widely compatible JPG files.</p>
         </div>
@@ -673,7 +671,7 @@ footer a{color:var(--accent);margin:0 8px}
           <tr><td><strong>PDF</strong></td><td>Multi-page documents, sharing, and printing</td><td>Some PDFs contain selectable text and links; image-based PDFs may not.</td></tr>
           <tr><td><strong>PNG</strong></td><td>Diagrams, screenshots, and page images with crisp edges</td><td>Files can be larger than JPG images.</td></tr>
           <tr><td><strong>JPG</strong></td><td>Photographs and general-purpose image sharing</td><td>Lossy compression can soften text and fine details.</td></tr>
-          <tr><td><strong>WebP</strong></td><td>Web images where the receiving platform supports WebP</td><td>Some older apps and workflows may require JPG or PNG instead.</td></tr>
+           <tr><td><strong>WebP</strong></td><td>Web images where the receiving platform supports WebP</td><td>Some older apps and workflows may require JPG or PNG instead.</td></tr>
         </tbody>
       </table>
     </div>
@@ -747,6 +745,7 @@ footer a{color:var(--accent);margin:0 8px}
   <a href="/contact.html">Contact</a>
   <a href="/terms.html">Terms</a>
 </footer>
+
 <script>
 /* FILEFLIP - CORE ENGINE */
 
@@ -935,8 +934,7 @@ $("pdfPngButton").addEventListener("click",async function(){
       "Done! "+doc.numPages+" PNG image(s) created.",
       "success"
     );
-
-  }catch(e){
+    }catch(e){
     console.error(e);
     status("pdfPngStatus","Conversion failed: "+e.message,"error");
   }finally{
@@ -1007,16 +1005,49 @@ $("imagesPdfButton").addEventListener("click",async function(){
               format:[width,height]
             });
           }else{
-                        pdf.addPage([width,height],orientation);
+            pdf.addPage([width,height],orientation);
           }
 
           pdf.addImage(
             img,
-            file.type==="image/png" ? "PNG" : "JPEG",
+            file.type.toLowerCase().includes("png") ? "PNG" : "JPEG",
             0,
             0,
             width,
             height
+          );
+
+        }else{
+          const orientation=width>height?"landscape":"portrait";
+
+          if(!pdf){
+            pdf=new jsPDF({
+              orientation,
+              unit:"mm",
+              format:pageSize
+            });
+          }else{
+            pdf.addPage(pageSize,orientation);
+          }
+
+          const pageW=pdf.internal.pageSize.getWidth();
+          const pageH=pdf.internal.pageSize.getHeight();
+
+          const ratio=Math.min(
+            pageW/width,
+            pageH/height
+          );
+
+          const w=width*ratio;
+          const h=height*ratio;
+
+          pdf.addImage(
+            img,
+            file.type.toLowerCase().includes("png") ? "PNG" : "JPEG",
+            (pageW-w)/2,
+            (pageH-h)/2,
+            w,
+            h
           );
         }
 
@@ -1046,14 +1077,6 @@ $("imagesPdfButton").addEventListener("click",async function(){
     status("imagesPdfStatus","Conversion failed: "+e.message,"error");
   }finally{
     button.disabled=imageFiles.get().length===0;
-    pdf.addImage(
-  img,
-  file.type==="image/png" ? "PNG" : "JPEG",
-  0,
-  0,
-  width,
-  height
-);
   }
 });
   /* PDF TO JPG */
@@ -1166,115 +1189,7 @@ $("compressButton").addEventListener("click",async function(){
       scale=1.65;
       jpgQuality=0.88;
     }
-
-    if(quality==="strong"){
-      scale=1.05;
-      jpgQuality=0.48;
-    }
-
-    let output=null;
-
-    for(let i=1;i<=doc.numPages;i++){
-      status(
-        "compressStatus",
-        "Compressing page "+i+" of "+doc.numPages+"..."
-      );
-
-      const result=await renderPage(doc,i,scale);
-
-      const blob=await canvasBlob(
-        result.canvas,
-        "image/jpeg",
-        jpgQuality
-      );
-
-      const imageURL=URL.createObjectURL(blob);
-
-      try{
-        const img=new Image();
-
-        await new Promise((resolve,reject)=>{
-          img.onload=resolve;
-          img.onerror=()=>reject(new Error("Could not compress page "+i));
-          img.src=imageURL;
-        });
-
-        const width=result.canvas.width;
-        const height=result.canvas.height;
-        const orientation=width>height?"landscape":"portrait";
-
-        if(!output){
-          output=new jsPDF({
-            orientation:orientation,
-            unit:"px",
-            format:[width,height],
-            compress:true
-          });
-        }else{
-          output.addPage([width,height],orientation);
-        }
-
-        output.addImage(
-          img,
-          "JPEG",
-          0,
-          0,
-          width,
-          height,
-          undefined,
-          "FAST"
-        );
-
-      }finally{
-        URL.revokeObjectURL(imageURL);
-      }
-
-      result.canvas.width=1;
-      result.canvas.height=1;
-      result.page.cleanup();
-    }
-
-    const compressed=output.output("blob");
-    const base=file.name.replace(/\.pdf$/i,"");
-    const percent=Math.round(
-      (1-compressed.size/file.size)*100
-    );
-
-    addDownload(
-      "compressResults",
-      compressed,
-      base+"-compressed.pdf",
-      "Download Compressed PDF"
-    );
-
-    let message="Compression complete. Original: "+
-      formatSize(file.size)+
-      " · New: "+formatSize(compressed.size);
-
-    if(percent>0){
-      message+=" · Reduced by "+percent+"%";
-    }else{
-      message+=" · The new file is not smaller than the original.";
-    }
-
-    status("compressStatus",message,"success");
-
-  }catch(e){
-    console.error(e);
-    status("compressStatus","Compression failed: "+e.message,"error");
-  }finally{
-    button.disabled=compressFiles.get().length===0;
-  }
-});
-      let output=null;
-
-    for(let i=1;i<=doc.numPages;i++){
-      status(
-        "compressStatus",
-        "Compressing page "+i+" of "+doc.numPages+"..."
-      );
-
-      const result=await renderPage(doc,i,scale);
+    const result=await renderPage(doc,i,scale);
 
       const blob=await canvasBlob(
         result.canvas,
@@ -1510,3 +1425,19 @@ window.addEventListener("load",function(){
 
 </body>
 </html>
+
+
+    if(quality==="strong"){
+      scale=1.05;
+      jpgQuality=0.48;
+    }
+
+    let output=null;
+
+    for(let i=1;i<=doc.numPages;i++){
+      status(
+        "compressStatus",
+        "Compressing page "+i+" of "+doc.numPages+"..."
+      );
+      
+      
