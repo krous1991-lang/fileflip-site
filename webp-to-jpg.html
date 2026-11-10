@@ -62,6 +62,16 @@
 <h2>More FileFlip tools</h2>
 <ul><li><a href="/pdf-to-jpg.html">PDF to JPG</a></li><li><a href="/pdf-to-png.html">PDF to PNG</a></li><li><a href="/jpg-to-pdf.html">JPG to PDF</a></li><li><a href="/png-to-pdf.html">PNG to PDF</a></li><li><a href="/pdf-compressor.html">PDF Compressor</a></li></ul>
 </section>
+<section class="card" aria-label="FileFlip practical notes">
+<h2>Understand what changes during WebP to JPG conversion</h2>
+<p>JPG is widely supported by older image editors, office applications, upload forms, and devices. It can be a practical compatibility format when a service rejects WebP. The conversion creates a new raster image; it does not restore the original source file or increase its resolution. If the WebP was already saved with lossy compression, converting it to JPG may add another generation of compression.</p>
+<p>JPG does not support transparency. If the WebP contains transparent pixels, those areas must be filled with a background colour during conversion. Inspect the result around logos, icons, product cut-outs, and other subjects that were designed to sit on a transparent background before using the JPG elsewhere.</p>
+<h2>Select quality for the intended use</h2>
+<p>For a quick preview or a small image shared in a message, a smaller-file setting may be sufficient. Choose a higher setting when fine details matter, but remember that a higher quality usually increases file size and cannot restore detail already lost in the source. Compare both the visual result and file size rather than assuming one setting is best for every image.</p>
+<h2>Check the converted image</h2>
+<ul><li>Open the JPG and inspect edges where transparent areas were flattened.</li><li>Check small text, gradients, and fine patterns for compression artifacts.</li><li>Confirm the dimensions are suitable for the app or website that rejected WebP.</li><li>Keep the original WebP if transparency or future editing may be important.</li></ul>
+<p>If you are converting images for a website, consider whether the site supports WebP before replacing the original. WebP may be more efficient for web delivery, while JPG remains useful where compatibility is the priority.</p>
+</section>
 </main>
 <footer><a href="/">Home</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy</a><a href="/terms.html">Terms</a><p>© 2026 FileFlip</p></footer>
 </body></html>
