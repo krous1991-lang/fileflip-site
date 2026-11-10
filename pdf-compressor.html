@@ -29,7 +29,7 @@ nav a{margin-left:20px;color:#344054;text-decoration:none;font-size:14px}
 .dropzone{border:2px dashed #aab8d0;border-radius:12px;padding:38px 15px;text-align:center;background:#f9fbff;cursor:pointer}
 .dropzone:hover{border-color:#2563eb;background:#f1f6ff}
 .dropzone .symbol{font-size:42px}
-.dropzone h3{margin:10px 0}
+.dropzone h2{font-size:18px;margin:10px 0}
 .dropzone p{color:#667085;font-size:14px}
 button,.download{border:0;border-radius:9px;padding:14px 20px;background:#2563eb;color:white;font-weight:bold;font-size:15px;cursor:pointer;text-decoration:none;display:inline-block}
 button:disabled{opacity:.5;cursor:not-allowed}
@@ -44,7 +44,7 @@ select{width:100%;padding:13px;border:1px solid #d0d5dd;border-radius:8px;backgr
 #progressText{font-size:13px;color:#667085;margin-top:8px}
 #status{margin-top:15px;font-size:14px;line-height:1.5}
 #result{display:none;margin-top:22px;padding:20px;background:#ecfdf3;border-radius:10px}
-#result h3{margin-top:0;color:#067647}
+#result h2{font-size:20px;margin-top:0;color:#067647}
 .stats{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:15px 0;font-size:14px}
 .note{font-size:12px;color:#667085;line-height:1.6;margin-top:18px}
 section.info{max-width:850px;margin:45px auto;padding:0 18px;line-height:1.7}
@@ -83,7 +83,7 @@ footer a{color:#2563eb;text-decoration:none;margin:0 8px}
 
 <div class="dropzone" id="dropzone">
 <div class="symbol">📄</div>
-<h3>Choose a PDF file</h3>
+<h2>Choose a PDF file</h2>
 <p>Click here or drag and drop your PDF file</p>
 <p>Maximum file size: 50 MB · up to 150 pages · output pages are images</p>
 <input type="file" id="fileInput" accept="application/pdf,.pdf" hidden>
@@ -112,7 +112,7 @@ footer a{color:#2563eb;text-decoration:none;margin:0 8px}
 <div id="status" role="status" aria-live="polite"></div>
 
 <div id="result">
-<h3>PDF compressed successfully!</h3>
+<h2>PDF compressed successfully!</h2>
 <div class="stats">
 <span>Original: <strong id="originalSize"></strong></span>
 <span>Compressed: <strong id="compressedSize"></strong></span>
