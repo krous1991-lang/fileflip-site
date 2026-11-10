@@ -98,7 +98,7 @@ main{margin-top:-38px}.trust{background:#edfaf5;border:1px solid #ccebdd;border-
    <label class="pick" for="pdfPngInput">
     <span class="fileicon">📁</span>
     <b>Choose a PDF file</b>
-    <small>One PDF · processed locally</small>
+    <small>PDF up to 80 MB · 100 pages · processed locally</small>
    </label>
    <input class="fileinput" id="pdfPngInput" type="file" accept=".pdf,application/pdf">
    <div class="options">
@@ -126,7 +126,7 @@ main{margin-top:-38px}.trust{background:#edfaf5;border:1px solid #ccebdd;border-
    <label class="pick" for="imagesPdfInput">
     <span class="fileicon">📁</span>
     <b>Choose image files</b>
-    <small>Select multiple JPG, JPEG or PNG images</small>
+    <small>Up to 50 JPG or PNG images · 25 MB each</small>
    </label>
    <input class="fileinput" id="imagesPdfInput" type="file" accept="image/jpeg,image/png,.jpg,.jpeg,.png" multiple>
    <div class="options">
@@ -154,7 +154,7 @@ main{margin-top:-38px}.trust{background:#edfaf5;border:1px solid #ccebdd;border-
    <label class="pick" for="pdfJpgInput">
     <span class="fileicon">📁</span>
     <b>Choose a PDF file</b>
-    <small>One PDF · output is one JPG per page</small>
+    <small>PDF up to 80 MB · 100 pages · one JPG per page</small>
    </label>
    <input class="fileinput" id="pdfJpgInput" type="file" accept=".pdf,application/pdf">
    <div class="options">
@@ -182,7 +182,7 @@ main{margin-top:-38px}.trust{background:#edfaf5;border:1px solid #ccebdd;border-
    <label class="pick" for="compressPdfInput">
     <span class="fileicon">📁</span>
     <b>Choose a PDF file</b>
-    <small>Best suited to scanned or image-based PDFs</small>
+    <small>Up to 50 MB · 150 pages · best for scanned PDFs</small>
    </label>
    <input class="fileinput" id="compressPdfInput" type="file" accept=".pdf,application/pdf">
    <div class="options">
@@ -210,7 +210,7 @@ main{margin-top:-38px}.trust{background:#edfaf5;border:1px solid #ccebdd;border-
    <label class="pick" for="jpgWebpInput">
     <span class="fileicon">📁</span>
     <b>Choose a JPG image</b>
-    <small>JPG or JPEG · one image</small>
+    <small>One JPG · up to 25 MB · 16 megapixels</small>
    </label>
    <input class="fileinput" id="jpgWebpInput" type="file" accept="image/jpeg,.jpg,.jpeg">
    <div class="options">
@@ -238,7 +238,7 @@ main{margin-top:-38px}.trust{background:#edfaf5;border:1px solid #ccebdd;border-
    <label class="pick" for="webpJpgInput">
     <span class="fileicon">📁</span>
     <b>Choose a WebP image</b>
-    <small>WebP · one image</small>
+    <small>One WebP · up to 25 MB · 16 megapixels</small>
    </label>
    <input class="fileinput" id="webpJpgInput" type="file" accept="image/webp,.webp">
    <div class="options">
@@ -396,7 +396,10 @@ main{margin-top:-38px}.trust{background:#edfaf5;border:1px solid #ccebdd;border-
 const $ = id => document.getElementById(id);
 
 const MAX_PAGES = 100;
+const MAX_COMPRESSOR_PAGES = 150;
+const MAX_COMPRESSOR_BYTES = 50 * 1024 * 1024;
 const MAX_IMAGE_BYTES = 25 * 1024 * 1024;
+const MAX_IMAGE_FILES = 50;
 const MAX_PIXELS = 16000000;
 
 if(window.pdfjsLib){
@@ -450,6 +453,12 @@ function requireLibraries(){
 
 async function openPdf(file){
  requireLibraries();
+
+ if(!file || file.size===0)
+  throw Error("The selected PDF is empty or could not be read.");
+
+ if(file.type!=="application/pdf" && !file.name.toLowerCase().endsWith(".pdf"))
+  throw Error("Please select a valid PDF file.");
 
  if(file.size>80*1024*1024)
   throw Error("PDF is larger than the 80 MB browser limit.");
@@ -603,6 +612,9 @@ $("imagesPdfButton").addEventListener("click",async()=>{
 
   requireLibraries();
 
+  if(files.length>MAX_IMAGE_FILES)
+   throw Error("Choose no more than "+MAX_IMAGE_FILES+" images at a time.");
+
   const {jsPDF}=window.jspdf;
   let doc=null;
 
@@ -633,6 +645,9 @@ $("imagesPdfButton").addEventListener("click",async()=>{
    });
 
    const img=await loadImage(data);
+
+   if(img.width*img.height>MAX_PIXELS)
+    throw Error(f.name+" is too large in pixel dimensions. Maximum is 16 megapixels.");
 
    const orient=img.width>=img.height
     ?"landscape":"portrait";
@@ -752,10 +767,13 @@ $("compressPdfButton").addEventListener("click",async()=>{
   requireLibraries();
 
   const {jsPDF}=window.jspdf;
+  if(file.size>MAX_COMPRESSOR_BYTES)
+   throw Error("PDF is larger than the 50 MB compressor limit.");
+
   const pdf=await openPdf(file);
 
-  if(pdf.numPages>MAX_PAGES)
-   throw Error("This tool supports up to "+MAX_PAGES+" pages.");
+  if(pdf.numPages>MAX_COMPRESSOR_PAGES)
+   throw Error("This compressor supports up to "+MAX_COMPRESSOR_PAGES+" pages.");
 
   let out=null;
 
