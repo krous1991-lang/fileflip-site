@@ -432,7 +432,11 @@ function setStatus(id,msg,kind=""){
 }
 
 function clearResults(id){
- $(id).replaceChildren();
+ const container=$(id);
+ container.querySelectorAll("a[data-object-url]").forEach(link=>{
+  URL.revokeObjectURL(link.dataset.objectUrl);
+ });
+ container.replaceChildren();
 }
 
 function downloadBlob(blob,name,resultId,label){
@@ -440,6 +444,7 @@ function downloadBlob(blob,name,resultId,label){
  const a=document.createElement("a");
  a.className="download";
  a.href=url;
+ a.dataset.objectUrl=url;
  a.download=name;
  a.textContent=label||("Download "+name);
  $(resultId).appendChild(a);
@@ -504,6 +509,7 @@ async function pageCanvas(pdf,n,scale){
   throw Error("Could not create page image.");
 
  const ctx=canvas.getContext("2d",{alpha:false});
+ if(!ctx) throw Error("Your browser could not create a canvas.");
 
  await page.render({
   canvasContext:ctx,
